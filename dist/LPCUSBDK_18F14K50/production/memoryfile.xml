@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/LPCUSBDK_18F14K50/production\CDC.production.hex">
+  <executable name="dist/LPCUSBDK_18F14K50/production\18F14K50-PIC-USB_UART.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>16384</length>
-      <used>8678</used>
-      <free>7706</free>
+      <used>10064</used>
+      <free>6320</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>768</length>
-      <used>607</used>
-      <free>161</free>
+      <used>652</used>
+      <free>116</free>
     </memory>
   </executable>
 </project>

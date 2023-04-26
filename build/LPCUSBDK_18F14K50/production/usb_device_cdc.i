@@ -6332,10 +6332,10 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
     return cdc_rx_len;
 
 }
-# 557 "usb_device_cdc.c"
+# 572 "usb_device_cdc.c"
 void putUSBUSART(uint8_t *data, uint8_t length)
 {
-# 582 "usb_device_cdc.c"
+# 609 "usb_device_cdc.c"
                        ;
     if(cdc_trf_state == 0)
     {
@@ -6343,12 +6343,12 @@ void putUSBUSART(uint8_t *data, uint8_t length)
     }
                          ;
 }
-# 630 "usb_device_cdc.c"
+# 657 "usb_device_cdc.c"
 void putsUSBUSART(char *data)
 {
     uint8_t len;
     char *pData;
-# 658 "usb_device_cdc.c"
+# 685 "usb_device_cdc.c"
                        ;
     if(cdc_trf_state != 0)
     {
@@ -6377,12 +6377,12 @@ void putsUSBUSART(char *data)
     { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x01; cdc_trf_state = 1; };
                          ;
 }
-# 727 "usb_device_cdc.c"
+# 754 "usb_device_cdc.c"
 void putrsUSBUSART(const char *data)
 {
     uint8_t len;
     const char *pData;
-# 755 "usb_device_cdc.c"
+# 782 "usb_device_cdc.c"
                        ;
     if(cdc_trf_state != 0)
     {
@@ -6401,12 +6401,12 @@ void putrsUSBUSART(const char *data)
         len++;
         if(len == 255) break;
     }while(*pData++);
-# 781 "usb_device_cdc.c"
+# 808 "usb_device_cdc.c"
     { pCDCSrc.bRom = (const uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x00; cdc_trf_state = 1; };
                          ;
 
 }
-# 837 "usb_device_cdc.c"
+# 864 "usb_device_cdc.c"
 void CDCTxService(void)
 {
     uint8_t byte_to_send;

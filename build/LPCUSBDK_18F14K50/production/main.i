@@ -7,9 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 22 "main.c"
-# 1 "./system.h" 1
-# 23 "./system.h"
+# 21 "main.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5092,8 +5090,161 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 2 3
-# 23 "./system.h" 2
+# 21 "main.c" 2
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+int getch(void);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+void putch(char);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+__attribute__((__format__(__printf__, 1, 2)))
+int printf(const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int fprintf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 2, 3)))
+int sprintf(char *restrict, const char *restrict, ...);
+__attribute__((__format__(__printf__, 3, 4)))
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+__attribute__((__format__(__printf__, 1, 0)))
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 2, 0)))
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__printf__, 3, 0)))
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+__attribute__((__format__(__scanf__, 1, 2)))
+int scanf(const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int fscanf(FILE *restrict, const char *restrict, ...);
+__attribute__((__format__(__scanf__, 2, 3)))
+int sscanf(const char *restrict, const char *restrict, ...);
+
+__attribute__((__format__(__scanf__, 1, 0)))
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+__attribute__((__format__(__scanf__, 2, 0)))
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 22 "main.c" 2
+
+
+
+
+# 1 "./system.h" 1
+# 24 "./system.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
 # 24 "./system.h" 2
 
@@ -5155,7 +5306,7 @@ typedef enum
 } SYSTEM_STATE;
 # 54 "./system.h"
 void SYSTEM_Initialize( SYSTEM_STATE state );
-# 22 "main.c" 2
+# 26 "main.c" 2
 
 
 # 1 "./app_device_cdc_basic.h" 1
@@ -6172,12 +6323,12 @@ extern const uint8_t configDescriptor1[];
 void APP_DeviceCDCBasicDemoInitialize(void);
 # 56 "./app_device_cdc_basic.h"
 void APP_DeviceCDCBasicDemoTasks(void);
-# 24 "main.c" 2
+# 28 "main.c" 2
 
 # 1 "./app_led_usb_status.h" 1
 # 37 "./app_led_usb_status.h"
 void APP_LEDUpdateUSBStatus(void);
-# 25 "main.c" 2
+# 29 "main.c" 2
 
 
 
@@ -6409,8 +6560,8 @@ typedef union _QWORD_VAL
         unsigned char b63:1;
     } bits;
 } QWORD_VAL;
-# 30 "main.c" 2
-# 45 "main.c"
+# 34 "main.c" 2
+# 49 "main.c"
 #pragma config CPUDIV = NOCLKDIV
 #pragma config USBDIV = OFF
 #pragma config FOSC = HS
@@ -6432,8 +6583,13 @@ typedef union _QWORD_VAL
 
 #pragma udata
 
-char USB_In_Buffer[64] ;
-char USB_Out_Buffer[64] ;
+uint8_t USB_In_Buffer[64] ;
+uint8_t USB_Out_Buffer[64] ;
+
+char CharConv[16]={
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    'a', 'b', 'c', 'd', 'e', 'f'
+};
 
 
 void ProcessUSB(void);
@@ -6442,9 +6598,19 @@ void YourHighPriorityISRCode();
 void YourLowPriorityISRCode();
 void USBCBSendResume(void);
 void BlinkUSBStatus(void);
-# 98 "main.c"
+void skUSB_ini(void);
+void UsbPutString01(char *str, uint8_t flg);
+void Wait(uint16_t num);
+uint8_t skStrlen(char *str, uint8_t flg);
+uint8_t skStrinMerge(char *a, char *b);
+void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta);
+void uint2string(char *buf, uint16_t data, uint8_t flg);
+# 116 "main.c"
 void main(void)
 {
+     BYTE numBytesRead ;
+     BYTE i ;
+
 
      OSCCON = 0b00000000 ;
      ANSEL = 0b00000000 ;
@@ -6456,14 +6622,26 @@ void main(void)
      PORTB = 0b00000000 ;
      PORTC = 0b00000000 ;
 
-     USBDeviceInit() ;
+    skUSB_ini();
+
 
      while(1) {
-# 122 "main.c"
-               USBDeviceTasks() ;
 
 
-          ProcessUSB() ;
+        USBDeviceTasks() ;
+
+
+
+        numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;
+        if(numBytesRead != 0) {
+
+            UsbPutString03("GetChaNumr = ",numBytesRead,1,16);
+            for (i=0 ; i<numBytesRead ; i++) {
+                UsbPutString03("GetChar = ",USB_Out_Buffer[i],1,16);
+            }
+        }
+
+
     }
 }
 
@@ -6479,6 +6657,7 @@ void ProcessUSB(void)
      if ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ) return ;
 
 
+
      if ((cdc_trf_state == 0)) {
           numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;
           if(numBytesRead != 0) {
@@ -6489,7 +6668,7 @@ void ProcessUSB(void)
                               USB_In_Buffer[i] = USB_Out_Buffer[i] ;
                               break ;
                          default:
-                              USB_In_Buffer[i] = USB_Out_Buffer[i] + 1 ;
+                              USB_In_Buffer[i] = USB_Out_Buffer[i] + 2 ;
                               break ;
                     }
                }
@@ -6500,4 +6679,198 @@ void ProcessUSB(void)
 
 
     CDCTxService() ;
+}
+
+
+
+
+void Wait(uint16_t num)
+{
+     int i ;
+
+     for (i=0 ; i < num ; i++) {
+          _delay((unsigned long)((10)*(4000000/4000.0))) ;
+     }
+}
+
+
+
+
+void skUSB_ini(void)
+{
+    USBDeviceInit() ;
+
+    while ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ){
+        USBDeviceTasks() ;
+        Wait(1);
+    }
+
+    UsbPutString01("*********1**********",1);
+
+    while ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ){
+        USBDeviceTasks() ;
+        Wait(1);
+    }
+
+    UsbPutString01("*** UART START ****",1);
+
+    while ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ){
+        USBDeviceTasks() ;
+        Wait(1);
+    }
+
+
+    UsbPutString01("*********2**********",1);
+
+}
+
+
+
+uint8_t skStrlen(char *str, uint8_t flg)
+{
+    uint8_t rtn;
+    uint8_t i;
+
+    rtn = 0;
+    while( *str != (char)((void*)0) )
+    {
+        str ++;
+        rtn ++;
+    }
+
+    if( flg == 1){
+        *str = 0x0d;
+        str ++;
+        rtn ++;
+        *str = 0x0a;
+        str ++;
+        rtn ++;
+        *str = 0x00;
+    }
+
+    return rtn;
+
+}
+
+
+
+
+void UsbPutString01(char *str, uint8_t flg)
+{
+    uint8_t num;
+    char *string;
+
+    string = str;
+
+    num = skStrlen( string , flg );
+    putUSBUSART( str, num);
+    CDCTxService() ;
+}
+
+
+
+void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta)
+{
+    uint8_t i;
+    uint8_t num;
+    char string[30];
+
+    i=0;
+    while( *str != (char)((void*)0) )
+    {
+        string[i]=*str;
+        str ++;
+        i ++;
+    }
+
+
+
+
+    uint2string( &string[i], data, keta);
+    num = skStrlen( string , flg );
+
+    putUSBUSART( string, num);
+    CDCTxService() ;
+}
+
+
+
+uint8_t skStrinMerge(char *a, char *b)
+{
+    uint8_t rtn;
+    char *string;
+
+    rtn = 0;
+    while( *a != (char)((void*)0) )
+    {
+        a ++;
+        rtn ++;
+    }
+
+    while( *b != (char)((void*)0) )
+    {
+        *a = *b;
+        a ++;
+        b ++;
+        rtn ++;
+    }
+    *a = *b;
+
+    return rtn;
+
+}
+
+
+
+void uint2string(char *buf, uint16_t data, uint8_t flg)
+{
+    uint16_t dt;
+    uint16_t i;
+    uint16_t sw;
+
+    sw = 0;
+
+    dt = data;
+    if( flg == 10){
+        for(i=10000; i>0; i/=10){
+            dt = dt/i;
+            if(sw==0){
+                if(dt != 0){
+                    *buf = CharConv[dt];
+                    sw=1;
+                }
+            }
+            else{
+                    *buf = CharConv[dt];
+            }
+            dt = data - dt*i;
+            buf ++;
+        }
+    }
+    else{
+        *buf = '0';
+        buf ++;
+        *buf = 'x';
+        buf ++;
+
+        dt = (data >> 12)& 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+
+        dt = (data >> 8)& 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+
+        dt = (data >> 4)& 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+
+        dt = data & 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+
+    }
+
+    *buf =(char) ((void*)0);
+
 }

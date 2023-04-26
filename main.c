@@ -18,6 +18,10 @@ please contact mla_licensing@microchip.com
 *******************************************************************************/
 
 /** INCLUDES *******************************************************/
+#include    <xc.h>
+#include    <stdio.h>
+//#include    <types.h>
+//#include    <wait.h>
 
 #include "system.h"
 
@@ -63,8 +67,13 @@ please contact mla_licensing@microchip.com
 // 変数の定義
 #pragma udata					// 変数の格納先を指定(アドレスは指定せず)
 
-char USB_In_Buffer[64] ;       // USBの送信用バッファ
-char USB_Out_Buffer[64] ;      // USBの受信用バッファ
+uint8_t     USB_In_Buffer[64] ;       // USBの送信用バッファ
+uint8_t     USB_Out_Buffer[64] ;      // USBの受信用バッファ
+
+char CharConv[16]={
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+    'a', 'b', 'c', 'd', 'e', 'f'
+};
 
 // 関数プロトタイプの宣言
 void ProcessUSB(void);
@@ -73,8 +82,17 @@ void YourHighPriorityISRCode();
 void YourLowPriorityISRCode();
 void USBCBSendResume(void);
 void BlinkUSBStatus(void);
+void skUSB_ini(void);
+void UsbPutString01(char *str, uint8_t flg);
+void Wait(uint16_t num);
+uint8_t skStrlen(char *str, uint8_t flg);
+uint8_t skStrinMerge(char *a, char *b);
+void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta);
+void uint2string(char *buf, uint16_t data, uint8_t flg);
 
 
+
+#define _XTAL_FREQ 4000000
 /********************************************************************
  * Function:        void main(void)
  *
@@ -97,7 +115,10 @@ void BlinkUSBStatus(void);
 *******************************************************************************/
 void main(void)
 {
-
+     BYTE numBytesRead ;
+     BYTE i ;
+     
+     
      OSCCON = 0b00000000 ;     // 外部クロックとする(12MHz x 4倍 = 48MHz)
      ANSEL  = 0b00000000 ;     // ANS3-7 アナログは使用しない、デジタルI/Oに割当
      ANSELH = 0b00000000 ;     // ANS8-11アナログは使用しない、デジタルI/Oに割当
@@ -108,21 +129,26 @@ void main(void)
      PORTB  = 0b00000000 ;     // 出力ピンの初期化(全てLOWにする)
      PORTC  = 0b00000000 ;     // 出力ピンの初期化(全てLOWにする)
 
-     USBDeviceInit() ;         // ＵＳＢの初期化を行う(フルスピードで内部プルアップ有り)
+    skUSB_ini(); 
+             
 
      while(1) {
-          // 割込みで処理する場合
-          #if defined(USB_INTERRUPT)
-               if(USB_BUS_SENSE && (USBGetDeviceState() == DETACHED_STATE)) {
-                    USBDeviceAttach() ;
-               }
-          #endif
-          // USBホストからSETUPパケットを受けてポーリングで処理する場合
-          #if defined(USB_POLLING)
-               USBDeviceTasks() ;
-          #endif
-          // ＵＳＢのメイン処理
-          ProcessUSB() ;
+         
+         
+        USBDeviceTasks() ;
+         // ＵＳＢのメイン処理
+        //ProcessUSB() ;
+
+        numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;  // 受信データが有れば取り出す
+        if(numBytesRead != 0) {
+            
+            UsbPutString03("GetChaNumr = ",numBytesRead,1,16);
+            for (i=0 ; i<numBytesRead ; i++) {           // 受信した個数分繰り返す
+                UsbPutString03("GetChar = ",USB_Out_Buffer[i],1,16);
+            }
+        }
+
+
     }
 }
 /*******************************************************************************
@@ -136,7 +162,8 @@ void ProcessUSB(void)
 
      // ＵＳＢが通信可能になるまで待つ
      if ( (USBDeviceState < CONFIGURED_STATE) || (USBSuspendControl == 1) ) return ;
-
+     
+    
      // データを受信したら"受信データ＋１"で送り返す処理
      if (USBUSARTIsTxTrfReady()) {      // ホストにデータを送信する準備ができているかどうかをチェックする
           numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;  // 受信データが有れば取り出す
@@ -148,7 +175,7 @@ void ProcessUSB(void)
                               USB_In_Buffer[i] = USB_Out_Buffer[i] ;       // 改行コードはそのまま移す
                               break ;
                          default:
-                              USB_In_Buffer[i] = USB_Out_Buffer[i] + 1 ;   // 他のコードは＋１して移す
+                              USB_In_Buffer[i] = USB_Out_Buffer[i] + 2 ;   // 他のコードは＋１して移す
                               break ;
                     }
                }
@@ -161,7 +188,199 @@ void ProcessUSB(void)
     CDCTxService() ;
 }
 
+//==============================================================================
+// Waite time = num x 10ms
+//==============================================================================
+void Wait(uint16_t num)
+{
+     int i ;
 
+     for (i=0 ; i < num ; i++) {
+          __delay_ms(10) ;
+     }
+}
+//==============================================================================
+//
+//==============================================================================
+
+void    skUSB_ini(void)
+{
+    USBDeviceInit() ;         // ＵＳＢの初期化を行う(フルスピードで内部プルアップ有り)
+    //wait(1);
+    while ( (USBDeviceState < CONFIGURED_STATE) || (USBSuspendControl == 1) ){
+        USBDeviceTasks() ;
+        Wait(1);
+    }
+
+    UsbPutString01("*********1**********",1);
+    
+    while ( (USBDeviceState < CONFIGURED_STATE) || (USBSuspendControl == 1) ){
+        USBDeviceTasks() ;
+        Wait(1);
+    }
+
+    UsbPutString01("*** UART START ****",1);
+    
+    while ( (USBDeviceState < CONFIGURED_STATE) || (USBSuspendControl == 1) ){
+        USBDeviceTasks() ;
+        Wait(1);
+    }
+
+    
+    UsbPutString01("*********2**********",1);
+
+}
+//==============================================================================
+//
+//==============================================================================
+uint8_t  skStrlen(char *str, uint8_t flg)
+{
+    uint8_t rtn;
+    uint8_t i;
+    
+    rtn = 0;
+    while( *str != (char)NULL )
+    {
+        str ++;
+        rtn ++;
+    }
+    
+    if( flg == 1){
+        *str = 0x0d;
+        str ++;
+        rtn ++;
+        *str = 0x0a;
+        str ++;
+        rtn ++;
+        *str = 0x00;
+    }
+    
+    return rtn;
+    
+}
+
+//-----------------------------------------------------------------------------
+// 
+//-----------------------------------------------------------------------------
+void UsbPutString01(char *str, uint8_t flg)
+{
+    uint8_t  num;
+    char *string;
+    
+    string = str;
+    
+    num = skStrlen( string , flg );    
+    putUSBUSART( str, num);
+    CDCTxService() ;
+}
+//-----------------------------------------------------------------------------
+// 
+//-----------------------------------------------------------------------------
+void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta)
+{
+    uint8_t  i;
+    uint8_t  num;
+    char string[30];
+    
+    i=0;
+    while( *str != (char)NULL )
+    {
+        string[i]=*str;
+        str ++;
+        i ++;
+    }
+
+
+
+
+    uint2string( &string[i], data, keta);
+    num = skStrlen( string , flg );   
+    //num = skStrlen( string , flg );    
+    putUSBUSART( string, num);
+    CDCTxService() ;
+}
+//-----------------------------------------------------------------------------
+// 
+//-----------------------------------------------------------------------------
+uint8_t skStrinMerge(char *a, char *b)
+{
+    uint8_t  rtn;
+    char *string;
+    
+    rtn = 0;
+    while( *a != (char)NULL )
+    {
+        a ++;
+        rtn ++;
+    }
+
+    while( *b != (char)NULL )
+    {
+        *a = *b;
+        a ++;
+        b ++;
+        rtn ++;
+    }
+    *a = *b;
+
+    return rtn;
+    
+}
+//-----------------------------------------------------------------------------
+// 
+//-----------------------------------------------------------------------------
+void uint2string(char *buf, uint16_t data, uint8_t flg)
+{
+    uint16_t dt;
+    uint16_t i;
+    uint16_t sw;
+    
+    sw = 0;
+    
+    dt = data;
+    if( flg == 10){
+        for(i=10000; i>0; i/=10){
+            dt = dt/i;
+            if(sw==0){
+                if(dt != 0){
+                    *buf = CharConv[dt];
+                    sw=1;
+                }
+            }
+            else{
+                    *buf = CharConv[dt];            
+            }
+            dt = data - dt*i;
+            buf ++;
+        }
+    }
+    else{
+        *buf = '0';
+        buf ++;
+        *buf = 'x';
+        buf ++;
+
+        dt = (data >> 12)& 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+        
+        dt = (data >> 8)& 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+        
+        dt = (data >> 4)& 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+        
+        dt = data & 0x0f;
+        *buf = CharConv[dt];
+        buf ++;
+                
+    }
+    
+    *buf =(char) NULL;
+    
+}
 
 
 

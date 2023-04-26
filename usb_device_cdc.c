@@ -528,6 +528,9 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
     capable of transferring 0x00 (what is typically a NULL character in any of
     the string transfer functions).
 
+ * putUSBUSART は、データの配列を USB に書き込みます。 このバージョンを使用すると、
+ * 0x00 を転送できます (これは通常、文字列転送関数の NULL 文字です)。
+ 
     Typical Usage:
     <code>
         if(USBUSARTIsTxTrfReady())
@@ -542,6 +545,12 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
     maximum size of bulk IN endpoint. A state machine is used to transfer a
     \long string of data over multiple USB transactions. CDCTxService()
     must be called periodically to keep sending blocks of data to the host.
+ * デバイスからホストへの転送メカニズム (put) は、ホストからデバイスへの転送メカニズム
+ *  (get) よりも柔軟です。 バルク IN エンドポイントの最大サイズを超えるデータの
+ * 文字列を処理できます。 ステート マシンは、 \long 複数の USB トランザクションに
+ * わたるデータの文字列。 データのブロックをホストに送信し続けるために、
+ * CDCTxService() を定期的に呼び出す必要があります。
+ 
 
   Conditions:
     USBUSARTIsTxTrfReady() must return true. This indicates that the last
@@ -549,10 +558,16 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
     string of characters pointed to by 'data' must equal to or smaller than
     255 BYTEs.
 
+ * USBUSARTIsTxTrfReady() は true を返す必要があります。 これは、最後の転送が完了し、
+ * 新しいデータ ブロックを受信する準備ができていることを示します。 
+ * 'data' が指す文字列は、255 バイト以下でなければなりません。
+ 
   Input:
     char *data - pointer to a RAM array of data to be transfered to the host
     uint8_t length - the number of bytes to be transfered (must be less than 255).
-
+ * char *data - ホストに転送されるデータの RAM 配列へのポインタ uint8_t length - 
+ * 転送されるバイト数 (255 未満である必要があります)。
+ 
  *****************************************************************************/
 void putUSBUSART(uint8_t *data, uint8_t  length)
 {
@@ -561,23 +576,35 @@ void putUSBUSART(uint8_t *data, uint8_t  length)
      * before calling this function.
      * As a safety precaution, this function checks the state one more time
      * to make sure it does not override any pending transactions.
+     * この関数を呼び出す前に、cdc_trf_state が CDC_TX_READY 状態であることを
+     * 確認する必要があります。 安全上の予防措置として、この関数は状態をもう一度
+     * チェックして、保留中のトランザクションを上書きしないようにします。
      *
      * Currently it just quits the routine without reporting any errors back
      * to the user.
+     * 現在、ユーザーにエラーを報告せずにルーチンを終了するだけです。
      *
      * Bottom line: User MUST make sure that USBUSARTIsTxTrfReady()==1
      *             before calling this function!
+     * 結論: ユーザーは、この関数を呼び出す前に USBUSARTIsTxTrfReady()==1 
+     * であることを確認する必要があります!
+     * 
      * Example:
      * if(USBUSARTIsTxTrfReady())
      *     putUSBUSART(pData, Length);
      *
      * IMPORTANT: Never use the following blocking while loop to wait:
+     * 重要: 次のブロッキング while ループを使用して待機しないでください。
+     * 
      * while(!USBUSARTIsTxTrfReady())
      *     putUSBUSART(pData, Length);
      *
      * The whole firmware framework is written based on cooperative
      * multi-tasking and a blocking code is not acceptable.
      * Use a state machine instead.
+     * ファームウェア フレームワーク全体が協調マルチタスクに基づいて記述されており、
+     * ブロッキング コードは受け入れられません。
+     * 代わりにステート マシンを使用してください。
      */
     USBMaskInterrupts();
     if(cdc_trf_state == CDC_TX_READY)
