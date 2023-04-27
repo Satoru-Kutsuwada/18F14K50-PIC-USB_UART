@@ -5774,7 +5774,6 @@ typedef enum
 {
 
 
-
     DETACHED_STATE
                             = 0x00 ,
 
@@ -5825,7 +5824,7 @@ typedef enum
 
 
     EVENT_EP0_REQUEST,
-# 160 "./usb_device.h"
+# 159 "./usb_device.h"
     EVENT_ATTACH,
 
 
@@ -5834,80 +5833,80 @@ typedef enum
     EVENT_TRANSFER_TERMINATED
 
 } USB_DEVICE_STACK_EVENTS;
-# 199 "./usb_device.h"
+# 198 "./usb_device.h"
 void USBDeviceInit(void);
-# 303 "./usb_device.h"
+# 302 "./usb_device.h"
 void USBDeviceTasks(void);
-# 355 "./usb_device.h"
+# 354 "./usb_device.h"
 void USBEnableEndpoint(uint8_t ep, uint8_t options);
-# 448 "./usb_device.h"
+# 447 "./usb_device.h"
 void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
-# 473 "./usb_device.h"
+# 472 "./usb_device.h"
 void USBStallEndpoint(uint8_t ep, uint8_t dir);
-# 497 "./usb_device.h"
+# 496 "./usb_device.h"
 void USBCancelIO(uint8_t endpoint);
-# 594 "./usb_device.h"
+# 593 "./usb_device.h"
 void USBDeviceDetach(void);
-# 639 "./usb_device.h"
+# 638 "./usb_device.h"
 void USBDeviceAttach(void);
-# 678 "./usb_device.h"
+# 677 "./usb_device.h"
 void USBCtrlEPAllowStatusStage(void);
-# 708 "./usb_device.h"
+# 707 "./usb_device.h"
 void USBCtrlEPAllowDataStage(void);
-# 784 "./usb_device.h"
+# 783 "./usb_device.h"
 void USBDeferOUTDataStage(void);
 extern volatile _Bool USBDeferOUTDataStagePackets;
-# 854 "./usb_device.h"
+# 853 "./usb_device.h"
 void USBDeferStatusStage(void);
 extern volatile _Bool USBDeferStatusStagePacket;
-# 906 "./usb_device.h"
+# 905 "./usb_device.h"
 _Bool USBOUTDataStageDeferred(void);
-# 989 "./usb_device.h"
+# 988 "./usb_device.h"
 void USBDeferINDataStage(void);
 extern volatile _Bool USBDeferINDataStagePackets;
-# 1043 "./usb_device.h"
+# 1042 "./usb_device.h"
 _Bool USBINDataStageDeferred(void);
-# 1113 "./usb_device.h"
+# 1112 "./usb_device.h"
 _Bool USBGetRemoteWakeupStatus(void);
-# 1170 "./usb_device.h"
+# 1169 "./usb_device.h"
 USB_DEVICE_STATE USBGetDeviceState(void);
-# 1226 "./usb_device.h"
+# 1225 "./usb_device.h"
 _Bool USBGetSuspendState(void);
-# 1261 "./usb_device.h"
+# 1260 "./usb_device.h"
 _Bool USBIsDeviceSuspended(void);
-# 1304 "./usb_device.h"
+# 1303 "./usb_device.h"
 _Bool USBIsBusSuspended(void);
-# 1330 "./usb_device.h"
+# 1329 "./usb_device.h"
 void USBSoftDetach(void);
-# 1368 "./usb_device.h"
+# 1367 "./usb_device.h"
 _Bool USBHandleBusy(void* handle);
-# 1406 "./usb_device.h"
+# 1405 "./usb_device.h"
 uint16_t USBHandleGetLength(void* handle);
-# 1438 "./usb_device.h"
+# 1437 "./usb_device.h"
 uint16_t USBHandleGetAddr(void*);
-# 1538 "./usb_device.h"
+# 1537 "./usb_device.h"
 void* USBGetNextHandle(uint8_t ep_num, uint8_t ep_dir);
-# 1571 "./usb_device.h"
+# 1570 "./usb_device.h"
 void USBEP0Transmit(uint8_t options);
-# 1599 "./usb_device.h"
+# 1598 "./usb_device.h"
 void USBEP0SendRAMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1631 "./usb_device.h"
+# 1630 "./usb_device.h"
 void USBEP0SendROMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1659 "./usb_device.h"
+# 1658 "./usb_device.h"
 void USBEP0Receive(uint8_t* dest, uint16_t size, void (*function));
-# 1694 "./usb_device.h"
+# 1693 "./usb_device.h"
 void* USBTxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1731 "./usb_device.h"
+# 1730 "./usb_device.h"
 void* USBRxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1763 "./usb_device.h"
+# 1762 "./usb_device.h"
 _Bool USB_APPLICATION_EVENT_HANDLER(uint8_t address, USB_EVENT event, void *pdata, uint16_t size);
-# 1808 "./usb_device.h"
+# 1807 "./usb_device.h"
 void USBIncrement1msInternalTimers(void);
-# 1867 "./usb_device.h"
+# 1866 "./usb_device.h"
 uint32_t USBGet1msTickCount(void);
-# 1908 "./usb_device.h"
+# 1907 "./usb_device.h"
 uint8_t USBGetTicksSinceSuspendEnd(void);
-# 1980 "./usb_device.h"
+# 1979 "./usb_device.h"
 typedef union
 {
     uint16_t Val;
@@ -6179,7 +6178,7 @@ _Bool USBHALTransferData ( TRANSFER_FLAGS flags,
 _Bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
 # 603 "./usb_hal.h"
 _Bool USBHALInitialize ( unsigned long flags );
-# 2056 "./usb_device.h" 2
+# 2055 "./usb_device.h" 2
 # 51 "./usb.h" 2
 # 26 "./usb_device_cdc.h" 2
 # 536 "./usb_device_cdc.h"
@@ -6605,22 +6604,52 @@ uint8_t skStrlen(char *str, uint8_t flg);
 uint8_t skStrinMerge(char *a, char *b);
 void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta);
 void uint2string(char *buf, uint16_t data, uint8_t flg);
-# 116 "main.c"
+char GetChar(void);
+void PutString03(char *string,uint16_t data, uint16_t flg, uint16_t keta);
+void PutString(char *string);
+void PutStringLF(void);
+void PutString01(char *string,uint16_t flg);
+# 119 "main.c"
 void main(void)
 {
      BYTE numBytesRead ;
      BYTE i ;
-
-
+     char RxData;
+# 141 "main.c"
      OSCCON = 0b00000000 ;
+
+
      ANSEL = 0b00000000 ;
      ANSELH = 0b00000000 ;
-     TRISA = 0b00000000 ;
-     TRISB = 0b00000000 ;
+
+
+
      TRISC = 0b00000000 ;
      PORTA = 0b00000000 ;
      PORTB = 0b00000000 ;
      PORTC = 0b00000000 ;
+# 162 "main.c"
+    TRISA = 0b00000000 ;
+
+
+    TRISB = 0b00000000 ;
+
+
+
+
+    TXSTA = 0b00100100;
+
+
+    RCSTA = 0b10010000;
+
+
+
+    BAUDCON = 0b00000000;
+
+
+
+
+    SPBRG = 155;
 
     skUSB_ini();
 
@@ -6636,13 +6665,99 @@ void main(void)
         if(numBytesRead != 0) {
 
             UsbPutString03("GetChaNumr = ",numBytesRead,1,16);
+            PutString03("GetChaNumr = ", numBytesRead, 1, 16);
             for (i=0 ; i<numBytesRead ; i++) {
                 UsbPutString03("GetChar = ",USB_Out_Buffer[i],1,16);
+                PutString03("UART-Rxdata = ", USB_Out_Buffer[i], 1, 16);
             }
         }
 
 
+        RxData = GetChar();
+
+        if(RxData > 0){
+            PutString03("UART-Rxdata = ", RxData, 1, 16);
+        }
+
+
     }
+}
+
+
+
+char GetChar(void)
+{
+    char rxdt;
+
+    if (PIR1bits.RCIF){
+       rxdt = RCREG;
+    }
+    else{
+        rxdt = 0;
+    }
+
+    return rxdt;
+}
+
+
+
+void PutString01(char *string,uint16_t flg)
+{
+    PutString(string);
+    if(flg == 1)
+        PutStringLF();
+}
+
+
+
+void PutString03(char *string,uint16_t data, uint16_t flg, uint16_t keta)
+
+{
+    char buf[20];
+
+    PutString(string);
+    uint2string(buf, data, keta);
+    PutString(buf);
+    if(flg == 1)
+        PutStringLF();
+}
+
+
+
+void PutString(char *string)
+
+{
+    char dummy;
+
+    while( *string != (char)((void*)0) ){
+        while(TXIF==0){
+
+        }
+
+
+        TXREG = *string ;
+        dummy = TXREG;
+        string ++;
+    }
+}
+
+
+
+void PutStringLF(void)
+{
+    char dummy;
+        while(TXIF==0){
+
+        }
+        TXREG = 0x0d ;
+        dummy = TXREG;
+
+        while(TXIF==0) {
+
+        }
+
+        TXREG = 0x0a ;
+        dummy = TXREG;
 }
 
 
@@ -6698,29 +6813,39 @@ void Wait(uint16_t num)
 
 void skUSB_ini(void)
 {
+    BYTE numBytesRead;
+
     USBDeviceInit() ;
 
     while ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ){
         USBDeviceTasks() ;
         Wait(1);
     }
+    USBDeviceTasks() ;
 
-    UsbPutString01("*********1**********",1);
+    numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;
+
+
+    UsbPutString03("*********1**********", 0, 1, 16);
+
+
+
+    while ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ){
+        USBDeviceTasks() ;
+        Wait(1);
+    }
+    USBDeviceTasks() ;
+    UsbPutString03("*** UART START ****", 0, 1, 16);
+
 
     while ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ){
         USBDeviceTasks() ;
         Wait(1);
     }
 
-    UsbPutString01("*** UART START ****",1);
+    USBDeviceTasks() ;
+    UsbPutString03("*********2**********", 0, 1, 16);
 
-    while ( (USBDeviceState < CONFIGURED_STATE) || (UCONbits.SUSPND == 1) ){
-        USBDeviceTasks() ;
-        Wait(1);
-    }
-
-
-    UsbPutString01("*********2**********",1);
 
 }
 
@@ -6763,7 +6888,10 @@ void UsbPutString01(char *str, uint8_t flg)
     string = str;
 
     num = skStrlen( string , flg );
-    putUSBUSART( str, num);
+
+    CDCTxService() ;
+    putsUSBUSART(str);
+
     CDCTxService() ;
 }
 
@@ -6789,8 +6917,17 @@ void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta)
     uint2string( &string[i], data, keta);
     num = skStrlen( string , flg );
 
-    putUSBUSART( string, num);
+
+
+
     CDCTxService() ;
+    if(cdc_trf_state == 0)
+    {
+        PutString01("putsUSBUSART",1);
+        putsUSBUSART(string);
+        CDCTxService() ;
+    }
+# 481 "main.c"
 }
 
 

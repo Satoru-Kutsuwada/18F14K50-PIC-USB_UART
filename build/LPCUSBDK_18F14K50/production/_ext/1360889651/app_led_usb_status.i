@@ -1,4 +1,4 @@
-# 1 "system.c"
+# 1 "../CDC/app_led_usb_status.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,117 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "system.c" 2
-# 20 "system.c"
-# 1 "./system.h" 1
-# 23 "./system.h"
+# 1 "../CDC/app_led_usb_status.c" 2
+# 25 "../CDC/app_led_usb_status.c"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
+# 25 "../CDC/app_led_usb_status.c" 2
+
+# 1 "../CDC/system.h" 1
+# 23 "../CDC/system.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -23,16 +130,7 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
@@ -41,10 +139,6 @@ extern double __fpnormalize(double);
 typedef long int wchar_t;
 # 122 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
@@ -117,91 +211,7 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
 
-
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
-
-
-
-
-
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 23 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 5 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\builtins.h" 2 3
 
 
 #pragma intrinsic(__nop)
@@ -5092,27 +5102,27 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\\pic\\include\\xc.h" 2 3
-# 23 "./system.h" 2
+# 23 "../CDC/system.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 24 "./system.h" 2
+# 24 "../CDC/system.h" 2
 
 
-# 1 "./buttons.h" 1
-# 29 "./buttons.h"
+# 1 "../CDC/buttons.h" 1
+# 29 "../CDC/buttons.h"
 typedef enum
 {
     BUTTON_NONE,
     BUTTON_S1,
 } BUTTON;
-# 51 "./buttons.h"
+# 51 "../CDC/buttons.h"
 _Bool BUTTON_IsPressed(BUTTON button);
-# 69 "./buttons.h"
+# 69 "../CDC/buttons.h"
 void BUTTON_Enable(BUTTON button);
-# 26 "./system.h" 2
+# 26 "../CDC/system.h" 2
 
-# 1 "./leds.h" 1
-# 29 "./leds.h"
+# 1 "../CDC/leds.h" 1
+# 29 "../CDC/leds.h"
 typedef enum
 {
     LED_NONE,
@@ -5121,27 +5131,27 @@ typedef enum
     LED_D3,
     LED_D4
 } LED;
-# 56 "./leds.h"
+# 56 "../CDC/leds.h"
 void LED_On(LED led);
-# 74 "./leds.h"
+# 74 "../CDC/leds.h"
 void LED_Off(LED led);
-# 92 "./leds.h"
+# 92 "../CDC/leds.h"
 void LED_Toggle(LED led);
-# 110 "./leds.h"
+# 110 "../CDC/leds.h"
 _Bool LED_Get(LED led);
-# 127 "./leds.h"
+# 127 "../CDC/leds.h"
 void LED_Enable(LED led);
-# 27 "./system.h" 2
+# 27 "../CDC/system.h" 2
 
 
-# 1 "./io_mapping.h" 1
-# 21 "./io_mapping.h"
-# 1 "./buttons.h" 1
-# 21 "./io_mapping.h" 2
-# 29 "./system.h" 2
+# 1 "../CDC/io_mapping.h" 1
+# 21 "../CDC/io_mapping.h"
+# 1 "../CDC/buttons.h" 1
+# 21 "../CDC/io_mapping.h" 2
+# 29 "../CDC/system.h" 2
 
-# 1 "./fixed_address_memory.h" 1
-# 30 "./system.h" 2
+# 1 "../CDC/fixed_address_memory.h" 1
+# 30 "../CDC/system.h" 2
 
 
 
@@ -5153,24 +5163,20 @@ typedef enum
     SYSTEM_STATE_USB_SUSPEND,
     SYSTEM_STATE_USB_RESUME
 } SYSTEM_STATE;
-# 54 "./system.h"
+# 54 "../CDC/system.h"
 void SYSTEM_Initialize( SYSTEM_STATE state );
-# 20 "system.c" 2
+# 26 "../CDC/app_led_usb_status.c" 2
 
-# 1 "./usb.h" 1
-# 45 "./usb.h"
-# 1 "./usb_config.h" 1
-# 45 "./usb.h" 2
-
-
-# 1 "./usb_common.h" 1
-# 46 "./usb_common.h"
+# 1 "../CDC/usb_device.h" 1
+# 43 "../CDC/usb_device.h"
+# 1 "../CDC/usb_common.h" 1
+# 46 "../CDC/usb_common.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\limits.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\limits.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/limits.h" 1 3
 # 11 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\limits.h" 2 3
-# 46 "./usb_common.h" 2
-# 132 "./usb_common.h"
+# 46 "../CDC/usb_common.h" 2
+# 132 "../CDC/usb_common.h"
 typedef union
 {
     uint8_t bitmap;
@@ -5184,7 +5190,7 @@ typedef union
     }field;
 
 } TRANSFER_FLAGS;
-# 206 "./usb_common.h"
+# 206 "../CDC/usb_common.h"
 typedef enum
 {
 
@@ -5218,7 +5224,7 @@ typedef enum
 
 
     EVENT_VBUS_RELEASE_POWER,
-# 247 "./usb_common.h"
+# 247 "../CDC/usb_common.h"
     EVENT_VBUS_POWER_AVAILABLE,
 
 
@@ -5277,7 +5283,7 @@ typedef enum
 
 
     EVENT_DATA_ISOC_WRITE,
-# 314 "./usb_common.h"
+# 314 "../CDC/usb_common.h"
     EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION,
 
 
@@ -5324,7 +5330,7 @@ typedef enum
     EVENT_BUS_ERROR = 0x7fff
 
 } USB_EVENT;
-# 371 "./usb_common.h"
+# 371 "../CDC/usb_common.h"
 typedef struct _transfer_event_data
 {
     TRANSFER_FLAGS flags;
@@ -5332,13 +5338,13 @@ typedef struct _transfer_event_data
     uint8_t pid;
 
 } USB_TRANSFER_EVENT_DATA;
-# 388 "./usb_common.h"
+# 388 "../CDC/usb_common.h"
 typedef struct _vbus_power_data
 {
     uint8_t port;
     uint8_t current;
 } USB_VBUS_POWER_EVENT_DATA;
-# 401 "./usb_common.h"
+# 401 "../CDC/usb_common.h"
 typedef struct _override_client_driver_data
 {
     uint16_t idVendor;
@@ -5347,266 +5353,16 @@ typedef struct _override_client_driver_data
     uint8_t bDeviceSubClass;
     uint8_t bDeviceProtocol;
 } USB_OVERRIDE_CLIENT_DRIVER_EVENT_DATA;
-# 463 "./usb_common.h"
+# 463 "../CDC/usb_common.h"
 typedef _Bool (*USB_EVENT_HANDLER) ( USB_EVENT event, void *data, unsigned int size );
-# 47 "./usb.h" 2
+# 43 "../CDC/usb_device.h" 2
 
-# 1 "./usb_ch9.h" 1
-# 71 "./usb_ch9.h"
-typedef struct _USB_DEVICE_DESCRIPTOR
-{
-    uint8_t bLength;
-    uint8_t bDescriptorType;
-    uint16_t bcdUSB;
-    uint8_t bDeviceClass;
-    uint8_t bDeviceSubClass;
-    uint8_t bDeviceProtocol;
-    uint8_t bMaxPacketSize0;
-    uint16_t idVendor;
-    uint16_t idProduct;
-    uint16_t bcdDevice;
-    uint8_t iManufacturer;
-    uint8_t iProduct;
-    uint8_t iSerialNumber;
-    uint8_t bNumConfigurations;
-} USB_DEVICE_DESCRIPTOR;
-
-
-
-
-
-
-
-typedef struct _USB_CONFIGURATION_DESCRIPTOR
-{
-    uint8_t bLength;
-    uint8_t bDescriptorType;
-    uint16_t wTotalLength;
-    uint8_t bNumInterfaces;
-    uint8_t bConfigurationValue;
-    uint8_t iConfiguration;
-    uint8_t bmAttributes;
-    uint8_t bMaxPower;
-} USB_CONFIGURATION_DESCRIPTOR;
-# 118 "./usb_ch9.h"
-typedef struct _USB_INTERFACE_DESCRIPTOR
-{
-    uint8_t bLength;
-    uint8_t bDescriptorType;
-    uint8_t bInterfaceNumber;
-    uint8_t bAlternateSetting;
-    uint8_t bNumEndpoints;
-    uint8_t bInterfaceClass;
-    uint8_t bInterfaceSubClass;
-    uint8_t bInterfaceProtocol;
-    uint8_t iInterface;
-} USB_INTERFACE_DESCRIPTOR;
-
-
-
-
-
-
-
-typedef struct _USB_ENDPOINT_DESCRIPTOR
-{
-    uint8_t bLength;
-    uint8_t bDescriptorType;
-    uint8_t bEndpointAddress;
-    uint8_t bmAttributes;
-    uint16_t wMaxPacketSize;
-    uint8_t bInterval;
-} USB_ENDPOINT_DESCRIPTOR;
-# 187 "./usb_ch9.h"
-typedef struct
-{
-    uint8_t index;
-    uint8_t type;
-    uint16_t language_id;
-
-} DESCRIPTOR_ID;
-# 202 "./usb_ch9.h"
-typedef struct _USB_OTG_DESCRIPTOR
-{
-    uint8_t bLength;
-    uint8_t bDescriptorType;
-    uint8_t bmAttributes;
-} USB_OTG_DESCRIPTOR;
-# 226 "./usb_ch9.h"
-typedef struct _USB_STRING_DSC
-{
-    uint8_t bLength;
-    uint8_t bDescriptorType;
-
-} USB_STRING_DESCRIPTOR;
-# 245 "./usb_ch9.h"
-typedef struct _USB_DEVICE_QUALIFIER_DESCRIPTOR
-{
-    uint8_t bLength;
-    uint8_t bType;
-    uint16_t bcdUSB;
-    uint8_t bDeviceClass;
-    uint8_t bDeviceSubClass;
-    uint8_t bDeviceProtocol;
-    uint8_t bMaxPacketSize0;
-    uint8_t bNumConfigurations;
-    uint8_t bReserved;
-
-} USB_DEVICE_QUALIFIER_DESCRIPTOR;
-# 268 "./usb_ch9.h"
-typedef union
-{
-
-    struct
-    {
-        uint8_t bmRequestType;
-        uint8_t bRequest;
-        uint16_t wValue;
-        uint16_t wIndex;
-        uint16_t wLength;
-    };
-    struct
-    {
-        unsigned :8;
-        unsigned :8;
-        union
-        {
-            uint16_t Val;
-            uint8_t v[2];
-            struct
-            {
-                uint8_t LB;
-                uint8_t HB;
-            } byte;
-        } W_Value;
-
-        union
-        {
-            uint16_t Val;
-            uint8_t v[2];
-            struct
-            {
-                uint8_t LB;
-                uint8_t HB;
-            } byte;
-        } W_Index;
-
-        union
-        {
-            uint16_t Val;
-            uint8_t v[2];
-            struct
-            {
-                uint8_t LB;
-                uint8_t HB;
-            } byte;
-        } W_Length;
-    };
-    struct
-    {
-        unsigned Recipient:5;
-        unsigned RequestType:2;
-        unsigned DataDir:1;
-        unsigned :8;
-        uint8_t bFeature;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct
-    {
-        union
-        {
-            uint8_t bmRequestType;
-            struct
-            {
-                uint8_t recipient: 5;
-                uint8_t type: 2;
-                uint8_t direction: 1;
-            };
-        }requestInfo;
-    };
-    struct
-    {
-        unsigned :8;
-        unsigned :8;
-        uint8_t bDscIndex;
-        uint8_t bDescriptorType;
-        uint16_t wLangID;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct
-    {
-        unsigned :8;
-        unsigned :8;
-        uint8_t bDevADR;
-        uint8_t bDevADRH;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct
-    {
-        unsigned :8;
-        unsigned :8;
-        uint8_t bConfigurationValue;
-        uint8_t bCfgRSD;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct
-    {
-        unsigned :8;
-        unsigned :8;
-        uint8_t bAltID;
-        uint8_t bAltID_H;
-        uint8_t bIntfID;
-        uint8_t bIntfID_H;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct
-    {
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        uint8_t bEPID;
-        uint8_t bEPID_H;
-        unsigned :8;
-        unsigned :8;
-    };
-    struct
-    {
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-        unsigned EPNum:4;
-        unsigned :3;
-        unsigned EPDir:1;
-        unsigned :8;
-        unsigned :8;
-        unsigned :8;
-    };
-
-
-
-} CTRL_TRF_SETUP, SETUP_PKT, *PSETUP_PKT;
-# 48 "./usb.h" 2
-
-
-
-# 1 "./usb_device.h" 1
-# 77 "./usb_device.h"
+# 1 "../CDC/usb_config.h" 1
+# 44 "../CDC/usb_device.h" 2
+# 77 "../CDC/usb_device.h"
 typedef enum
 {
+
 
 
     DETACHED_STATE
@@ -5659,7 +5415,7 @@ typedef enum
 
 
     EVENT_EP0_REQUEST,
-# 159 "./usb_device.h"
+# 160 "../CDC/usb_device.h"
     EVENT_ATTACH,
 
 
@@ -5668,80 +5424,80 @@ typedef enum
     EVENT_TRANSFER_TERMINATED
 
 } USB_DEVICE_STACK_EVENTS;
-# 198 "./usb_device.h"
+# 199 "../CDC/usb_device.h"
 void USBDeviceInit(void);
-# 302 "./usb_device.h"
+# 303 "../CDC/usb_device.h"
 void USBDeviceTasks(void);
-# 354 "./usb_device.h"
+# 355 "../CDC/usb_device.h"
 void USBEnableEndpoint(uint8_t ep, uint8_t options);
-# 447 "./usb_device.h"
+# 448 "../CDC/usb_device.h"
 void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
-# 472 "./usb_device.h"
+# 473 "../CDC/usb_device.h"
 void USBStallEndpoint(uint8_t ep, uint8_t dir);
-# 496 "./usb_device.h"
+# 497 "../CDC/usb_device.h"
 void USBCancelIO(uint8_t endpoint);
-# 593 "./usb_device.h"
+# 594 "../CDC/usb_device.h"
 void USBDeviceDetach(void);
-# 638 "./usb_device.h"
+# 639 "../CDC/usb_device.h"
 void USBDeviceAttach(void);
-# 677 "./usb_device.h"
+# 678 "../CDC/usb_device.h"
 void USBCtrlEPAllowStatusStage(void);
-# 707 "./usb_device.h"
+# 708 "../CDC/usb_device.h"
 void USBCtrlEPAllowDataStage(void);
-# 783 "./usb_device.h"
+# 784 "../CDC/usb_device.h"
 void USBDeferOUTDataStage(void);
 extern volatile _Bool USBDeferOUTDataStagePackets;
-# 853 "./usb_device.h"
+# 854 "../CDC/usb_device.h"
 void USBDeferStatusStage(void);
 extern volatile _Bool USBDeferStatusStagePacket;
-# 905 "./usb_device.h"
+# 906 "../CDC/usb_device.h"
 _Bool USBOUTDataStageDeferred(void);
-# 988 "./usb_device.h"
+# 989 "../CDC/usb_device.h"
 void USBDeferINDataStage(void);
 extern volatile _Bool USBDeferINDataStagePackets;
-# 1042 "./usb_device.h"
+# 1043 "../CDC/usb_device.h"
 _Bool USBINDataStageDeferred(void);
-# 1112 "./usb_device.h"
+# 1113 "../CDC/usb_device.h"
 _Bool USBGetRemoteWakeupStatus(void);
-# 1169 "./usb_device.h"
+# 1170 "../CDC/usb_device.h"
 USB_DEVICE_STATE USBGetDeviceState(void);
-# 1225 "./usb_device.h"
+# 1226 "../CDC/usb_device.h"
 _Bool USBGetSuspendState(void);
-# 1260 "./usb_device.h"
+# 1261 "../CDC/usb_device.h"
 _Bool USBIsDeviceSuspended(void);
-# 1303 "./usb_device.h"
+# 1304 "../CDC/usb_device.h"
 _Bool USBIsBusSuspended(void);
-# 1329 "./usb_device.h"
+# 1330 "../CDC/usb_device.h"
 void USBSoftDetach(void);
-# 1367 "./usb_device.h"
+# 1368 "../CDC/usb_device.h"
 _Bool USBHandleBusy(void* handle);
-# 1405 "./usb_device.h"
+# 1406 "../CDC/usb_device.h"
 uint16_t USBHandleGetLength(void* handle);
-# 1437 "./usb_device.h"
+# 1438 "../CDC/usb_device.h"
 uint16_t USBHandleGetAddr(void*);
-# 1537 "./usb_device.h"
+# 1538 "../CDC/usb_device.h"
 void* USBGetNextHandle(uint8_t ep_num, uint8_t ep_dir);
-# 1570 "./usb_device.h"
+# 1571 "../CDC/usb_device.h"
 void USBEP0Transmit(uint8_t options);
-# 1598 "./usb_device.h"
+# 1599 "../CDC/usb_device.h"
 void USBEP0SendRAMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1630 "./usb_device.h"
+# 1631 "../CDC/usb_device.h"
 void USBEP0SendROMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1658 "./usb_device.h"
+# 1659 "../CDC/usb_device.h"
 void USBEP0Receive(uint8_t* dest, uint16_t size, void (*function));
-# 1693 "./usb_device.h"
+# 1694 "../CDC/usb_device.h"
 void* USBTxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1730 "./usb_device.h"
+# 1731 "../CDC/usb_device.h"
 void* USBRxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1762 "./usb_device.h"
+# 1763 "../CDC/usb_device.h"
 _Bool USB_APPLICATION_EVENT_HANDLER(uint8_t address, USB_EVENT event, void *pdata, uint16_t size);
-# 1807 "./usb_device.h"
+# 1808 "../CDC/usb_device.h"
 void USBIncrement1msInternalTimers(void);
-# 1866 "./usb_device.h"
+# 1867 "../CDC/usb_device.h"
 uint32_t USBGet1msTickCount(void);
-# 1907 "./usb_device.h"
+# 1908 "../CDC/usb_device.h"
 uint8_t USBGetTicksSinceSuspendEnd(void);
-# 1979 "./usb_device.h"
+# 1980 "../CDC/usb_device.h"
 typedef union
 {
     uint16_t Val;
@@ -5819,10 +5575,10 @@ extern uint8_t USBTicksSinceSuspendEnd;
 
 
 
-# 1 "./usb_hal.h" 1
-# 36 "./usb_hal.h"
-# 1 "./usb_hal_pic18.h" 1
-# 48 "./usb_hal_pic18.h"
+# 1 "../CDC/usb_hal.h" 1
+# 36 "../CDC/usb_hal.h"
+# 1 "../CDC/usb_hal_pic18.h" 1
+# 48 "../CDC/usb_hal_pic18.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
 # 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5880,8 +5636,8 @@ size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
 void *memccpy (void *restrict, const void *restrict, int, size_t);
-# 48 "./usb_hal_pic18.h" 2
-# 268 "./usb_hal_pic18.h"
+# 48 "../CDC/usb_hal_pic18.h" 2
+# 268 "../CDC/usb_hal_pic18.h"
 typedef union _BD_STAT
 {
     uint8_t Val;
@@ -5976,7 +5732,7 @@ typedef union _POINTER
 
 
 } POINTER;
-# 608 "./usb_hal_pic18.h"
+# 608 "../CDC/usb_hal_pic18.h"
     extern uint8_t USBActiveConfiguration;
     extern IN_PIPE inPipes[1];
     extern OUT_PIPE outPipes[1];
@@ -5984,96 +5740,85 @@ typedef union _POINTER
 
 extern volatile BDT_ENTRY* pBDTEntryOut[2 +1];
 extern volatile BDT_ENTRY* pBDTEntryIn[2 +1];
-# 36 "./usb_hal.h" 2
-# 167 "./usb_hal.h"
+# 36 "../CDC/usb_hal.h" 2
+# 167 "../CDC/usb_hal.h"
 void OTGCORE_SetDeviceAddr( uint8_t addr );
-# 203 "./usb_hal.h"
+# 203 "../CDC/usb_hal.h"
     void USBHALControlUsbResistors( uint8_t flags );
-# 237 "./usb_hal.h"
+# 237 "../CDC/usb_hal.h"
 _Bool USBHALSessionIsValid( void );
-# 263 "./usb_hal.h"
+# 263 "../CDC/usb_hal.h"
 _Bool USBHALControlBusPower( uint8_t cmd );
-# 293 "./usb_hal.h"
+# 293 "../CDC/usb_hal.h"
 unsigned long USBHALGetLastError( void );
-# 326 "./usb_hal.h"
+# 326 "../CDC/usb_hal.h"
 void USBHALHandleBusEvent ( void );
-# 367 "./usb_hal.h"
+# 367 "../CDC/usb_hal.h"
 _Bool OTGCORE_StallPipe( TRANSFER_FLAGS pipe );
-# 404 "./usb_hal.h"
+# 404 "../CDC/usb_hal.h"
 _Bool OTGCORE_UnstallPipe( TRANSFER_FLAGS pipe );
-# 438 "./usb_hal.h"
+# 438 "../CDC/usb_hal.h"
 uint16_t OTGCORE_GetStalledEndpoints ( void );
-# 475 "./usb_hal.h"
+# 475 "../CDC/usb_hal.h"
 _Bool USBHALFlushPipe( TRANSFER_FLAGS pipe );
-# 535 "./usb_hal.h"
+# 535 "../CDC/usb_hal.h"
 _Bool USBHALTransferData ( TRANSFER_FLAGS flags,
                           void *buffer,
                           unsigned int size );
-# 575 "./usb_hal.h"
+# 575 "../CDC/usb_hal.h"
 _Bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
-# 603 "./usb_hal.h"
+# 603 "../CDC/usb_hal.h"
 _Bool USBHALInitialize ( unsigned long flags );
-# 2055 "./usb_device.h" 2
-# 51 "./usb.h" 2
-# 21 "system.c" 2
-
-
-
-
-#pragma config CPUDIV = NOCLKDIV
-#pragma config USBDIV = OFF
-#pragma config FOSC = HS
-#pragma config PLLEN = ON
-#pragma config FCMEN = OFF
-#pragma config IESO = OFF
-#pragma config PWRTEN = OFF
-#pragma config BOREN = OFF
-#pragma config BORV = 30
-#pragma config WDTEN = OFF
-#pragma config WDTPS = 32768
-#pragma config MCLRE = OFF
-#pragma config HFOFST = OFF
-#pragma config STVREN = ON
-#pragma config LVP = OFF
-#pragma config XINST = OFF
-#pragma config BBSIZ = OFF
-#pragma config CP0 = OFF
-#pragma config CP1 = OFF
-#pragma config CPB = OFF
-#pragma config WRT0 = OFF
-#pragma config WRT1 = OFF
-#pragma config WRTB = OFF
-#pragma config WRTC = OFF
-#pragma config EBTR0 = OFF
-#pragma config EBTR1 = OFF
-#pragma config EBTRB = OFF
-# 65 "system.c"
-void SYSTEM_Initialize( SYSTEM_STATE state )
+# 2056 "../CDC/usb_device.h" 2
+# 27 "../CDC/app_led_usb_status.c" 2
+# 50 "../CDC/app_led_usb_status.c"
+void APP_LEDUpdateUSBStatus(void)
 {
-    switch(state)
+    static uint16_t ledCount = 0;
+
+    if(UCONbits.SUSPND == 1)
     {
-        case SYSTEM_STATE_USB_START:
-            LED_Enable(LED_D1);
-            BUTTON_Enable(BUTTON_S1);
+        LED_Off(LED_D1);
+        return;
+    }
+
+    switch(USBDeviceState)
+    {
+        case CONFIGURED_STATE:
+
+
+            if(ledCount == 1)
+            {
+                LED_On(LED_D1);
+            }
+            else if(ledCount == 75)
+            {
+                LED_Off(LED_D1);
+            }
+            else if(ledCount > 150)
+            {
+                ledCount = 0;
+            }
             break;
 
-        case SYSTEM_STATE_USB_SUSPEND:
-            break;
+        default:
 
-        case SYSTEM_STATE_USB_RESUME:
+
+            if(ledCount == 1)
+            {
+                LED_On(LED_D1);
+            }
+            else if(ledCount == 50)
+            {
+                LED_Off(LED_D1);
+            }
+            else if(ledCount > 950)
+            {
+                ledCount = 0;
+            }
             break;
     }
-}
 
 
-
-
-
-
-
-void __attribute__((picinterrupt(("")))) SYS_InterruptHigh(void)
-{
-
-
-
+    ledCount++;
 }

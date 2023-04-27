@@ -5617,7 +5617,6 @@ typedef enum
 {
 
 
-
     DETACHED_STATE
                             = 0x00 ,
 
@@ -5668,7 +5667,7 @@ typedef enum
 
 
     EVENT_EP0_REQUEST,
-# 160 "./usb_device.h"
+# 159 "./usb_device.h"
     EVENT_ATTACH,
 
 
@@ -5677,80 +5676,80 @@ typedef enum
     EVENT_TRANSFER_TERMINATED
 
 } USB_DEVICE_STACK_EVENTS;
-# 199 "./usb_device.h"
+# 198 "./usb_device.h"
 void USBDeviceInit(void);
-# 303 "./usb_device.h"
+# 302 "./usb_device.h"
 void USBDeviceTasks(void);
-# 355 "./usb_device.h"
+# 354 "./usb_device.h"
 void USBEnableEndpoint(uint8_t ep, uint8_t options);
-# 448 "./usb_device.h"
+# 447 "./usb_device.h"
 void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
-# 473 "./usb_device.h"
+# 472 "./usb_device.h"
 void USBStallEndpoint(uint8_t ep, uint8_t dir);
-# 497 "./usb_device.h"
+# 496 "./usb_device.h"
 void USBCancelIO(uint8_t endpoint);
-# 594 "./usb_device.h"
+# 593 "./usb_device.h"
 void USBDeviceDetach(void);
-# 639 "./usb_device.h"
+# 638 "./usb_device.h"
 void USBDeviceAttach(void);
-# 678 "./usb_device.h"
+# 677 "./usb_device.h"
 void USBCtrlEPAllowStatusStage(void);
-# 708 "./usb_device.h"
+# 707 "./usb_device.h"
 void USBCtrlEPAllowDataStage(void);
-# 784 "./usb_device.h"
+# 783 "./usb_device.h"
 void USBDeferOUTDataStage(void);
 extern volatile _Bool USBDeferOUTDataStagePackets;
-# 854 "./usb_device.h"
+# 853 "./usb_device.h"
 void USBDeferStatusStage(void);
 extern volatile _Bool USBDeferStatusStagePacket;
-# 906 "./usb_device.h"
+# 905 "./usb_device.h"
 _Bool USBOUTDataStageDeferred(void);
-# 989 "./usb_device.h"
+# 988 "./usb_device.h"
 void USBDeferINDataStage(void);
 extern volatile _Bool USBDeferINDataStagePackets;
-# 1043 "./usb_device.h"
+# 1042 "./usb_device.h"
 _Bool USBINDataStageDeferred(void);
-# 1113 "./usb_device.h"
+# 1112 "./usb_device.h"
 _Bool USBGetRemoteWakeupStatus(void);
-# 1170 "./usb_device.h"
+# 1169 "./usb_device.h"
 USB_DEVICE_STATE USBGetDeviceState(void);
-# 1226 "./usb_device.h"
+# 1225 "./usb_device.h"
 _Bool USBGetSuspendState(void);
-# 1261 "./usb_device.h"
+# 1260 "./usb_device.h"
 _Bool USBIsDeviceSuspended(void);
-# 1304 "./usb_device.h"
+# 1303 "./usb_device.h"
 _Bool USBIsBusSuspended(void);
-# 1330 "./usb_device.h"
+# 1329 "./usb_device.h"
 void USBSoftDetach(void);
-# 1368 "./usb_device.h"
+# 1367 "./usb_device.h"
 _Bool USBHandleBusy(void* handle);
-# 1406 "./usb_device.h"
+# 1405 "./usb_device.h"
 uint16_t USBHandleGetLength(void* handle);
-# 1438 "./usb_device.h"
+# 1437 "./usb_device.h"
 uint16_t USBHandleGetAddr(void*);
-# 1538 "./usb_device.h"
+# 1537 "./usb_device.h"
 void* USBGetNextHandle(uint8_t ep_num, uint8_t ep_dir);
-# 1571 "./usb_device.h"
+# 1570 "./usb_device.h"
 void USBEP0Transmit(uint8_t options);
-# 1599 "./usb_device.h"
+# 1598 "./usb_device.h"
 void USBEP0SendRAMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1631 "./usb_device.h"
+# 1630 "./usb_device.h"
 void USBEP0SendROMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1659 "./usb_device.h"
+# 1658 "./usb_device.h"
 void USBEP0Receive(uint8_t* dest, uint16_t size, void (*function));
-# 1694 "./usb_device.h"
+# 1693 "./usb_device.h"
 void* USBTxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1731 "./usb_device.h"
+# 1730 "./usb_device.h"
 void* USBRxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1763 "./usb_device.h"
+# 1762 "./usb_device.h"
 _Bool USB_APPLICATION_EVENT_HANDLER(uint8_t address, USB_EVENT event, void *pdata, uint16_t size);
-# 1808 "./usb_device.h"
+# 1807 "./usb_device.h"
 void USBIncrement1msInternalTimers(void);
-# 1867 "./usb_device.h"
+# 1866 "./usb_device.h"
 uint32_t USBGet1msTickCount(void);
-# 1908 "./usb_device.h"
+# 1907 "./usb_device.h"
 uint8_t USBGetTicksSinceSuspendEnd(void);
-# 1980 "./usb_device.h"
+# 1979 "./usb_device.h"
 typedef union
 {
     uint16_t Val;
@@ -5963,7 +5962,7 @@ _Bool USBHALTransferData ( TRANSFER_FLAGS flags,
 _Bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
 # 603 "./usb_hal.h"
 _Bool USBHALInitialize ( unsigned long flags );
-# 2056 "./usb_device.h" 2
+# 2055 "./usb_device.h" 2
 # 51 "./usb.h" 2
 # 53 "usb_device.c" 2
 
@@ -6187,11 +6186,11 @@ void USBDeviceInit(void)
 
     USBDeviceState = DETACHED_STATE;
 }
-# 481 "usb_device.c"
+# 432 "usb_device.c"
 void USBDeviceTasks(void)
 {
     uint8_t i;
-# 509 "usb_device.c"
+# 460 "usb_device.c"
     if (1 != 1)
     {
 
@@ -6202,11 +6201,11 @@ void USBDeviceTasks(void)
 
 
          USBDeviceState = DETACHED_STATE;
-# 546 "usb_device.c"
+# 497 "usb_device.c"
          {PIR2bits.USBIF = 0;};
          return;
     }
-# 570 "usb_device.c"
+# 521 "usb_device.c"
     if(USBDeviceState == DETACHED_STATE)
     {
 
@@ -6233,7 +6232,7 @@ void USBDeviceTasks(void)
 
     if(USBDeviceState == ATTACHED_STATE)
     {
-# 605 "usb_device.c"
+# 556 "usb_device.c"
         if(!UCONbits.SE0)
         {
 
@@ -6252,7 +6251,7 @@ void USBDeviceTasks(void)
             USBDeviceState = POWERED_STATE;
         }
     }
-# 638 "usb_device.c"
+# 589 "usb_device.c"
     if(UIRbits.ACTVIF && UIEbits.ACTVIE)
     {
         (UIR &= 0xFB);
@@ -6271,7 +6270,7 @@ void USBDeviceTasks(void)
         {PIR2bits.USBIF = 0;};
         return;
     }
-# 667 "usb_device.c"
+# 618 "usb_device.c"
     if(UIRbits.URSTIF && UIEbits.URSTIE)
     {
         USBDeviceInit();
@@ -6281,7 +6280,7 @@ void USBDeviceTasks(void)
                              ;
 
         USBDeviceState = DEFAULT_STATE;
-# 685 "usb_device.c"
+# 636 "usb_device.c"
         (UIR &= 0xFE);
     }
 
@@ -6298,7 +6297,7 @@ void USBDeviceTasks(void)
             USBSuspend();
 
     }
-# 712 "usb_device.c"
+# 663 "usb_device.c"
     if(UIRbits.SOFIF)
     {
 
@@ -6310,7 +6309,7 @@ void USBDeviceTasks(void)
 
 
             USBIncrement1msInternalTimers();
-# 739 "usb_device.c"
+# 690 "usb_device.c"
             if(USBStatusStageTimeoutCounter != 0u)
             {
                 USBStatusStageTimeoutCounter--;
@@ -6404,7 +6403,7 @@ void USBDeviceTasks(void)
 
     {PIR2bits.USBIF = 0;};
 }
-# 882 "usb_device.c"
+# 833 "usb_device.c"
 void USBEnableEndpoint(uint8_t ep, uint8_t options)
 {
     unsigned char* p;
@@ -6430,7 +6429,7 @@ void USBEnableEndpoint(uint8_t ep, uint8_t options)
 
     *p = options;
 }
-# 999 "usb_device.c"
+# 950 "usb_device.c"
 void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len)
 {
     volatile BDT_ENTRY* handle;
@@ -6453,7 +6452,7 @@ void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len)
     {
         return 0;
     }
-# 1033 "usb_device.c"
+# 984 "usb_device.c"
     handle->ADR = ((uint16_t)(data));
     handle->CNT = len;
     handle->STAT.Val &= 0x40;
@@ -6473,7 +6472,7 @@ void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len)
     }
     return (void*)handle;
 }
-# 1077 "usb_device.c"
+# 1028 "usb_device.c"
 void USBStallEndpoint(uint8_t ep, uint8_t dir)
 {
     BDT_ENTRY *p;
@@ -6506,7 +6505,7 @@ void USBStallEndpoint(uint8_t ep, uint8_t dir)
 
     }
 }
-# 1133 "usb_device.c"
+# 1084 "usb_device.c"
 void USBCancelIO(uint8_t endpoint)
 {
     if(UCONbits.PKTDIS == 1)
@@ -6528,7 +6527,7 @@ void USBCancelIO(uint8_t endpoint)
 
     }
 }
-# 1420 "usb_device.c"
+# 1371 "usb_device.c"
 void USBCtrlEPAllowStatusStage(void)
 {
 
@@ -6573,7 +6572,7 @@ void USBCtrlEPAllowStatusStage(void)
         }
     }
 }
-# 1492 "usb_device.c"
+# 1443 "usb_device.c"
 void USBCtrlEPAllowDataStage(void)
 {
     USBDeferINDataStagePackets = 0;
@@ -6605,7 +6604,7 @@ void USBCtrlEPAllowDataStage(void)
         pBDTEntryIn[0]->STAT.Val |= 0x80;
     }
 }
-# 1547 "usb_device.c"
+# 1498 "usb_device.c"
 static void USBConfigureEndpoint(uint8_t EPNum, uint8_t direction)
 {
     volatile BDT_ENTRY* handle;
@@ -6632,9 +6631,9 @@ static void USBConfigureEndpoint(uint8_t EPNum, uint8_t direction)
 
         handle->STAT.DTS = 0;
         (handle+1)->STAT.DTS = 1;
-# 1589 "usb_device.c"
+# 1540 "usb_device.c"
 }
-# 1620 "usb_device.c"
+# 1571 "usb_device.c"
 static void USBCtrlEPServiceComplete(void)
 {
 
@@ -6652,7 +6651,7 @@ static void USBCtrlEPServiceComplete(void)
         if(outPipes[0].info.bits.busy == 1)
         {
             controlTransferState = 2;
-# 1647 "usb_device.c"
+# 1598 "usb_device.c"
             if(USBDeferOUTDataStagePackets == 0)
             {
                 USBCtrlEPAllowDataStage();
@@ -6682,12 +6681,12 @@ static void USBCtrlEPServiceComplete(void)
   if(SetupPkt.DataDir == (0x80>>7))
   {
    controlTransferState = 1;
-# 1689 "usb_device.c"
+# 1640 "usb_device.c"
    if(USBDeferINDataStagePackets == 0)
             {
                 USBCtrlEPAllowDataStage();
    }
-# 1714 "usb_device.c"
+# 1665 "usb_device.c"
             USBStatusStageEnabledFlag2 = 0;
             USBStatusStageEnabledFlag1 = 0;
             if(USBDeferStatusStagePacket == 0)
@@ -6697,7 +6696,7 @@ static void USBCtrlEPServiceComplete(void)
   }
   else
   {
-# 1733 "usb_device.c"
+# 1684 "usb_device.c"
    controlTransferState = 2;
 
 
@@ -6718,7 +6717,7 @@ static void USBCtrlEPServiceComplete(void)
     }
 
 }
-# 1775 "usb_device.c"
+# 1726 "usb_device.c"
 static void USBCtrlTrfTxService(void)
 {
     uint8_t byteToSend;
@@ -6774,7 +6773,7 @@ static void USBCtrlTrfTxService(void)
         }
     }
 }
-# 1856 "usb_device.c"
+# 1807 "usb_device.c"
 static void USBCtrlTrfRxService(void)
 {
     uint8_t byteToRead;
@@ -6851,7 +6850,7 @@ static void USBCtrlTrfRxService(void)
 
  }
         outPipes[0].info.bits.busy = 0;
-# 1945 "usb_device.c"
+# 1896 "usb_device.c"
         if(USBDeferStatusStagePacket == 0)
         {
             USBCtrlEPAllowStatusStage();
@@ -6859,7 +6858,7 @@ static void USBCtrlTrfRxService(void)
     }
 
 }
-# 1972 "usb_device.c"
+# 1923 "usb_device.c"
 static void USBStdSetCfgHandler(void)
 {
     uint8_t i;
@@ -6917,7 +6916,7 @@ static void USBStdSetCfgHandler(void)
         USBDeviceState = CONFIGURED_STATE;
     }
 }
-# 2047 "usb_device.c"
+# 1998 "usb_device.c"
 static void USBStdGetDscHandler(void)
 {
     if(SetupPkt.bmRequestType == 0x80)
@@ -6968,7 +6967,7 @@ static void USBStdGetDscHandler(void)
 
                     inPipes[0].wCount.Val = *inPipes[0].pSrc.bRom;
                 }
-# 2106 "usb_device.c"
+# 2057 "usb_device.c"
                 else
                 {
                     inPipes[0].info.Val = 0;
@@ -6980,7 +6979,7 @@ static void USBStdGetDscHandler(void)
         }
     }
 }
-# 2133 "usb_device.c"
+# 2084 "usb_device.c"
 static void USBStdGetStatusHandler(void)
 {
     CtrlTrfData[0] = 0;
@@ -7040,10 +7039,10 @@ static void USBStdGetStatusHandler(void)
         inPipes[0].wCount.v[0] = 2;
     }
 }
-# 2209 "usb_device.c"
+# 2160 "usb_device.c"
 static void USBStallHandler(void)
 {
-# 2221 "usb_device.c"
+# 2172 "usb_device.c"
     if(UEP0bits.EPSTALL == 1)
     {
 
@@ -7058,10 +7057,10 @@ static void USBStallHandler(void)
 
     (UIR &= 0xDF);
 }
-# 2252 "usb_device.c"
+# 2203 "usb_device.c"
 static void USBSuspend(void)
 {
-# 2277 "usb_device.c"
+# 2228 "usb_device.c"
     UIEbits.ACTVIE = 1;
     (UIR &= 0xEF);
 
@@ -7079,7 +7078,7 @@ static void USBSuspend(void)
 
     USER_USB_CALLBACK_EVENT_HANDLER((USB_EVENT)EVENT_SUSPEND,0,0);
 }
-# 2310 "usb_device.c"
+# 2261 "usb_device.c"
 static void USBWakeFromSuspend(void)
 {
     USBBusIsSuspended = 0;
@@ -7101,7 +7100,7 @@ static void USBWakeFromSuspend(void)
 
 
     UIEbits.ACTVIE = 0;
-# 2348 "usb_device.c"
+# 2299 "usb_device.c"
     while(UIRbits.ACTVIF)
 
     {
@@ -7111,7 +7110,7 @@ static void USBWakeFromSuspend(void)
     USBTicksSinceSuspendEnd = 0;
 
 }
-# 2379 "usb_device.c"
+# 2330 "usb_device.c"
 static void USBCtrlEPService(void)
 {
 
@@ -7164,7 +7163,7 @@ static void USBCtrlEPService(void)
     }
 
 }
-# 2472 "usb_device.c"
+# 2423 "usb_device.c"
 static void USBCtrlTrfSetupHandler(void)
 {
 
@@ -7176,7 +7175,7 @@ static void USBCtrlTrfSetupHandler(void)
     USBDeferOUTDataStagePackets = 0;
     BothEP0OutUOWNsSet = 0;
     controlTransferState = 0;
-# 2491 "usb_device.c"
+# 2442 "usb_device.c"
     pBDTEntryIn[0]->STAT.Val &= ~(0x80);
 
     pBDTEntryIn[0] = (volatile BDT_ENTRY*)(((uint16_t)pBDTEntryIn[0]) ^ 0x0004);
@@ -7195,10 +7194,10 @@ static void USBCtrlTrfSetupHandler(void)
 
     USBCheckStdRequest();
     USER_USB_CALLBACK_EVENT_HANDLER((USB_EVENT)EVENT_EP0_REQUEST,0,0);
-# 2521 "usb_device.c"
+# 2472 "usb_device.c"
     USBCtrlEPServiceComplete();
 }
-# 2545 "usb_device.c"
+# 2496 "usb_device.c"
 static void USBCtrlTrfOutHandler(void)
 {
     if(controlTransferState == 2)
@@ -7229,7 +7228,7 @@ static void USBCtrlTrfOutHandler(void)
         }
     }
 }
-# 2599 "usb_device.c"
+# 2550 "usb_device.c"
 static void USBCtrlTrfInHandler(void)
 {
     uint8_t lastDTS;
@@ -7306,7 +7305,7 @@ static void USBCtrlTrfInHandler(void)
  }
 
 }
-# 2693 "usb_device.c"
+# 2644 "usb_device.c"
 static void USBCheckStdRequest(void)
 {
     if(SetupPkt.RequestType != (0x00>>5)) return;
@@ -7355,7 +7354,7 @@ static void USBCheckStdRequest(void)
             break;
     }
 }
-# 2761 "usb_device.c"
+# 2712 "usb_device.c"
 static void USBStdFeatureReqHandler(void)
 {
     BDT_ENTRY *p;
@@ -7495,7 +7494,7 @@ static void USBStdFeatureReqHandler(void)
 
                     p->STAT.Val &= ~(0x80 | 0x40 | 0x04);
                 }
-# 2946 "usb_device.c"
+# 2897 "usb_device.c"
                 pUEP = (unsigned char*)(&UEP0+SetupPkt.EPNum);
 
 
@@ -7504,7 +7503,7 @@ static void USBStdFeatureReqHandler(void)
         }
     }
 }
-# 2998 "usb_device.c"
+# 2949 "usb_device.c"
 void USBIncrement1msInternalTimers(void)
 {
 
@@ -7524,10 +7523,10 @@ void USBIncrement1msInternalTimers(void)
         }
     }
 }
-# 3077 "usb_device.c"
+# 3028 "usb_device.c"
 uint32_t USBGet1msTickCount(void)
 {
-# 3093 "usb_device.c"
+# 3044 "usb_device.c"
         return USB1msTickCount;
 
 }

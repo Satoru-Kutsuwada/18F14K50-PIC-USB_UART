@@ -71,43 +71,42 @@ please contact mla_licensing@microchip.com
  * USB 2.0 Spec Ref Table 9-4
  *******************************************************************/
 
-/* USB Device States as returned by USBGetDeviceState().  Only the defenitions
-   for these states should be used.  The actual value for each state should
-   not be relied upon as constant and may change based on the implementation. */
+/* USBGetDeviceState() によって返される USB デバイスの状態。 
+ * これらの状態の定義のみを使用する必要があります。 各状態の実際の値は、
+ * 定数として依存するべきではなく、実装に基づいて変更される可能性があります。 */
 typedef enum
 {
-    /* Detached is the state in which the device is not attached to the bus.  When
-    in the detached state a device should not have any pull-ups attached to either
-    the D+ or D- line.  */
+    /* Detached は、デバイスがバスに接続されていない状態です。 切り離された状態では、
+     * デバイスは D+ または D- ラインに接続されたプルアップを持っていてはなりません。  */
     DETACHED_STATE
     /*DOM-IGNORE-BEGIN*/    = 0x00                         /*DOM-IGNORE-END*/,
-    /* Attached is the state in which the device is attached ot the bus but the
-    hub/port that it is attached to is not yet configured. */
+            
+    /* 接続済みとは、デバイスがバスに接続されているが、接続先のハブ/ポートがまだ構成されていない状態です。 */
     ATTACHED_STATE
     /*DOM-IGNORE-BEGIN*/    = 0x01                         /*DOM-IGNORE-END*/,
-    /* Powered is the state in which the device is attached to the bus and the
-    hub/port that it is attached to is configured. */
+            
+    /*電源が入っている状態は、デバイスがバスに接続され、接続先のハブ/ポートが構成されている状態です。 */
     POWERED_STATE
     /*DOM-IGNORE-BEGIN*/    = 0x02                         /*DOM-IGNORE-END*/,
-    /* Default state is the state after the device receives a RESET command from
-    the host. */
+            
+    /* デフォルト状態は、デバイスがホストから RESET コマンドを受信した後の状態です。 */
     DEFAULT_STATE
     /*DOM-IGNORE-BEGIN*/    = 0x04                         /*DOM-IGNORE-END*/,
-    /* Address pending state is not an official state of the USB defined states.
-    This state is internally used to indicate that the device has received a
-    SET_ADDRESS command but has not received the STATUS stage of the transfer yet.
-    The device is should not switch addresses until after the STATUS stage is
-    complete.  */
+            
+    /* アドレス保留状態は、USB 定義状態の正式な状態ではありません。 
+     * この状態は、デバイスが SET_ADDRESS コマンドを受信したが、転送の STATUS ステージを
+     * まだ受信していないことを示すために内部的に使用されます。 
+     * デバイスは、STATUS ステージが完了するまでアドレスを切り替えるべきではありません。  */
     ADR_PENDING_STATE
     /*DOM-IGNORE-BEGIN*/    = 0x08                         /*DOM-IGNORE-END*/,
-    /* Address is the state in which the device has its own specific address on the
-    bus. */
+            
+    /* アドレスは、デバイスがバス上に固有のアドレスを持つ状態です。 */
     ADDRESS_STATE
     /*DOM-IGNORE-BEGIN*/    = 0x10                         /*DOM-IGNORE-END*/,
-    /* Configured is the state where the device has been fully enumerated and is
-    operating on the bus.  The device is now allowed to execute its application
-    specific tasks.  It is also allowed to increase its current consumption to the
-    value specified in the configuration descriptor of the current configuration.
+            
+    /* 構成済みとは、デバイスが完全に列挙され、バス上で動作している状態です。 
+     * デバイスは、アプリケーション固有のタスクを実行できるようになりました。 
+     * また、現在の構成の構成記述子で指定された値まで消費電流を増やすこともできます。
     */
     CONFIGURED_STATE
     /*DOM-IGNORE-BEGIN*/    = 0x20                        /*DOM-IGNORE-END*/

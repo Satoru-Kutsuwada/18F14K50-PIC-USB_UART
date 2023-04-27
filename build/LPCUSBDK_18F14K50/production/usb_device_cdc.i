@@ -5609,7 +5609,6 @@ typedef enum
 {
 
 
-
     DETACHED_STATE
                             = 0x00 ,
 
@@ -5660,7 +5659,7 @@ typedef enum
 
 
     EVENT_EP0_REQUEST,
-# 160 "./usb_device.h"
+# 159 "./usb_device.h"
     EVENT_ATTACH,
 
 
@@ -5669,80 +5668,80 @@ typedef enum
     EVENT_TRANSFER_TERMINATED
 
 } USB_DEVICE_STACK_EVENTS;
-# 199 "./usb_device.h"
+# 198 "./usb_device.h"
 void USBDeviceInit(void);
-# 303 "./usb_device.h"
+# 302 "./usb_device.h"
 void USBDeviceTasks(void);
-# 355 "./usb_device.h"
+# 354 "./usb_device.h"
 void USBEnableEndpoint(uint8_t ep, uint8_t options);
-# 448 "./usb_device.h"
+# 447 "./usb_device.h"
 void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
-# 473 "./usb_device.h"
+# 472 "./usb_device.h"
 void USBStallEndpoint(uint8_t ep, uint8_t dir);
-# 497 "./usb_device.h"
+# 496 "./usb_device.h"
 void USBCancelIO(uint8_t endpoint);
-# 594 "./usb_device.h"
+# 593 "./usb_device.h"
 void USBDeviceDetach(void);
-# 639 "./usb_device.h"
+# 638 "./usb_device.h"
 void USBDeviceAttach(void);
-# 678 "./usb_device.h"
+# 677 "./usb_device.h"
 void USBCtrlEPAllowStatusStage(void);
-# 708 "./usb_device.h"
+# 707 "./usb_device.h"
 void USBCtrlEPAllowDataStage(void);
-# 784 "./usb_device.h"
+# 783 "./usb_device.h"
 void USBDeferOUTDataStage(void);
 extern volatile _Bool USBDeferOUTDataStagePackets;
-# 854 "./usb_device.h"
+# 853 "./usb_device.h"
 void USBDeferStatusStage(void);
 extern volatile _Bool USBDeferStatusStagePacket;
-# 906 "./usb_device.h"
+# 905 "./usb_device.h"
 _Bool USBOUTDataStageDeferred(void);
-# 989 "./usb_device.h"
+# 988 "./usb_device.h"
 void USBDeferINDataStage(void);
 extern volatile _Bool USBDeferINDataStagePackets;
-# 1043 "./usb_device.h"
+# 1042 "./usb_device.h"
 _Bool USBINDataStageDeferred(void);
-# 1113 "./usb_device.h"
+# 1112 "./usb_device.h"
 _Bool USBGetRemoteWakeupStatus(void);
-# 1170 "./usb_device.h"
+# 1169 "./usb_device.h"
 USB_DEVICE_STATE USBGetDeviceState(void);
-# 1226 "./usb_device.h"
+# 1225 "./usb_device.h"
 _Bool USBGetSuspendState(void);
-# 1261 "./usb_device.h"
+# 1260 "./usb_device.h"
 _Bool USBIsDeviceSuspended(void);
-# 1304 "./usb_device.h"
+# 1303 "./usb_device.h"
 _Bool USBIsBusSuspended(void);
-# 1330 "./usb_device.h"
+# 1329 "./usb_device.h"
 void USBSoftDetach(void);
-# 1368 "./usb_device.h"
+# 1367 "./usb_device.h"
 _Bool USBHandleBusy(void* handle);
-# 1406 "./usb_device.h"
+# 1405 "./usb_device.h"
 uint16_t USBHandleGetLength(void* handle);
-# 1438 "./usb_device.h"
+# 1437 "./usb_device.h"
 uint16_t USBHandleGetAddr(void*);
-# 1538 "./usb_device.h"
+# 1537 "./usb_device.h"
 void* USBGetNextHandle(uint8_t ep_num, uint8_t ep_dir);
-# 1571 "./usb_device.h"
+# 1570 "./usb_device.h"
 void USBEP0Transmit(uint8_t options);
-# 1599 "./usb_device.h"
+# 1598 "./usb_device.h"
 void USBEP0SendRAMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1631 "./usb_device.h"
+# 1630 "./usb_device.h"
 void USBEP0SendROMPtr(uint8_t* src, uint16_t size, uint8_t Options);
-# 1659 "./usb_device.h"
+# 1658 "./usb_device.h"
 void USBEP0Receive(uint8_t* dest, uint16_t size, void (*function));
-# 1694 "./usb_device.h"
+# 1693 "./usb_device.h"
 void* USBTxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1731 "./usb_device.h"
+# 1730 "./usb_device.h"
 void* USBRxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
-# 1763 "./usb_device.h"
+# 1762 "./usb_device.h"
 _Bool USB_APPLICATION_EVENT_HANDLER(uint8_t address, USB_EVENT event, void *pdata, uint16_t size);
-# 1808 "./usb_device.h"
+# 1807 "./usb_device.h"
 void USBIncrement1msInternalTimers(void);
-# 1867 "./usb_device.h"
+# 1866 "./usb_device.h"
 uint32_t USBGet1msTickCount(void);
-# 1908 "./usb_device.h"
+# 1907 "./usb_device.h"
 uint8_t USBGetTicksSinceSuspendEnd(void);
-# 1980 "./usb_device.h"
+# 1979 "./usb_device.h"
 typedef union
 {
     uint16_t Val;
@@ -6014,7 +6013,7 @@ _Bool USBHALTransferData ( TRANSFER_FLAGS flags,
 _Bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
 # 603 "./usb_hal.h"
 _Bool USBHALInitialize ( unsigned long flags );
-# 2056 "./usb_device.h" 2
+# 2055 "./usb_device.h" 2
 # 51 "./usb.h" 2
 # 49 "usb_device_cdc.c" 2
 
@@ -6260,7 +6259,7 @@ void USBCheckCDCRequest(void)
     }
 
 }
-# 295 "usb_device_cdc.c"
+# 291 "usb_device_cdc.c"
 void CDCInitEP(void)
 {
 
@@ -6270,16 +6269,16 @@ void CDCInitEP(void)
     line_coding.bDataBits = 0x08;
 
     cdc_rx_len = 0;
-# 316 "usb_device_cdc.c"
+# 312 "usb_device_cdc.c"
     USBEnableEndpoint(1,0x02|0x10|0x08);
     USBEnableEndpoint(2,0x02|0x04|0x10|0x08);
 
     CDCDataOutHandle = USBTransferOnePacket(2,0,(uint8_t*)&cdc_data_rx,sizeof(cdc_data_rx));
     CDCDataInHandle = ((void*)0);
-# 347 "usb_device_cdc.c"
+# 343 "usb_device_cdc.c"
     cdc_trf_state = 0;
 }
-# 425 "usb_device_cdc.c"
+# 424 "usb_device_cdc.c"
 _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
 {
     switch( (uint16_t)event )
@@ -6301,7 +6300,7 @@ _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
     }
     return 1;
 }
-# 486 "usb_device_cdc.c"
+# 485 "usb_device_cdc.c"
 uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
 {
     cdc_rx_len = 0;
@@ -6332,10 +6331,10 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
     return cdc_rx_len;
 
 }
-# 572 "usb_device_cdc.c"
+# 550 "usb_device_cdc.c"
 void putUSBUSART(uint8_t *data, uint8_t length)
 {
-# 609 "usb_device_cdc.c"
+# 577 "usb_device_cdc.c"
                        ;
     if(cdc_trf_state == 0)
     {
@@ -6343,19 +6342,18 @@ void putUSBUSART(uint8_t *data, uint8_t length)
     }
                          ;
 }
-# 657 "usb_device_cdc.c"
+# 618 "usb_device_cdc.c"
 void putsUSBUSART(char *data)
 {
     uint8_t len;
     char *pData;
-# 685 "usb_device_cdc.c"
+# 639 "usb_device_cdc.c"
                        ;
     if(cdc_trf_state != 0)
     {
                              ;
         return;
     }
-
 
 
 
@@ -6367,7 +6365,6 @@ void putsUSBUSART(char *data)
         len++;
         if(len == 255) break;
     }while(*pData++);
-
 
 
 
@@ -6377,12 +6374,12 @@ void putsUSBUSART(char *data)
     { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x01; cdc_trf_state = 1; };
                          ;
 }
-# 754 "usb_device_cdc.c"
+# 706 "usb_device_cdc.c"
 void putrsUSBUSART(const char *data)
 {
     uint8_t len;
     const char *pData;
-# 782 "usb_device_cdc.c"
+# 734 "usb_device_cdc.c"
                        ;
     if(cdc_trf_state != 0)
     {
@@ -6401,12 +6398,12 @@ void putrsUSBUSART(const char *data)
         len++;
         if(len == 255) break;
     }while(*pData++);
-# 808 "usb_device_cdc.c"
+# 760 "usb_device_cdc.c"
     { pCDCSrc.bRom = (const uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x00; cdc_trf_state = 1; };
                          ;
 
 }
-# 864 "usb_device_cdc.c"
+# 814 "usb_device_cdc.c"
 void CDCTxService(void)
 {
     uint8_t byte_to_send;
@@ -6421,14 +6418,10 @@ void CDCTxService(void)
                              ;
         return;
     }
-
-
-
-
-
-
+# 837 "usb_device_cdc.c"
     if(cdc_trf_state == 3)
         cdc_trf_state = 0;
+
 
 
 
@@ -6438,6 +6431,7 @@ void CDCTxService(void)
                              ;
         return;
     }
+
 
 
 
@@ -6453,10 +6447,12 @@ void CDCTxService(void)
 
 
 
+
      if(cdc_tx_len > sizeof(cdc_data_tx))
          byte_to_send = sizeof(cdc_data_tx);
      else
          byte_to_send = cdc_tx_len;
+
 
 
 
@@ -6486,6 +6482,8 @@ void CDCTxService(void)
                 i--;
             }
         }
+
+
 
 
 

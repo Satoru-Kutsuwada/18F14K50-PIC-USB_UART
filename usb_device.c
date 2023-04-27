@@ -377,58 +377,25 @@ void USBDeviceInit(void)
 
 
 /**************************************************************************
-  Function:
+■Function:
         void USBDeviceTasks(void)
 
-  Summary:
-    This function is the main state machine/transaction handler of the USB
-    device side stack.  When the USB stack is operated in "USB_POLLING" mode
-    (usb_config.h user option) the USBDeviceTasks() function should be called
-    periodically to receive and transmit packets through the stack. This
-    function also takes care of control transfers associated with the USB
-    enumeration process, and detecting various USB events (such as suspend).
-    This function should be called at least once every 1.8ms during the USB
-    enumeration process. After the enumeration process is complete (which can
-    be determined when USBGetDeviceState() returns CONFIGURED_STATE), the
-    USBDeviceTasks() handler may be called the faster of: either once
-    every 9.8ms, or as often as needed to make sure that the hardware USTAT
-    FIFO never gets full.  A good rule of thumb is to call USBDeviceTasks() at
-    a minimum rate of either the frequency that USBTransferOnePacket() gets
-    called, or, once/1.8ms, whichever is faster.  See the inline code comments
-    near the top of usb_device.c for more details about minimum timing
-    requirements when calling USBDeviceTasks().
+■Summary:
 
-    When the USB stack is operated in "USB_INTERRUPT" mode, it is not necessary
-    to call USBDeviceTasks() from the main loop context.  In the USB_INTERRUPT
-    mode, the USBDeviceTasks() handler only needs to execute when a USB
-    interrupt occurs, and therefore only needs to be called from the interrupt
-    context.
+この関数は、USB デバイス側スタックのメイン ステート マシン/トランザクション ハンドラです。 
+USB スタックが「USB_POLLING」モード (usb_config.h ユーザー オプション) で動作している場合、USBDeviceTasks() 関数を定期的に呼び出して、スタックを介してパケットを送受信する必要があります。 
+この関数は、USB エニュメレーション プロセスに関連するコントロール転送も処理し、さまざまな USB イベント (サスペンドなど) を検出します。 
+この関数は、USB エニュメレーション プロセス中に少なくとも 1.8ms ごとに呼び出す必要があります。 列挙プロセスが完了した後 (これは、USBGetDeviceState() が CONFIGURED_STATE を返すときに決定できます)、USBDeviceTasks() ハンドラは、9.8ms ごとに 1 回、またはハードウェア USTAT FIFO いっぱいになることはありません。 
+経験則として、USBTransferOnePacket() が呼び出される頻度、または 1 回/1.8 ミリ秒のいずれか早い方の最小レートで USBDeviceTasks() を呼び出すことをお勧めします。 USBDeviceTasks() を呼び出す際の最小タイミング要件の詳細については、usb_device.c の上部にあるインライン コード コメントを参照してください。
 
-  Description:
-    This function is the main state machine/transaction handler of the USB
-    device side stack.  When the USB stack is operated in "USB_POLLING" mode
-    (usb_config.h user option) the USBDeviceTasks() function should be called
-    periodically to receive and transmit packets through the stack. This
-    function also takes care of control transfers associated with the USB
-    enumeration process, and detecting various USB events (such as suspend).
-    This function should be called at least once every 1.8ms during the USB
-    enumeration process. After the enumeration process is complete (which can
-    be determined when USBGetDeviceState() returns CONFIGURED_STATE), the
-    USBDeviceTasks() handler may be called the faster of: either once
-    every 9.8ms, or as often as needed to make sure that the hardware USTAT
-    FIFO never gets full.  A good rule of thumb is to call USBDeviceTasks() at
-    a minimum rate of either the frequency that USBTransferOnePacket() gets
-    called, or, once/1.8ms, whichever is faster.  See the inline code comments
-    near the top of usb_device.c for more details about minimum timing
-    requirements when calling USBDeviceTasks().
+USB スタックが「USB_INTERRUPT」モードで動作している場合、メイン ループ コンテキストから USBDeviceTasks()を呼び出す必要はありません。 USB_INTERRUPT モードでは、USBDeviceTasks() ハンドラは USB 割り込みが発生したときにのみ実行する必要があるため、割り込みコンテキストからのみ呼び出す必要があります。
 
-    When the USB stack is operated in "USB_INTERRUPT" mode, it is not necessary
-    to call USBDeviceTasks() from the main loop context.  In the USB_INTERRUPT
-    mode, the USBDeviceTasks() handler only needs to execute when a USB
-    interrupt occurs, and therefore only needs to be called from the interrupt
-    context.
+■Description:
+この関数は、USB デバイス側スタックのメイン ステート マシン/トランザクション ハンドラです。 USB スタックが「USB_POLLING」モード (usb_config.h ユーザー オプション) で動作している場合、USBDeviceTasks() 関数を定期的に呼び出して、スタックを介してパケットを送受信する必要があります。 この関数は、USB エニュメレーション プロセスに関連するコントロール転送も処理し、さまざまな USB イベント (サスペンドなど) を検出します。 この関数は、USB エニュメレーション プロセス中に少なくとも 1.8ms ごとに呼び出す必要があります。 列挙プロセスが完了した後 (これは、USBGetDeviceState() が CONFIGURED_STATE を返すときに決定できます)、USBDeviceTasks() ハンドラは、9.8ms ごとに 1 回、またはハードウェア USTAT FIFO いっぱいになることはありません。 経験則として、USBTransferOnePacket() が呼び出される頻度、または 1 回/1.8 ミリ秒のいずれか早い方の最小レートで USBDeviceTasks() を呼び出すことをお勧めします。 USBDeviceTasks() を呼び出す際の最小タイミング要件の詳細については、usb_device.c の上部にあるインライン コード コメントを参照してください。
 
-    Typical usage:
+USB スタックが「USB_INTERRUPT」モードで動作している場合、メイン ループ コンテキストから USBDeviceTasks()を呼び出す必要はありません。 USB_INTERRUPT モードでは、USBDeviceTasks() ハンドラは USB 割り込みが発生したときにのみ実行する必要があるため、割り込みコンテキストからのみ呼び出す必要があります。
+
+■Typical usage:
     <code>
     void main(void)
     {
@@ -453,30 +420,14 @@ void USBDeviceInit(void)
     }
     </code>
 
-  Precondition:
-    Make sure the USBDeviceInit() function has been called prior to calling
-    USBDeviceTasks() for the first time.
-  Remarks:
-    USBDeviceTasks() does not need to be called while in the USB suspend mode,
-    if the user application firmware in the USBCBSuspend() callback function
-    enables the ACTVIF USB interrupt source and put the microcontroller into
-    sleep mode.  If the application firmware decides not to sleep the
-    microcontroller core during USB suspend (ex: continues running at full
-    frequency, or clock switches to a lower frequency), then the USBDeviceTasks()
-    function must still be called periodically, at a rate frequent enough to
-    ensure the 10ms resume recovery interval USB specification is met.  Assuming
-    a worst case primary oscillator and PLL start up time of less than 5ms, then
-    USBDeviceTasks() should be called once every 5ms in this scenario.
+■Precondition:
 
-    When the USB cable is detached, or the USB host is not actively powering
-    the VBUS line to +5V nominal, the application firmware does not always have
-    to call USBDeviceTasks() frequently, as no USB activity will be taking
-    place.  However, if USBDeviceTasks() is not called regularly, some
-    alternative means of promptly detecting when VBUS is powered (indicating
-    host attachment), or not powered (host powered down or USB cable unplugged)
-    is still needed.  For self or dual self/bus powered USB applications, see
-    the USBDeviceAttach() and USBDeviceDetach() API documentation for additional
-    considerations.
+初めて USBDeviceTasks() を呼び出す前に、USBDeviceInit() 関数が呼び出されていることを確認してください。
+
+■Remarks:
+
+USBCBSuspend() コールバック関数のユーザー アプリケーション ファームウェアが ACTVIF USB 割り込みソースを有効にし、マイクロコントローラーをスリープ モードにする場合、USB サスペンド モード中に USBDeviceTasks() を呼び出す必要はありません。 アプリケーション ファームウェアが USB サスペンド中にマイクロコントローラ コアをスリープ状態にしないことを決定した場合 (例: フル周波数で動作を継続する、またはクロックがより低い周波数に切り替わる)、USBDeviceTasks() 関数は引き続き定期的に呼び出す必要があります。 10 ミリ秒の再開回復間隔 USB 仕様が満たされていることを確認してください。 最悪の場合のプライマリ オシレータと PLL の起動時間が 5 ミリ秒未満であると仮定すると、このシナリオでは USBDeviceTasks() を 5 ミリ秒ごとに呼び出す必要があります。
+   USB ケーブルが取り外されている場合、または USB ホストがアクティブに VBUS ラインに公称 +5V の電力を供給していない場合、USB アクティビティは発生しないため、アプリケーション ファームウェアは常に USBDeviceTasks() を頻繁に呼び出す必要はありません。 ただし、USBDeviceTasks() が定期的に呼び出されない場合は、VBUS に電源が供給されている (ホストの接続を示す) か、電源が供給されていない (ホストの電源が切断されているか、USB ケーブルが切断されている) ことを迅速に検出する代替手段がいくつかあります。
     ***************************************************************************/
 void USBDeviceTasks(void)
 {

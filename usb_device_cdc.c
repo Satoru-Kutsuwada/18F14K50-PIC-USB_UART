@@ -263,33 +263,29 @@ void USBCheckCDCRequest(void)
 /** U S E R  A P I ***********************************************************/
 
 /**************************************************************************
-  Function:
+■Function:
         void CDCInitEP(void)
 
-  Summary:
-    This function initializes the CDC function driver. This function should
-    be called after the SET_CONFIGURATION command (ex: within the context of
-    the USBCBInitEP() function).
-  Description:
-    This function initializes the CDC function driver. This function sets
-    the default line coding (baud rate, bit parity, number of data bits,
-    and format). This function also enables the endpoints and prepares for
-    the first transfer from the host.
+■Summary:
+この関数は、CDC 関数ドライバーを初期化します。 この関数は、SET_CONFIGURATION
+ コマンドの後に呼び出す必要があります (例: USBCBInitEP() 関数のコンテキスト内)。
+■Description:
+この関数は、CDC 関数ドライバーを初期化します。 この関数は、デフォルトのライン コーディング 
+(ボー レート、ビット パリティ、データ ビット数、およびフォーマット) を設定します。 
+この関数はまた、エンドポイントを有効にし、ホストからの最初の転送に備えます。
+この関数は、SET_CONFIGURATION コマンドの後に呼び出す必要があります。
+これは、USBCBInitEP() 関数からこの関数を呼び出すことによって最も簡単に実行できます。
 
-    This function should be called after the SET_CONFIGURATION command.
-    This is most simply done by calling this function from the
-    USBCBInitEP() function.
-
-    Typical Usage:
+■Typical Usage:
     <code>
         void USBCBInitEP(void)
         {
             CDCInitEP();
         }
     </code>
-  Conditions:
+■Conditions:
     None
-  Remarks:
+■Remarks:
     None
   **************************************************************************/
 void CDCInitEP(void)
@@ -349,20 +345,23 @@ void CDCInitEP(void)
 
 
 /**************************************************************************
-  Function: void CDCNotificationHandler(void)
-  Summary: Checks for changes in DSR status and reports them to the USB host.
-  Description: Checks for changes in DSR pin state and reports any changes
-               to the USB host.
-  Conditions: CDCInitEP() must have been called previously, prior to calling
-              CDCNotificationHandler() for the first time.
-  Remarks:
-    This function is only implemented and needed when the
-    USB_CDC_SUPPORT_DSR_REPORTING option has been enabled.  If the function is
-    enabled, it should be called periodically to sample the DSR pin and feed
-    the information to the USB host.  This can be done by calling
-    CDCNotificationHandler() by itself, or, by calling CDCTxService() which
-    also calls CDCNotificationHandler() internally, when appropriate.
-  **************************************************************************/
+■Function: void CDCNotificationHandler(void)
+
+■Summary: 
+DSR ステータスの変化をチェックし、USB ホストに報告します。
+
+■Description: 
+DSR ピンの状態の変化をチェックし、変化を USB ホストに報告します。
+
+■Conditions: 
+CDCInitEP() は、CDCNotificationHandler() を初めて呼び出す前に、以前に呼び出されている必要があります。
+
+■Remarks:
+この関数は、USB_CDC_SUPPORT_DSR_REPORTING オプションが有効になっている場合にのみ実装され、
+必要になります。 この関数が有効になっている場合は、定期的に呼び出して DSR ピンをサンプリングし、
+情報を USB ホストにフィードする必要があります。 これは、 CDCNotificationHandler() を
+単独で呼び出すか、必要に応じて内部で CDCNotificationHandler() も呼び出す CDCTxService() を呼び出すことで実行できます。
+**************************************************************************/
 #if defined(USB_CDC_SUPPORT_DSR_REPORTING)
 void CDCNotificationHandler(void)
 {
@@ -515,23 +514,17 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
 }//end getsUSBUSART
 
 /******************************************************************************
-  Function:
+■Function:
 	void putUSBUSART(char *data, uint8_t length)
 
-  Summary:
-    putUSBUSART writes an array of data to the USB. Use this version, is
-    capable of transferring 0x00 (what is typically a NULL character in any of
-    the string transfer functions).
+■Summary:
+putUSBUSART は、データの配列を USB に書き込みます。 このバージョンを使用すると、0x00 を転送できます (これは通常、文字列転送関数の NULL 文字です)。
 
-  Description:
-    putUSBUSART writes an array of data to the USB. Use this version, is
-    capable of transferring 0x00 (what is typically a NULL character in any of
-    the string transfer functions).
+■Description:
 
- * putUSBUSART は、データの配列を USB に書き込みます。 このバージョンを使用すると、
- * 0x00 を転送できます (これは通常、文字列転送関数の NULL 文字です)。
+putUSBUSART は、データの配列を USB に書き込みます。 このバージョンを使用すると、0x00 を転送できます (これは通常、文字列転送関数の NULL 文字です)。
  
-    Typical Usage:
+■Typical Usage:
     <code>
         if(USBUSARTIsTxTrfReady())
         {
@@ -540,52 +533,29 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
         }
     </code>
 
-    The transfer mechanism for device-to-host(put) is more flexible than
-    host-to-device(get). It can handle a string of data larger than the
-    maximum size of bulk IN endpoint. A state machine is used to transfer a
-    \long string of data over multiple USB transactions. CDCTxService()
-    must be called periodically to keep sending blocks of data to the host.
- * デバイスからホストへの転送メカニズム (put) は、ホストからデバイスへの転送メカニズム
- *  (get) よりも柔軟です。 バルク IN エンドポイントの最大サイズを超えるデータの
- * 文字列を処理できます。 ステート マシンは、 \long 複数の USB トランザクションに
- * わたるデータの文字列。 データのブロックをホストに送信し続けるために、
- * CDCTxService() を定期的に呼び出す必要があります。
+デバイスからホストへの転送メカニズム (put) は、ホストからデバイスへの転送メカニズム (get) よりも柔軟です。 
+バルク IN エンドポイントの最大サイズを超えるデータの文字列を処理できます。 ステート マシンは、 
+\long 複数の USB トランザクションにわたるデータの文字列。 
+データのブロックをホストに送信し続けるために、CDCTxService() を定期的に呼び出す必要があります。
  
 
-  Conditions:
-    USBUSARTIsTxTrfReady() must return true. This indicates that the last
-    transfer is complete and is ready to receive a new block of data. The
-    string of characters pointed to by 'data' must equal to or smaller than
-    255 BYTEs.
+■Conditions:
 
- * USBUSARTIsTxTrfReady() は true を返す必要があります。 これは、最後の転送が完了し、
- * 新しいデータ ブロックを受信する準備ができていることを示します。 
- * 'data' が指す文字列は、255 バイト以下でなければなりません。
+USBUSARTIsTxTrfReady() は true を返す必要があります。 これは、最後の転送が完了し、新しいデータ ブロックを受信する準備ができていることを示します。 'data' が指す文字列は、255 バイト以下でなければなりません。
  
-  Input:
-    char *data - pointer to a RAM array of data to be transfered to the host
-    uint8_t length - the number of bytes to be transfered (must be less than 255).
- * char *data - ホストに転送されるデータの RAM 配列へのポインタ uint8_t length - 
- * 転送されるバイト数 (255 未満である必要があります)。
+■Input:
+ char *data - ホストに転送されるデータの RAM 配列へのポインタ uint8_t length - 転送されるバイト数 (255 未満である必要があります)。
  
  *****************************************************************************/
 void putUSBUSART(uint8_t *data, uint8_t  length)
 {
     /*
-     * User should have checked that cdc_trf_state is in CDC_TX_READY state
-     * before calling this function.
-     * As a safety precaution, this function checks the state one more time
-     * to make sure it does not override any pending transactions.
      * この関数を呼び出す前に、cdc_trf_state が CDC_TX_READY 状態であることを
      * 確認する必要があります。 安全上の予防措置として、この関数は状態をもう一度
      * チェックして、保留中のトランザクションを上書きしないようにします。
      *
-     * Currently it just quits the routine without reporting any errors back
-     * to the user.
      * 現在、ユーザーにエラーを報告せずにルーチンを終了するだけです。
      *
-     * Bottom line: User MUST make sure that USBUSARTIsTxTrfReady()==1
-     *             before calling this function!
      * 結論: ユーザーは、この関数を呼び出す前に USBUSARTIsTxTrfReady()==1 
      * であることを確認する必要があります!
      * 
@@ -599,13 +569,11 @@ void putUSBUSART(uint8_t *data, uint8_t  length)
      * while(!USBUSARTIsTxTrfReady())
      *     putUSBUSART(pData, Length);
      *
-     * The whole firmware framework is written based on cooperative
-     * multi-tasking and a blocking code is not acceptable.
-     * Use a state machine instead.
      * ファームウェア フレームワーク全体が協調マルチタスクに基づいて記述されており、
      * ブロッキング コードは受け入れられません。
      * 代わりにステート マシンを使用してください。
      */
+    
     USBMaskInterrupts();
     if(cdc_trf_state == CDC_TX_READY)
     {
@@ -615,18 +583,16 @@ void putUSBUSART(uint8_t *data, uint8_t  length)
 }//end putUSBUSART
 
 /******************************************************************************
-	Function:
-		void putsUSBUSART(char *data)
+■Function:
+	void putsUSBUSART(char *data)
 
-  Summary:
-    putsUSBUSART writes a string of data to the USB including the null
-    character. Use this version, 'puts', to transfer data from a RAM buffer.
+■Summary:
+putsUSBUSART は、ヌル文字を含むデータの文字列を USB に書き込みます。 このバージョンの「puts」を使用して、RAM バッファからデータを転送します。
 
-  Description:
-    putsUSBUSART writes a string of data to the USB including the null
-    character. Use this version, 'puts', to transfer data from a RAM buffer.
+■Description:
+putsUSBUSART は、ヌル文字を含むデータの文字列を USB に書き込みます。 このバージョンの「puts」を使用して、RAM バッファからデータを転送します。
 
-    Typical Usage:
+■Typical Usage:
     <code>
         if(USBUSARTIsTxTrfReady())
         {
@@ -635,22 +601,17 @@ void putUSBUSART(uint8_t *data, uint8_t  length)
         }
     </code>
 
-    The transfer mechanism for device-to-host(put) is more flexible than
-    host-to-device(get). It can handle a string of data larger than the
-    maximum size of bulk IN endpoint. A state machine is used to transfer a
-    \long string of data over multiple USB transactions. CDCTxService()
-    must be called periodically to keep sending blocks of data to the host.
+デバイスからホストへの転送メカニズム (put) は、ホストからデバイスへの転送メカニズム (get) よりも柔軟です。
+バルク IN エンドポイントの最大サイズを超えるデータの文字列を処理できます。 
+ステート マシンは、複数の USB トランザクションでデータの \long 文字列を転送するために使用されます。
+データのブロックをホストに送信し続けるために、CDCTxService() を定期的に呼び出す必要があります。
 
-  Conditions:
-    USBUSARTIsTxTrfReady() must return true. This indicates that the last
-    transfer is complete and is ready to receive a new block of data. The
-    string of characters pointed to by 'data' must equal to or smaller than
-    255 BYTEs.
+■Conditions:
+USBUSARTIsTxTrfReady() は true を返す必要があります。 これは、最後の転送が完了し、
+新しいデータ ブロックを受信する準備ができていることを示します。 'data' が指す文字列は、255 バイト以下でなければなりません。
 
-  Input:
-    char *data -  null\-terminated string of constant data. If a
-                            null character is not found, 255 BYTEs of data
-                            will be transferred to the host.
+■Input:
+char *data - null\ で終わる定数データの文字列。 ヌル文字が見つからない場合、255 バイトのデータがホストに転送されます。
 
  *****************************************************************************/
 
@@ -660,27 +621,20 @@ void putsUSBUSART(char *data)
     char *pData;
 
     /*
-     * User should have checked that cdc_trf_state is in CDC_TX_READY state
-     * before calling this function.
-     * As a safety precaution, this function checks the state one more time
-     * to make sure it does not override any pending transactions.
-     *
-     * Currently it just quits the routine without reporting any errors back
-     * to the user.
-     *
-     * Bottom line: User MUST make sure that USBUSARTIsTxTrfReady()==1
-     *             before calling this function!
-     * Example:
+     * この関数を呼び出す前に、cdc_trf_state が CDC_TX_READY 状態であることを確認する必要があります。
+     *  安全上の予防措置として、この関数は状態をもう一度チェックして、保留中のトランザクションを上書きしないようにします。
+     * 
+     *  現在、ユーザーにエラーを報告せずにルーチンを終了するだけです。
+     * 
+     * ■Bottom line: 
+     * ユーザーは、この関数を呼び出す前に、USBUSARTIsTxTrfReady()==1 であることを確認する必要があります。
+     * 例：
      * if(USBUSARTIsTxTrfReady())
-     *     putsUSBUSART(pData, Length);
-     *
-     * IMPORTANT: Never use the following blocking while loop to wait:
-     * while(!USBUSARTIsTxTrfReady())
-     *     putsUSBUSART(pData);
-     *
-     * The whole firmware framework is written based on cooperative
-     * multi-tasking and a blocking code is not acceptable.
-     * Use a state machine instead.
+     *     putsUSBUSART(pData, 長さ);
+     * ■IMPORTANT:
+     * 次のブロッキング while ループを使用して待機しないでください。
+     * ファームウェア フレームワーク全体が協調マルチタスクに基づいて記述されており、
+     * ブロッキング コードは受け入れられません。 代わりにステート マシンを使用してください。
      */
     USBMaskInterrupts();
     if(cdc_trf_state != CDC_TX_READY)
@@ -690,8 +644,7 @@ void putsUSBUSART(char *data)
     }
 
     /*
-     * While loop counts the number of BYTEs to send including the
-     * null character.
+     * while ループは、NULL文字を含めて送信する BYTE の数をカウントします。
      */
     len = 0;
     pData = data;
@@ -702,10 +655,9 @@ void putsUSBUSART(char *data)
     }while(*pData++);
 
     /*
-     * Second piece of information (length of data to send) is ready.
-     * Call mUSBUSARTTxRam to setup the transfer.
-     * The actual transfer process will be handled by CDCTxService(),
-     * which should be called once per Main Program loop.
+     * 2 番目の情報 (送信するデータの長さ) の準備が整いました。 
+     * mUSBUSARTTxRam を呼び出して、転送をセットアップします。 
+     * 実際の転送プロセスは CDCTxService() によって処理され、メイン プログラム ループごとに 1 回呼び出される必要があります。
      */
     mUSBUSARTTxRam((uint8_t*)data, len);     // See cdc.h
     USBUnmaskInterrupts();
@@ -811,22 +763,22 @@ void putrsUSBUSART(const char *data)
 }//end putrsUSBUSART
 
 /************************************************************************
-  Function:
+■Function:
         void CDCTxService(void)
 
-  Summary:
-    CDCTxService handles device-to-host transaction(s). This function
-    should be called once per Main Program loop after the device reaches
-    the configured state.
-  Description:
-    CDCTxService handles device-to-host transaction(s). This function
-    should be called once per Main Program loop after the device reaches
-    the configured state (after the CDCIniEP() function has already executed).
-    This function is needed, in order to advance the internal software state
-    machine that takes care of sending multiple transactions worth of IN USB
-    data to the host, associated with CDC serial data.  Failure to call
-    CDCTxService() periodically will prevent data from being sent to the
-    USB host, over the CDC serial data interface.
+■Summary:
+
+CDCTxService は、デバイスからホストへのトランザクションを処理します。 こ
+の関数は、デバイスが構成された状態に達した後、メイン プログラム ループごとに 1 回呼び出す必要があります。
+
+■Description:
+
+CDCTxService は、デバイスからホストへのトランザクションを処理します。 
+この関数は、デバイスが構成された状態に達した後 (CDCIniEP() 関数が既に実行された後)、
+メイン プログラム ループごとに 1 回呼び出す必要があります。 この関数は、CDC シリアル データに
+関連付けられた複数のトランザクションに相当する IN USB データをホストに送信する内部
+ソフトウェア ステート マシンを進めるために必要です。 CDCTxService() を定期的に呼び出さないと、
+データが CDC シリアル データ インターフェイス経由で USB ホストに送信されません。
 
     Typical Usage:
     <code>
@@ -854,11 +806,9 @@ void putrsUSBUSART(const char *data)
         }
     }
     </code>
-  Conditions:
-    CDCIniEP() function should have already executed/the device should be
-    in the CONFIGURED_STATE.
-  Remarks:
-    None
+
+■Conditions:
+    CDCIniEP() 関数は既に実行されている必要があります/デバイスは CONFIGURED_STATE になっている必要があります。
   ************************************************************************/
 
 void CDCTxService(void)
@@ -880,12 +830,16 @@ void CDCTxService(void)
      * Completing stage is necessary while [ mCDCUSartTxIsBusy()==1 ].
      * By having this stage, user can always check cdc_trf_state,
      * and not having to call mCDCUsartTxIsBusy() directly.
+     * [ mCDCUSartTxIsBusy()==1 ] の間にステージを完了する必要があります。 
+     * この段階を持つことにより、ユーザーは常に cdc_trf_state をチェックでき、
+     * mCDCUsartTxIsBusy() を直接呼び出す必要はありません。
      */
     if(cdc_trf_state == CDC_TX_COMPLETING)
         cdc_trf_state = CDC_TX_READY;
 
     /*
      * If CDC_TX_READY state, nothing to do, just return.
+     * CDC_TX_READY 状態の場合は、何もせずそのままリターンします。
      */
     if(cdc_trf_state == CDC_TX_READY)
     {
@@ -895,6 +849,7 @@ void CDCTxService(void)
 
     /*
      * If CDC_TX_BUSY_ZLP state, send zero length packet
+     * CDC_TX_BUSY_ZLP 状態の場合、長さゼロのパケットを送信
      */
     if(cdc_trf_state == CDC_TX_BUSY_ZLP)
     {
@@ -906,6 +861,7 @@ void CDCTxService(void)
     {
         /*
          * First, have to figure out how many byte of data to send.
+         * まず、送信するデータのバイト数を把握する必要があります。
          */
     	if(cdc_tx_len > sizeof(cdc_data_tx))
     	    byte_to_send = sizeof(cdc_data_tx);
@@ -914,13 +870,14 @@ void CDCTxService(void)
 
         /*
          * Subtract the number of bytes just about to be sent from the total.
+         * 送信しようとしているバイト数を合計から引きます。
          */
     	cdc_tx_len = cdc_tx_len - byte_to_send;
 
-        pCDCDst.bRam = (uint8_t*)&cdc_data_tx; // Set destination pointer
+        pCDCDst.bRam = (uint8_t*)&cdc_data_tx; // Set destination pointer 宛先ポインタを設定
 
         i = byte_to_send;
-        if(cdc_mem_type == USB_EP0_ROM)            // Determine type of memory source
+        if(cdc_mem_type == USB_EP0_ROM)  // Determine type of memory source メモリ ソースの種類を決定する
         {
             while(i)
             {
@@ -944,6 +901,8 @@ void CDCTxService(void)
         /*
          * Lastly, determine if a zero length packet state is necessary.
          * See explanation in USB Specification 2.0: Section 5.8.3
+         * 最後に、長さゼロのパケット状態が必要かどうかを判断します。 
+         * USB 仕様 2.0 の説明を参照してください: セクション 5.8.3
          */
         if(cdc_tx_len == 0)
         {

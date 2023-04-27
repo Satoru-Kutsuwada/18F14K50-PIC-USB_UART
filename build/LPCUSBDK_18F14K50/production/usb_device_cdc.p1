@@ -110,66 +110,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 "959 ./usb_device_cdc.h
 [; ;./usb_device_cdc.h: 959: extern volatile CTRL_TRF_SETUP SetupPkt;
 [v _SetupPkt `VS341 ~T0 @X0 0 e ]
-"1997 ./usb_device.h
-[; ;./usb_device.h: 1997:     {
+"1996 ./usb_device.h
+[; ;./usb_device.h: 1996:     {
 [u S363 `*uc 1 `*Cuc 1 `*us 1 `*Cus 1 ]
 [n S363 . bRam bRom wRam wRom ]
-"2008
-[; ;./usb_device.h: 2008:         {
+"2007
+[; ;./usb_device.h: 2007:         {
 [s S365 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S365 . ctrl_trf_mem reserved includeZero busy ]
-"2006
-[; ;./usb_device.h: 2006:     {
+"2005
+[; ;./usb_device.h: 2005:     {
 [u S364 `S365 1 `uc 1 ]
 [n S364 . bits Val ]
-"1985
-[; ;./usb_device.h: 1985:     {
+"1984
+[; ;./usb_device.h: 1984:     {
 [s S361 `uc 1 `uc 1 ]
 [n S361 . LB HB ]
-"1981
-[; ;./usb_device.h: 1981: {
+"1980
+[; ;./usb_device.h: 1980: {
 [u S360 `us 1 `uc -> 2 `i `S361 1 ]
 [n S360 . Val v byte ]
-"1995
-[; ;./usb_device.h: 1995: {
+"1994
+[; ;./usb_device.h: 1994: {
 [s S362 `S363 1 `S364 1 `S360 1 ]
 [n S362 . pSrc info wCount ]
 "609 ./usb_hal_pic18.h
 [; ;./usb_hal_pic18.h: 609:     extern IN_PIPE inPipes[1];
 [v _inPipes `S362 ~T0 @X0 -> 0 `x e ]
-"2028 ./usb_device.h
-[; ;./usb_device.h: 2028:     {
+"2027 ./usb_device.h
+[; ;./usb_device.h: 2027:     {
 [u S367 `*uc 1 `*us 1 ]
 [n S367 . bRam wRam ]
-"2037
-[; ;./usb_device.h: 2037:         {
+"2036
+[; ;./usb_device.h: 2036:         {
 [s S369 :7 `uc 1 :1 `uc 1 ]
 [n S369 . reserved busy ]
-"2035
-[; ;./usb_device.h: 2035:     {
+"2034
+[; ;./usb_device.h: 2034:     {
 [u S368 `S369 1 `uc 1 ]
 [n S368 . bits Val ]
 [v F3231 `(v ~T0 @X0 0 tf ]
-"2026
-[; ;./usb_device.h: 2026: {
+"2025
+[; ;./usb_device.h: 2025: {
 [s S366 `S367 1 `S368 1 `S360 1 `*F3231 1 ]
 [n S366 . pDst info wCount pFunc ]
 "610 ./usb_hal_pic18.h
 [; ;./usb_hal_pic18.h: 610:     extern OUT_PIPE outPipes[1];
 [v _outPipes `S366 ~T0 @X0 -> 0 `x e ]
 [v F3621 `(v ~T0 @X0 0 tf ]
-"355 ./usb_device.h
-[; ;./usb_device.h: 355: void USBEnableEndpoint(uint8_t ep, uint8_t options);
+"354 ./usb_device.h
+[; ;./usb_device.h: 354: void USBEnableEndpoint(uint8_t ep, uint8_t options);
 [v _USBEnableEndpoint `(v ~T0 @X0 0 ef2`uc`uc ]
-"448
-[; ;./usb_device.h: 448: void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
+"447
+[; ;./usb_device.h: 447: void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
 [v _USBTransferOnePacket `(*v ~T0 @X0 0 ef4`uc`uc`*uc`uc ]
-"425 usb_device_cdc.c
-[; ;usb_device_cdc.c: 425: _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
+"424 usb_device_cdc.c
+[; ;usb_device_cdc.c: 424: _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
 [c E2851 0 1 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 400 500 600 700 800 900 1000 10000 32767 .. ]
 [n E2851 . EVENT_NONE EVENT_DEVICE_STACK_BASE EVENT_HOST_STACK_BASE EVENT_HUB_ATTACH EVENT_STALL EVENT_VBUS_SES_REQUEST EVENT_VBUS_OVERCURRENT EVENT_VBUS_REQUEST_POWER EVENT_VBUS_RELEASE_POWER EVENT_VBUS_POWER_AVAILABLE EVENT_UNSUPPORTED_DEVICE EVENT_CANNOT_ENUMERATE EVENT_CLIENT_INIT_ERROR EVENT_OUT_OF_MEMORY EVENT_UNSPECIFIED_ERROR EVENT_DETACH EVENT_TRANSFER EVENT_SOF EVENT_RESUME EVENT_SUSPEND EVENT_RESET EVENT_DATA_ISOC_READ EVENT_DATA_ISOC_WRITE EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION EVENT_1MS EVENT_ALT_INTERFACE EVENT_HOLD_BEFORE_CONFIGURATION EVENT_GENERIC_BASE EVENT_MSD_BASE EVENT_HID_BASE EVENT_PRINTER_BASE EVENT_CDC_BASE EVENT_CHARGER_BASE EVENT_AUDIO_BASE EVENT_USER_BASE EVENT_BUS_ERROR  ]
-"443
-[; ;usb_device_cdc.c: 443:     }
+"442
+[; ;usb_device_cdc.c: 442:     }
 [c E3111 1 2 3 4 5 .. ]
 [n E3111 . EVENT_CONFIGURED EVENT_SET_DESCRIPTOR EVENT_EP0_REQUEST EVENT_ATTACH EVENT_TRANSFER_TERMINATED  ]
 "271 ./usb_hal_pic18.h
@@ -851,564 +851,564 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;usb_device_cdc.c: 261: }
 [e :UE 396 ]
 }
-"295
-[; ;usb_device_cdc.c: 295: void CDCInitEP(void)
+"291
+[; ;usb_device_cdc.c: 291: void CDCInitEP(void)
 [v _CDCInitEP `(v ~T0 @X0 1 ef ]
-"296
-[; ;usb_device_cdc.c: 296: {
+"292
+[; ;usb_device_cdc.c: 292: {
 {
 [e :U _CDCInitEP ]
 [f ]
-"298
-[; ;usb_device_cdc.c: 298:     line_coding.dwDTERate = 19200;
+"294
+[; ;usb_device_cdc.c: 294:     line_coding.dwDTERate = 19200;
 [e = . . _line_coding 1 0 -> -> -> 19200 `i `l `ul ]
-"299
-[; ;usb_device_cdc.c: 299:     line_coding.bCharFormat = 0x00;
+"295
+[; ;usb_device_cdc.c: 295:     line_coding.bCharFormat = 0x00;
 [e = . . _line_coding 1 1 -> -> 0 `i `uc ]
-"300
-[; ;usb_device_cdc.c: 300:     line_coding.bParityType = 0x00;
+"296
+[; ;usb_device_cdc.c: 296:     line_coding.bParityType = 0x00;
 [e = . . _line_coding 1 2 -> -> 0 `i `uc ]
-"301
-[; ;usb_device_cdc.c: 301:     line_coding.bDataBits = 0x08;
+"297
+[; ;usb_device_cdc.c: 297:     line_coding.bDataBits = 0x08;
 [e = . . _line_coding 1 3 -> -> 8 `i `uc ]
-"303
-[; ;usb_device_cdc.c: 303:     cdc_rx_len = 0;
+"299
+[; ;usb_device_cdc.c: 299:     cdc_rx_len = 0;
 [e = _cdc_rx_len -> -> 0 `i `uc ]
-"316
-[; ;usb_device_cdc.c: 316:     USBEnableEndpoint(1,0x02|0x10|0x08);
+"312
+[; ;usb_device_cdc.c: 312:     USBEnableEndpoint(1,0x02|0x10|0x08);
 [e ( _USBEnableEndpoint (2 , -> -> 1 `i `uc -> | | -> 2 `i -> 16 `i -> 8 `i `uc ]
-"317
-[; ;usb_device_cdc.c: 317:     USBEnableEndpoint(2,0x02|0x04|0x10|0x08);
+"313
+[; ;usb_device_cdc.c: 313:     USBEnableEndpoint(2,0x02|0x04|0x10|0x08);
 [e ( _USBEnableEndpoint (2 , -> -> 2 `i `uc -> | | | -> 2 `i -> 4 `i -> 16 `i -> 8 `i `uc ]
-"319
-[; ;usb_device_cdc.c: 319:     CDCDataOutHandle = USBTransferOnePacket(2,0,(uint8_t*)&cdc_data_rx,sizeof(cdc_data_rx));
+"315
+[; ;usb_device_cdc.c: 315:     CDCDataOutHandle = USBTransferOnePacket(2,0,(uint8_t*)&cdc_data_rx,sizeof(cdc_data_rx));
 [e = _CDCDataOutHandle ( _USBTransferOnePacket (4 , , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U _cdc_data_rx `*uc -> -> # _cdc_data_rx `ui `uc ]
-"320
-[; ;usb_device_cdc.c: 320:     CDCDataInHandle = ((void*)0);
+"316
+[; ;usb_device_cdc.c: 316:     CDCDataInHandle = ((void*)0);
 [e = _CDCDataInHandle -> -> 0 `i `*v ]
-"347
-[; ;usb_device_cdc.c: 347:     cdc_trf_state = 0;
+"343
+[; ;usb_device_cdc.c: 343:     cdc_trf_state = 0;
 [e = _cdc_trf_state -> -> 0 `i `uc ]
-"348
-[; ;usb_device_cdc.c: 348: }
+"344
+[; ;usb_device_cdc.c: 344: }
 [e :UE 408 ]
 }
-"425
-[; ;usb_device_cdc.c: 425: _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
+"424
+[; ;usb_device_cdc.c: 424: _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
 [v _USBCDCEventHandler `(a ~T0 @X0 1 ef3`E2851`*v`us ]
-"426
-[; ;usb_device_cdc.c: 426: {
+"425
+[; ;usb_device_cdc.c: 425: {
 {
 [e :U _USBCDCEventHandler ]
-"425
-[; ;usb_device_cdc.c: 425: _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
+"424
+[; ;usb_device_cdc.c: 424: _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
 [v _event `E2851 ~T0 @X0 1 r1 ]
 [v _pdata `*v ~T0 @X0 1 r2 ]
 [v _size `us ~T0 @X0 1 r3 ]
-"426
-[; ;usb_device_cdc.c: 426: {
+"425
+[; ;usb_device_cdc.c: 425: {
 [f ]
-"427
-[; ;usb_device_cdc.c: 427:     switch( (uint16_t)event )
+"426
+[; ;usb_device_cdc.c: 426:     switch( (uint16_t)event )
 [e $U 411  ]
+"427
+[; ;usb_device_cdc.c: 427:     {
+{
 "428
-[; ;usb_device_cdc.c: 428:     {
-{
-"429
-[; ;usb_device_cdc.c: 429:         case EVENT_TRANSFER_TERMINATED:
+[; ;usb_device_cdc.c: 428:         case EVENT_TRANSFER_TERMINATED:
 [e :U 412 ]
-"430
-[; ;usb_device_cdc.c: 430:             if(pdata == CDCDataOutHandle)
+"429
+[; ;usb_device_cdc.c: 429:             if(pdata == CDCDataOutHandle)
 [e $ ! == _pdata _CDCDataOutHandle 413  ]
-"431
-[; ;usb_device_cdc.c: 431:             {
+"430
+[; ;usb_device_cdc.c: 430:             {
 {
-"432
-[; ;usb_device_cdc.c: 432:                 CDCDataOutHandle = USBTransferOnePacket(2,0,(uint8_t*)&cdc_data_rx,sizeof(cdc_data_rx));
+"431
+[; ;usb_device_cdc.c: 431:                 CDCDataOutHandle = USBTransferOnePacket(2,0,(uint8_t*)&cdc_data_rx,sizeof(cdc_data_rx));
 [e = _CDCDataOutHandle ( _USBTransferOnePacket (4 , , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U _cdc_data_rx `*uc -> -> # _cdc_data_rx `ui `uc ]
-"433
-[; ;usb_device_cdc.c: 433:             }
+"432
+[; ;usb_device_cdc.c: 432:             }
 }
 [e :U 413 ]
-"434
-[; ;usb_device_cdc.c: 434:             if(pdata == CDCDataInHandle)
+"433
+[; ;usb_device_cdc.c: 433:             if(pdata == CDCDataInHandle)
 [e $ ! == _pdata _CDCDataInHandle 414  ]
-"435
-[; ;usb_device_cdc.c: 435:             {
+"434
+[; ;usb_device_cdc.c: 434:             {
 {
-"437
-[; ;usb_device_cdc.c: 437:                 cdc_trf_state = 0;
+"436
+[; ;usb_device_cdc.c: 436:                 cdc_trf_state = 0;
 [e = _cdc_trf_state -> -> 0 `i `uc ]
-"438
-[; ;usb_device_cdc.c: 438:                 cdc_tx_len = 0;
+"437
+[; ;usb_device_cdc.c: 437:                 cdc_tx_len = 0;
 [e = _cdc_tx_len -> -> 0 `i `uc ]
-"439
-[; ;usb_device_cdc.c: 439:             }
+"438
+[; ;usb_device_cdc.c: 438:             }
 }
 [e :U 414 ]
-"440
-[; ;usb_device_cdc.c: 440:             break;
+"439
+[; ;usb_device_cdc.c: 439:             break;
 [e $U 410  ]
-"441
-[; ;usb_device_cdc.c: 441:         default:
+"440
+[; ;usb_device_cdc.c: 440:         default:
 [e :U 415 ]
-"442
-[; ;usb_device_cdc.c: 442:             return 0;
+"441
+[; ;usb_device_cdc.c: 441:             return 0;
 [e ) -> -> 0 `i `a ]
 [e $UE 409  ]
-"443
-[; ;usb_device_cdc.c: 443:     }
+"442
+[; ;usb_device_cdc.c: 442:     }
 }
 [e $U 410  ]
 [e :U 411 ]
 [e [\ -> -> _event `us `ui , $ -> . `E3111 4 `ui 412
  415 ]
 [e :U 410 ]
-"444
-[; ;usb_device_cdc.c: 444:     return 1;
+"443
+[; ;usb_device_cdc.c: 443:     return 1;
 [e ) -> -> 1 `i `a ]
 [e $UE 409  ]
-"445
-[; ;usb_device_cdc.c: 445: }
+"444
+[; ;usb_device_cdc.c: 444: }
 [e :UE 409 ]
 }
-"486
-[; ;usb_device_cdc.c: 486: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
+"485
+[; ;usb_device_cdc.c: 485: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
 [v _getsUSBUSART `(uc ~T0 @X0 1 ef2`*uc`uc ]
-"487
-[; ;usb_device_cdc.c: 487: {
+"486
+[; ;usb_device_cdc.c: 486: {
 {
 [e :U _getsUSBUSART ]
-"486
-[; ;usb_device_cdc.c: 486: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
+"485
+[; ;usb_device_cdc.c: 485: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
 [v _buffer `*uc ~T0 @X0 1 r1 ]
 [v _len `uc ~T0 @X0 1 r2 ]
-"487
-[; ;usb_device_cdc.c: 487: {
+"486
+[; ;usb_device_cdc.c: 486: {
 [f ]
-"488
-[; ;usb_device_cdc.c: 488:     cdc_rx_len = 0;
+"487
+[; ;usb_device_cdc.c: 487:     cdc_rx_len = 0;
 [e = _cdc_rx_len -> -> 0 `i `uc ]
-"490
-[; ;usb_device_cdc.c: 490:     if(!((CDCDataOutHandle != 0x0000) && ((*(volatile uint8_t*)CDCDataOutHandle & 0x80) != 0x00)))
+"489
+[; ;usb_device_cdc.c: 489:     if(!((CDCDataOutHandle != 0x0000) && ((*(volatile uint8_t*)CDCDataOutHandle & 0x80) != 0x00)))
 [e $ ! ! && != _CDCDataOutHandle -> -> 0 `i `*v != & -> *U -> _CDCDataOutHandle `*Vuc `i -> 128 `i -> 0 `i 417  ]
-"491
-[; ;usb_device_cdc.c: 491:     {
+"490
+[; ;usb_device_cdc.c: 490:     {
 {
-"496
-[; ;usb_device_cdc.c: 496:         if(len > (((volatile BDT_ENTRY*)CDCDataOutHandle)->CNT))
+"495
+[; ;usb_device_cdc.c: 495:         if(len > (((volatile BDT_ENTRY*)CDCDataOutHandle)->CNT))
 [e $ ! > -> _len `i -> . . *U -> _CDCDataOutHandle `*VS375 0 1 `i 418  ]
-"497
-[; ;usb_device_cdc.c: 497:             len = (((volatile BDT_ENTRY*)CDCDataOutHandle)->CNT);
+"496
+[; ;usb_device_cdc.c: 496:             len = (((volatile BDT_ENTRY*)CDCDataOutHandle)->CNT);
 [e = _len . . *U -> _CDCDataOutHandle `*VS375 0 1 ]
 [e :U 418 ]
-"502
-[; ;usb_device_cdc.c: 502:         for(cdc_rx_len = 0; cdc_rx_len < len; cdc_rx_len++)
+"501
+[; ;usb_device_cdc.c: 501:         for(cdc_rx_len = 0; cdc_rx_len < len; cdc_rx_len++)
 {
 [e = _cdc_rx_len -> -> 0 `i `uc ]
 [e $U 422  ]
 [e :U 419 ]
-"503
-[; ;usb_device_cdc.c: 503:             buffer[cdc_rx_len] = cdc_data_rx[cdc_rx_len];
+"502
+[; ;usb_device_cdc.c: 502:             buffer[cdc_rx_len] = cdc_data_rx[cdc_rx_len];
 [e = *U + _buffer * -> _cdc_rx_len `ux -> -> # *U _buffer `ui `ux *U + &U _cdc_data_rx * -> _cdc_rx_len `ux -> -> # *U &U _cdc_data_rx `ui `ux ]
 [e ++ _cdc_rx_len -> -> 1 `i `uc ]
 [e :U 422 ]
 [e $ < -> _cdc_rx_len `i -> _len `i 419  ]
 [e :U 420 ]
 }
-"509
-[; ;usb_device_cdc.c: 509:         CDCDataOutHandle = USBTransferOnePacket(2,0,(uint8_t*)&cdc_data_rx,sizeof(cdc_data_rx));
+"508
+[; ;usb_device_cdc.c: 508:         CDCDataOutHandle = USBTransferOnePacket(2,0,(uint8_t*)&cdc_data_rx,sizeof(cdc_data_rx));
 [e = _CDCDataOutHandle ( _USBTransferOnePacket (4 , , , -> -> 2 `i `uc -> -> 0 `i `uc -> &U _cdc_data_rx `*uc -> -> # _cdc_data_rx `ui `uc ]
-"511
-[; ;usb_device_cdc.c: 511:     }
+"510
+[; ;usb_device_cdc.c: 510:     }
 }
 [e :U 417 ]
-"513
-[; ;usb_device_cdc.c: 513:     return cdc_rx_len;
+"512
+[; ;usb_device_cdc.c: 512:     return cdc_rx_len;
 [e ) _cdc_rx_len ]
 [e $UE 416  ]
-"515
-[; ;usb_device_cdc.c: 515: }
+"514
+[; ;usb_device_cdc.c: 514: }
 [e :UE 416 ]
 }
-"572
-[; ;usb_device_cdc.c: 572: void putUSBUSART(uint8_t *data, uint8_t length)
+"550
+[; ;usb_device_cdc.c: 550: void putUSBUSART(uint8_t *data, uint8_t length)
 [v _putUSBUSART `(v ~T0 @X0 1 ef2`*uc`uc ]
-"573
-[; ;usb_device_cdc.c: 573: {
+"551
+[; ;usb_device_cdc.c: 551: {
 {
 [e :U _putUSBUSART ]
-"572
-[; ;usb_device_cdc.c: 572: void putUSBUSART(uint8_t *data, uint8_t length)
+"550
+[; ;usb_device_cdc.c: 550: void putUSBUSART(uint8_t *data, uint8_t length)
 [v _data `*uc ~T0 @X0 1 r1 ]
 [v _length `uc ~T0 @X0 1 r2 ]
-"573
-[; ;usb_device_cdc.c: 573: {
+"551
+[; ;usb_device_cdc.c: 551: {
 [f ]
-"610
-[; ;usb_device_cdc.c: 610:     if(cdc_trf_state == 0)
+"578
+[; ;usb_device_cdc.c: 578:     if(cdc_trf_state == 0)
 [e $ ! == -> _cdc_trf_state `i -> 0 `i 424  ]
-"611
-[; ;usb_device_cdc.c: 611:     {
+"579
+[; ;usb_device_cdc.c: 579:     {
 {
-"612
-[; ;usb_device_cdc.c: 612:         { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = length; cdc_mem_type = 0x01; cdc_trf_state = 1; };
+"580
+[; ;usb_device_cdc.c: 580:         { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = length; cdc_mem_type = 0x01; cdc_trf_state = 1; };
 {
 [e = . _pCDCSrc 2 _data ]
 [e = _cdc_tx_len _length ]
 [e = _cdc_mem_type -> -> 1 `i `uc ]
 [e = _cdc_trf_state -> -> 1 `i `uc ]
 }
-"613
-[; ;usb_device_cdc.c: 613:     }
+"581
+[; ;usb_device_cdc.c: 581:     }
 }
 [e :U 424 ]
-"615
-[; ;usb_device_cdc.c: 615: }
+"583
+[; ;usb_device_cdc.c: 583: }
 [e :UE 423 ]
 }
-"657
-[; ;usb_device_cdc.c: 657: void putsUSBUSART(char *data)
+"618
+[; ;usb_device_cdc.c: 618: void putsUSBUSART(char *data)
 [v _putsUSBUSART `(v ~T0 @X0 1 ef1`*uc ]
-"658
-[; ;usb_device_cdc.c: 658: {
+"619
+[; ;usb_device_cdc.c: 619: {
 {
 [e :U _putsUSBUSART ]
-"657
-[; ;usb_device_cdc.c: 657: void putsUSBUSART(char *data)
+"618
+[; ;usb_device_cdc.c: 618: void putsUSBUSART(char *data)
 [v _data `*uc ~T0 @X0 1 r1 ]
-"658
-[; ;usb_device_cdc.c: 658: {
+"619
+[; ;usb_device_cdc.c: 619: {
 [f ]
-"659
-[; ;usb_device_cdc.c: 659:     uint8_t len;
+"620
+[; ;usb_device_cdc.c: 620:     uint8_t len;
 [v _len `uc ~T0 @X0 1 a ]
-"660
-[; ;usb_device_cdc.c: 660:     char *pData;
+"621
+[; ;usb_device_cdc.c: 621:     char *pData;
 [v _pData `*uc ~T0 @X0 1 a ]
-"686
-[; ;usb_device_cdc.c: 686:     if(cdc_trf_state != 0)
+"640
+[; ;usb_device_cdc.c: 640:     if(cdc_trf_state != 0)
 [e $ ! != -> _cdc_trf_state `i -> 0 `i 426  ]
-"687
-[; ;usb_device_cdc.c: 687:     {
+"641
+[; ;usb_device_cdc.c: 641:     {
 {
-"689
-[; ;usb_device_cdc.c: 689:         return;
+"643
+[; ;usb_device_cdc.c: 643:         return;
 [e $UE 425  ]
-"690
-[; ;usb_device_cdc.c: 690:     }
+"644
+[; ;usb_device_cdc.c: 644:     }
 }
 [e :U 426 ]
-"696
-[; ;usb_device_cdc.c: 696:     len = 0;
+"649
+[; ;usb_device_cdc.c: 649:     len = 0;
 [e = _len -> -> 0 `i `uc ]
-"697
-[; ;usb_device_cdc.c: 697:     pData = data;
+"650
+[; ;usb_device_cdc.c: 650:     pData = data;
 [e = _pData _data ]
-"698
-[; ;usb_device_cdc.c: 698:     do
+"651
+[; ;usb_device_cdc.c: 651:     do
 [e :U 429 ]
-"699
-[; ;usb_device_cdc.c: 699:     {
+"652
+[; ;usb_device_cdc.c: 652:     {
 {
-"700
-[; ;usb_device_cdc.c: 700:         len++;
+"653
+[; ;usb_device_cdc.c: 653:         len++;
 [e ++ _len -> -> 1 `i `uc ]
-"701
-[; ;usb_device_cdc.c: 701:         if(len == 255) break;
+"654
+[; ;usb_device_cdc.c: 654:         if(len == 255) break;
 [e $ ! == -> _len `i -> 255 `i 430  ]
 [e $U 428  ]
 [e :U 430 ]
-"702
-[; ;usb_device_cdc.c: 702:     }while(*pData++);
+"655
+[; ;usb_device_cdc.c: 655:     }while(*pData++);
 }
 [e $ != -> *U ++ _pData * -> -> 1 `i `x -> -> # *U _pData `i `x `i -> 0 `i 429  ]
 [e :U 428 ]
-"710
-[; ;usb_device_cdc.c: 710:     { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x01; cdc_trf_state = 1; };
+"662
+[; ;usb_device_cdc.c: 662:     { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x01; cdc_trf_state = 1; };
 {
 [e = . _pCDCSrc 2 -> _data `*uc ]
 [e = _cdc_tx_len _len ]
 [e = _cdc_mem_type -> -> 1 `i `uc ]
 [e = _cdc_trf_state -> -> 1 `i `uc ]
 }
-"712
-[; ;usb_device_cdc.c: 712: }
+"664
+[; ;usb_device_cdc.c: 664: }
 [e :UE 425 ]
 }
-"754
-[; ;usb_device_cdc.c: 754: void putrsUSBUSART(const char *data)
+"706
+[; ;usb_device_cdc.c: 706: void putrsUSBUSART(const char *data)
 [v _putrsUSBUSART `(v ~T0 @X0 1 ef1`*Cuc ]
-"755
-[; ;usb_device_cdc.c: 755: {
+"707
+[; ;usb_device_cdc.c: 707: {
 {
 [e :U _putrsUSBUSART ]
-"754
-[; ;usb_device_cdc.c: 754: void putrsUSBUSART(const char *data)
+"706
+[; ;usb_device_cdc.c: 706: void putrsUSBUSART(const char *data)
 [v _data `*Cuc ~T0 @X0 1 r1 ]
-"755
-[; ;usb_device_cdc.c: 755: {
+"707
+[; ;usb_device_cdc.c: 707: {
 [f ]
-"756
-[; ;usb_device_cdc.c: 756:     uint8_t len;
+"708
+[; ;usb_device_cdc.c: 708:     uint8_t len;
 [v _len `uc ~T0 @X0 1 a ]
-"757
-[; ;usb_device_cdc.c: 757:     const char *pData;
+"709
+[; ;usb_device_cdc.c: 709:     const char *pData;
 [v _pData `*Cuc ~T0 @X0 1 a ]
-"783
-[; ;usb_device_cdc.c: 783:     if(cdc_trf_state != 0)
+"735
+[; ;usb_device_cdc.c: 735:     if(cdc_trf_state != 0)
 [e $ ! != -> _cdc_trf_state `i -> 0 `i 432  ]
-"784
-[; ;usb_device_cdc.c: 784:     {
+"736
+[; ;usb_device_cdc.c: 736:     {
 {
-"786
-[; ;usb_device_cdc.c: 786:         return;
+"738
+[; ;usb_device_cdc.c: 738:         return;
 [e $UE 431  ]
-"787
-[; ;usb_device_cdc.c: 787:     }
+"739
+[; ;usb_device_cdc.c: 739:     }
 }
 [e :U 432 ]
-"793
-[; ;usb_device_cdc.c: 793:     len = 0;
+"745
+[; ;usb_device_cdc.c: 745:     len = 0;
 [e = _len -> -> 0 `i `uc ]
-"794
-[; ;usb_device_cdc.c: 794:     pData = data;
+"746
+[; ;usb_device_cdc.c: 746:     pData = data;
 [e = _pData _data ]
-"795
-[; ;usb_device_cdc.c: 795:     do
+"747
+[; ;usb_device_cdc.c: 747:     do
 [e :U 435 ]
-"796
-[; ;usb_device_cdc.c: 796:     {
+"748
+[; ;usb_device_cdc.c: 748:     {
 {
-"797
-[; ;usb_device_cdc.c: 797:         len++;
+"749
+[; ;usb_device_cdc.c: 749:         len++;
 [e ++ _len -> -> 1 `i `uc ]
-"798
-[; ;usb_device_cdc.c: 798:         if(len == 255) break;
+"750
+[; ;usb_device_cdc.c: 750:         if(len == 255) break;
 [e $ ! == -> _len `i -> 255 `i 436  ]
 [e $U 434  ]
 [e :U 436 ]
-"799
-[; ;usb_device_cdc.c: 799:     }while(*pData++);
+"751
+[; ;usb_device_cdc.c: 751:     }while(*pData++);
 }
 [e $ != -> *U ++ _pData * -> -> 1 `i `x -> -> # *U _pData `i `x `i -> 0 `i 435  ]
 [e :U 434 ]
-"808
-[; ;usb_device_cdc.c: 808:     { pCDCSrc.bRom = (const uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x00; cdc_trf_state = 1; };
+"760
+[; ;usb_device_cdc.c: 760:     { pCDCSrc.bRom = (const uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x00; cdc_trf_state = 1; };
 {
 [e = . _pCDCSrc 4 -> _data `*Cuc ]
 [e = _cdc_tx_len _len ]
 [e = _cdc_mem_type -> -> 0 `i `uc ]
 [e = _cdc_trf_state -> -> 1 `i `uc ]
 }
-"811
-[; ;usb_device_cdc.c: 811: }
+"763
+[; ;usb_device_cdc.c: 763: }
 [e :UE 431 ]
 }
-"864
-[; ;usb_device_cdc.c: 864: void CDCTxService(void)
+"814
+[; ;usb_device_cdc.c: 814: void CDCTxService(void)
 [v _CDCTxService `(v ~T0 @X0 1 ef ]
-"865
-[; ;usb_device_cdc.c: 865: {
+"815
+[; ;usb_device_cdc.c: 815: {
 {
 [e :U _CDCTxService ]
 [f ]
-"866
-[; ;usb_device_cdc.c: 866:     uint8_t byte_to_send;
+"816
+[; ;usb_device_cdc.c: 816:     uint8_t byte_to_send;
 [v _byte_to_send `uc ~T0 @X0 1 a ]
-"867
-[; ;usb_device_cdc.c: 867:     uint8_t i;
+"817
+[; ;usb_device_cdc.c: 817:     uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"871
-[; ;usb_device_cdc.c: 871:     {};
+"821
+[; ;usb_device_cdc.c: 821:     {};
 {
 }
-"873
-[; ;usb_device_cdc.c: 873:     if(((CDCDataInHandle != 0x0000) && ((*(volatile uint8_t*)CDCDataInHandle & 0x80) != 0x00)))
+"823
+[; ;usb_device_cdc.c: 823:     if(((CDCDataInHandle != 0x0000) && ((*(volatile uint8_t*)CDCDataInHandle & 0x80) != 0x00)))
 [e $ ! && != _CDCDataInHandle -> -> 0 `i `*v != & -> *U -> _CDCDataInHandle `*Vuc `i -> 128 `i -> 0 `i 438  ]
-"874
-[; ;usb_device_cdc.c: 874:     {
+"824
+[; ;usb_device_cdc.c: 824:     {
 {
-"876
-[; ;usb_device_cdc.c: 876:         return;
+"826
+[; ;usb_device_cdc.c: 826:         return;
 [e $UE 437  ]
-"877
-[; ;usb_device_cdc.c: 877:     }
+"827
+[; ;usb_device_cdc.c: 827:     }
 }
 [e :U 438 ]
-"884
-[; ;usb_device_cdc.c: 884:     if(cdc_trf_state == 3)
+"837
+[; ;usb_device_cdc.c: 837:     if(cdc_trf_state == 3)
 [e $ ! == -> _cdc_trf_state `i -> 3 `i 439  ]
-"885
-[; ;usb_device_cdc.c: 885:         cdc_trf_state = 0;
+"838
+[; ;usb_device_cdc.c: 838:         cdc_trf_state = 0;
 [e = _cdc_trf_state -> -> 0 `i `uc ]
 [e :U 439 ]
-"890
-[; ;usb_device_cdc.c: 890:     if(cdc_trf_state == 0)
+"844
+[; ;usb_device_cdc.c: 844:     if(cdc_trf_state == 0)
 [e $ ! == -> _cdc_trf_state `i -> 0 `i 440  ]
-"891
-[; ;usb_device_cdc.c: 891:     {
+"845
+[; ;usb_device_cdc.c: 845:     {
 {
-"893
-[; ;usb_device_cdc.c: 893:         return;
+"847
+[; ;usb_device_cdc.c: 847:         return;
 [e $UE 437  ]
-"894
-[; ;usb_device_cdc.c: 894:     }
+"848
+[; ;usb_device_cdc.c: 848:     }
 }
 [e :U 440 ]
-"899
-[; ;usb_device_cdc.c: 899:     if(cdc_trf_state == 2)
+"854
+[; ;usb_device_cdc.c: 854:     if(cdc_trf_state == 2)
 [e $ ! == -> _cdc_trf_state `i -> 2 `i 441  ]
-"900
-[; ;usb_device_cdc.c: 900:     {
+"855
+[; ;usb_device_cdc.c: 855:     {
 {
-"901
-[; ;usb_device_cdc.c: 901:         CDCDataInHandle = USBTransferOnePacket(2,1,((void*)0),0);
+"856
+[; ;usb_device_cdc.c: 856:         CDCDataInHandle = USBTransferOnePacket(2,1,((void*)0),0);
 [e = _CDCDataInHandle ( _USBTransferOnePacket (4 , , , -> -> 2 `i `uc -> -> 1 `i `uc -> -> -> 0 `i `*v `*uc -> -> 0 `i `uc ]
-"903
-[; ;usb_device_cdc.c: 903:         cdc_trf_state = 3;
+"858
+[; ;usb_device_cdc.c: 858:         cdc_trf_state = 3;
 [e = _cdc_trf_state -> -> 3 `i `uc ]
-"904
-[; ;usb_device_cdc.c: 904:     }
+"859
+[; ;usb_device_cdc.c: 859:     }
 }
 [e $U 442  ]
-"905
-[; ;usb_device_cdc.c: 905:     else if(cdc_trf_state == 1)
+"860
+[; ;usb_device_cdc.c: 860:     else if(cdc_trf_state == 1)
 [e :U 441 ]
 [e $ ! == -> _cdc_trf_state `i -> 1 `i 443  ]
-"906
-[; ;usb_device_cdc.c: 906:     {
+"861
+[; ;usb_device_cdc.c: 861:     {
 {
-"910
-[; ;usb_device_cdc.c: 910:      if(cdc_tx_len > sizeof(cdc_data_tx))
+"866
+[; ;usb_device_cdc.c: 866:      if(cdc_tx_len > sizeof(cdc_data_tx))
 [e $ ! > -> _cdc_tx_len `ui -> # _cdc_data_tx `ui 444  ]
-"911
-[; ;usb_device_cdc.c: 911:          byte_to_send = sizeof(cdc_data_tx);
+"867
+[; ;usb_device_cdc.c: 867:          byte_to_send = sizeof(cdc_data_tx);
 [e = _byte_to_send -> -> # _cdc_data_tx `ui `uc ]
 [e $U 445  ]
-"912
-[; ;usb_device_cdc.c: 912:      else
+"868
+[; ;usb_device_cdc.c: 868:      else
 [e :U 444 ]
-"913
-[; ;usb_device_cdc.c: 913:          byte_to_send = cdc_tx_len;
+"869
+[; ;usb_device_cdc.c: 869:          byte_to_send = cdc_tx_len;
 [e = _byte_to_send _cdc_tx_len ]
 [e :U 445 ]
-"918
-[; ;usb_device_cdc.c: 918:      cdc_tx_len = cdc_tx_len - byte_to_send;
+"875
+[; ;usb_device_cdc.c: 875:      cdc_tx_len = cdc_tx_len - byte_to_send;
 [e = _cdc_tx_len -> - -> _cdc_tx_len `i -> _byte_to_send `i `uc ]
-"920
-[; ;usb_device_cdc.c: 920:         pCDCDst.bRam = (uint8_t*)&cdc_data_tx;
+"877
+[; ;usb_device_cdc.c: 877:         pCDCDst.bRam = (uint8_t*)&cdc_data_tx;
 [e = . _pCDCDst 2 -> &U _cdc_data_tx `*uc ]
-"922
-[; ;usb_device_cdc.c: 922:         i = byte_to_send;
+"879
+[; ;usb_device_cdc.c: 879:         i = byte_to_send;
 [e = _i _byte_to_send ]
-"923
-[; ;usb_device_cdc.c: 923:         if(cdc_mem_type == 0x00)
+"880
+[; ;usb_device_cdc.c: 880:         if(cdc_mem_type == 0x00)
 [e $ ! == -> _cdc_mem_type `i -> 0 `i 446  ]
-"924
-[; ;usb_device_cdc.c: 924:         {
+"881
+[; ;usb_device_cdc.c: 881:         {
 {
-"925
-[; ;usb_device_cdc.c: 925:             while(i)
+"882
+[; ;usb_device_cdc.c: 882:             while(i)
 [e $U 447  ]
 [e :U 448 ]
-"926
-[; ;usb_device_cdc.c: 926:             {
+"883
+[; ;usb_device_cdc.c: 883:             {
 {
-"927
-[; ;usb_device_cdc.c: 927:                 *pCDCDst.bRam = *pCDCSrc.bRom;
+"884
+[; ;usb_device_cdc.c: 884:                 *pCDCDst.bRam = *pCDCSrc.bRom;
 [e = *U . _pCDCDst 2 *U . _pCDCSrc 4 ]
-"928
-[; ;usb_device_cdc.c: 928:                 pCDCDst.bRam++;
+"885
+[; ;usb_device_cdc.c: 885:                 pCDCDst.bRam++;
 [e ++ . _pCDCDst 2 * -> -> 1 `i `x -> -> # *U . _pCDCDst 2 `i `x ]
-"929
-[; ;usb_device_cdc.c: 929:                 pCDCSrc.bRom++;
+"886
+[; ;usb_device_cdc.c: 886:                 pCDCSrc.bRom++;
 [e ++ . _pCDCSrc 4 * -> -> 1 `i `x -> -> # *U . _pCDCSrc 4 `i `x ]
-"930
-[; ;usb_device_cdc.c: 930:                 i--;
+"887
+[; ;usb_device_cdc.c: 887:                 i--;
 [e -- _i -> -> 1 `i `uc ]
-"931
-[; ;usb_device_cdc.c: 931:             }
+"888
+[; ;usb_device_cdc.c: 888:             }
 }
 [e :U 447 ]
-"925
-[; ;usb_device_cdc.c: 925:             while(i)
+"882
+[; ;usb_device_cdc.c: 882:             while(i)
 [e $ != -> _i `i -> 0 `i 448  ]
 [e :U 449 ]
-"932
-[; ;usb_device_cdc.c: 932:         }
+"889
+[; ;usb_device_cdc.c: 889:         }
 }
 [e $U 450  ]
-"933
-[; ;usb_device_cdc.c: 933:         else
+"890
+[; ;usb_device_cdc.c: 890:         else
 [e :U 446 ]
-"934
-[; ;usb_device_cdc.c: 934:         {
+"891
+[; ;usb_device_cdc.c: 891:         {
 {
-"935
-[; ;usb_device_cdc.c: 935:             while(i)
+"892
+[; ;usb_device_cdc.c: 892:             while(i)
 [e $U 451  ]
 [e :U 452 ]
-"936
-[; ;usb_device_cdc.c: 936:             {
+"893
+[; ;usb_device_cdc.c: 893:             {
 {
-"937
-[; ;usb_device_cdc.c: 937:                 *pCDCDst.bRam = *pCDCSrc.bRam;
+"894
+[; ;usb_device_cdc.c: 894:                 *pCDCDst.bRam = *pCDCSrc.bRam;
 [e = *U . _pCDCDst 2 *U . _pCDCSrc 2 ]
-"938
-[; ;usb_device_cdc.c: 938:                 pCDCDst.bRam++;
+"895
+[; ;usb_device_cdc.c: 895:                 pCDCDst.bRam++;
 [e ++ . _pCDCDst 2 * -> -> 1 `i `x -> -> # *U . _pCDCDst 2 `i `x ]
-"939
-[; ;usb_device_cdc.c: 939:                 pCDCSrc.bRam++;
+"896
+[; ;usb_device_cdc.c: 896:                 pCDCSrc.bRam++;
 [e ++ . _pCDCSrc 2 * -> -> 1 `i `x -> -> # *U . _pCDCSrc 2 `i `x ]
-"940
-[; ;usb_device_cdc.c: 940:                 i--;
+"897
+[; ;usb_device_cdc.c: 897:                 i--;
 [e -- _i -> -> 1 `i `uc ]
-"941
-[; ;usb_device_cdc.c: 941:             }
+"898
+[; ;usb_device_cdc.c: 898:             }
 }
 [e :U 451 ]
-"935
-[; ;usb_device_cdc.c: 935:             while(i)
+"892
+[; ;usb_device_cdc.c: 892:             while(i)
 [e $ != -> _i `i -> 0 `i 452  ]
 [e :U 453 ]
-"942
-[; ;usb_device_cdc.c: 942:         }
+"899
+[; ;usb_device_cdc.c: 899:         }
 }
 [e :U 450 ]
-"948
-[; ;usb_device_cdc.c: 948:         if(cdc_tx_len == 0)
+"907
+[; ;usb_device_cdc.c: 907:         if(cdc_tx_len == 0)
 [e $ ! == -> _cdc_tx_len `i -> 0 `i 454  ]
-"949
-[; ;usb_device_cdc.c: 949:         {
+"908
+[; ;usb_device_cdc.c: 908:         {
 {
-"950
-[; ;usb_device_cdc.c: 950:             if(byte_to_send == 64)
+"909
+[; ;usb_device_cdc.c: 909:             if(byte_to_send == 64)
 [e $ ! == -> _byte_to_send `i -> 64 `i 455  ]
-"951
-[; ;usb_device_cdc.c: 951:                 cdc_trf_state = 2;
+"910
+[; ;usb_device_cdc.c: 910:                 cdc_trf_state = 2;
 [e = _cdc_trf_state -> -> 2 `i `uc ]
 [e $U 456  ]
-"952
-[; ;usb_device_cdc.c: 952:             else
+"911
+[; ;usb_device_cdc.c: 911:             else
 [e :U 455 ]
-"953
-[; ;usb_device_cdc.c: 953:                 cdc_trf_state = 3;
+"912
+[; ;usb_device_cdc.c: 912:                 cdc_trf_state = 3;
 [e = _cdc_trf_state -> -> 3 `i `uc ]
 [e :U 456 ]
-"954
-[; ;usb_device_cdc.c: 954:         }
+"913
+[; ;usb_device_cdc.c: 913:         }
 }
 [e :U 454 ]
-"955
-[; ;usb_device_cdc.c: 955:         CDCDataInHandle = USBTransferOnePacket(2,1,(uint8_t*)&cdc_data_tx,byte_to_send);
+"914
+[; ;usb_device_cdc.c: 914:         CDCDataInHandle = USBTransferOnePacket(2,1,(uint8_t*)&cdc_data_tx,byte_to_send);
 [e = _CDCDataInHandle ( _USBTransferOnePacket (4 , , , -> -> 2 `i `uc -> -> 1 `i `uc -> &U _cdc_data_tx `*uc _byte_to_send ]
-"957
-[; ;usb_device_cdc.c: 957:     }
+"916
+[; ;usb_device_cdc.c: 916:     }
 }
 [e :U 443 ]
 [e :U 442 ]
-"960
-[; ;usb_device_cdc.c: 960: }
+"919
+[; ;usb_device_cdc.c: 919: }
 [e :UE 437 ]
 }

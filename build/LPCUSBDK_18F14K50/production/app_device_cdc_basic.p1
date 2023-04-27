@@ -14,12 +14,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "957
 [; ;./usb_device_cdc.h: 957: extern LINE_CODING line_coding;
 [v _line_coding `S382 ~T0 @X0 0 e ]
-"81 app_device_cdc_basic.c
-[; ;app_device_cdc_basic.c: 81:     if( USBDeviceState < CONFIGURED_STATE )
+"90 app_device_cdc_basic.c
+[; ;app_device_cdc_basic.c: 90:     if( USBDeviceState < CONFIGURED_STATE )
 [c E3270 0 1 2 4 8 16 32 .. ]
 [n E3270 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
-"2050 ./usb_device.h
-[; ;./usb_device.h: 2050: extern USB_DEVICE_STATE USBDeviceState;
+"2049 ./usb_device.h
+[; ;./usb_device.h: 2049: extern USB_DEVICE_STATE USBDeviceState;
 [v _USBDeviceState `E3270 ~T0 @X0 0 e ]
 "1421 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 1421:     struct {
@@ -32,8 +32,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1431
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 1431: extern volatile UCONbits_t UCONbits __attribute__((address(0xF64)));
 [v _UCONbits `VS60 ~T0 @X0 0 e@3940 ]
-"98 app_device_cdc_basic.c
-[; ;app_device_cdc_basic.c: 98:     if(BUTTON_IsPressed(BUTTON_S1) == 1)
+"107 app_device_cdc_basic.c
+[; ;app_device_cdc_basic.c: 107:     if(BUTTON_IsPressed(BUTTON_S1) == 1)
 [c E2809 0 1 .. ]
 [n E2809 . BUTTON_NONE BUTTON_S1  ]
 "51 ./buttons.h
@@ -568,57 +568,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;app_device_cdc_basic.c: 38: static uint8_t writeBuffer[64];
 [v _writeBuffer `uc ~T0 @X0 -> 64 `i s ]
-"52
-[; ;app_device_cdc_basic.c: 52: void APP_DeviceCDCBasicDemoInitialize()
+"55
+[; ;app_device_cdc_basic.c: 55: void APP_DeviceCDCBasicDemoInitialize()
 [v _APP_DeviceCDCBasicDemoInitialize `(v ~T0 @X0 1 ef ]
-"53
-[; ;app_device_cdc_basic.c: 53: {
+"56
+[; ;app_device_cdc_basic.c: 56: {
 {
 [e :U _APP_DeviceCDCBasicDemoInitialize ]
 [f ]
-"54
-[; ;app_device_cdc_basic.c: 54:     line_coding.bCharFormat = 0;
+"58
+[; ;app_device_cdc_basic.c: 58:      line_coding.bCharFormat = 0;
 [e = . . _line_coding 1 1 -> -> 0 `i `uc ]
-"55
-[; ;app_device_cdc_basic.c: 55:     line_coding.bDataBits = 8;
-[e = . . _line_coding 1 3 -> -> 8 `i `uc ]
-"56
-[; ;app_device_cdc_basic.c: 56:     line_coding.bParityType = 0;
-[e = . . _line_coding 1 2 -> -> 0 `i `uc ]
-"57
-[; ;app_device_cdc_basic.c: 57:     line_coding.dwDTERate = 9600;
-[e = . . _line_coding 1 0 -> -> -> 9600 `i `l `ul ]
 "59
-[; ;app_device_cdc_basic.c: 59:     buttonPressed = 0;
-[e = _buttonPressed -> -> 0 `i `a ]
+[; ;app_device_cdc_basic.c: 59:     line_coding.bDataBits = 8;
+[e = . . _line_coding 1 3 -> -> 8 `i `uc ]
 "60
-[; ;app_device_cdc_basic.c: 60: }
+[; ;app_device_cdc_basic.c: 60:     line_coding.bParityType = 0;
+[e = . . _line_coding 1 2 -> -> 0 `i `uc ]
+"61
+[; ;app_device_cdc_basic.c: 61:     line_coding.dwDTERate = 9600;
+[e = . . _line_coding 1 0 -> -> -> 9600 `i `l `ul ]
+"63
+[; ;app_device_cdc_basic.c: 63:     buttonPressed = 0;
+[e = _buttonPressed -> -> 0 `i `a ]
+"66
+[; ;app_device_cdc_basic.c: 66: }
 [e :UE 395 ]
 }
-"76
-[; ;app_device_cdc_basic.c: 76: void APP_DeviceCDCBasicDemoTasks()
+"84
+[; ;app_device_cdc_basic.c: 84: void APP_DeviceCDCBasicDemoTasks()
 [v _APP_DeviceCDCBasicDemoTasks `(v ~T0 @X0 1 ef ]
-"77
-[; ;app_device_cdc_basic.c: 77: {
+"85
+[; ;app_device_cdc_basic.c: 85: {
 {
 [e :U _APP_DeviceCDCBasicDemoTasks ]
 [f ]
-"81
-[; ;app_device_cdc_basic.c: 81:     if( USBDeviceState < CONFIGURED_STATE )
-[e $ ! < -> _USBDeviceState `ui -> . `E3270 6 `ui 397  ]
-"82
-[; ;app_device_cdc_basic.c: 82:     {
-{
-"83
-[; ;app_device_cdc_basic.c: 83:         return;
-[e $UE 396  ]
-"84
-[; ;app_device_cdc_basic.c: 84:     }
-}
-[e :U 397 ]
 "90
-[; ;app_device_cdc_basic.c: 90:     if( UCONbits.SUSPND== 1 )
-[e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 398  ]
+[; ;app_device_cdc_basic.c: 90:     if( USBDeviceState < CONFIGURED_STATE )
+[e $ ! < -> _USBDeviceState `ui -> . `E3270 6 `ui 397  ]
 "91
 [; ;app_device_cdc_basic.c: 91:     {
 {
@@ -628,109 +615,122 @@ Version 4.0 HI-TECH Software Intermediate Code
 "93
 [; ;app_device_cdc_basic.c: 93:     }
 }
-[e :U 398 ]
-"98
-[; ;app_device_cdc_basic.c: 98:     if(BUTTON_IsPressed(BUTTON_S1) == 1)
-[e $ ! == -> ( _BUTTON_IsPressed (1 . `E2809 1 `i -> 1 `i 399  ]
+[e :U 397 ]
 "99
-[; ;app_device_cdc_basic.c: 99:     {
+[; ;app_device_cdc_basic.c: 99:     if( UCONbits.SUSPND== 1 )
+[e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 398  ]
+"100
+[; ;app_device_cdc_basic.c: 100:     {
 {
-"103
-[; ;app_device_cdc_basic.c: 103:         if(buttonPressed == 0)
-[e $ ! == -> _buttonPressed `i -> 0 `i 400  ]
-"104
-[; ;app_device_cdc_basic.c: 104:         {
-{
+"101
+[; ;app_device_cdc_basic.c: 101:         return;
+[e $UE 396  ]
+"102
+[; ;app_device_cdc_basic.c: 102:     }
+}
+[e :U 398 ]
 "107
-[; ;app_device_cdc_basic.c: 107:             if((cdc_trf_state == 0) == 1)
-[e $ ! == -> == -> _cdc_trf_state `i -> 0 `i `i -> 1 `i 401  ]
+[; ;app_device_cdc_basic.c: 107:     if(BUTTON_IsPressed(BUTTON_S1) == 1)
+[e $ ! == -> ( _BUTTON_IsPressed (1 . `E2809 1 `i -> 1 `i 399  ]
 "108
-[; ;app_device_cdc_basic.c: 108:             {
+[; ;app_device_cdc_basic.c: 108:     {
 {
-"109
-[; ;app_device_cdc_basic.c: 109:                 putrsUSBUSART(buttonMessage);
+"112
+[; ;app_device_cdc_basic.c: 112:         if(buttonPressed == 0)
+[e $ ! == -> _buttonPressed `i -> 0 `i 400  ]
+"113
+[; ;app_device_cdc_basic.c: 113:         {
+{
+"116
+[; ;app_device_cdc_basic.c: 116:             if((cdc_trf_state == 0) == 1)
+[e $ ! == -> == -> _cdc_trf_state `i -> 0 `i `i -> 1 `i 401  ]
+"117
+[; ;app_device_cdc_basic.c: 117:             {
+{
+"118
+[; ;app_device_cdc_basic.c: 118:                 putrsUSBUSART(buttonMessage);
 [e ( _putrsUSBUSART (1 -> &U _buttonMessage `*Cuc ]
-"110
-[; ;app_device_cdc_basic.c: 110:                 buttonPressed = 1;
+"119
+[; ;app_device_cdc_basic.c: 119:                 buttonPressed = 1;
 [e = _buttonPressed -> -> 1 `i `a ]
-"111
-[; ;app_device_cdc_basic.c: 111:             }
+"120
+[; ;app_device_cdc_basic.c: 120:             }
 }
 [e :U 401 ]
-"112
-[; ;app_device_cdc_basic.c: 112:         }
+"121
+[; ;app_device_cdc_basic.c: 121:         }
 }
 [e :U 400 ]
-"113
-[; ;app_device_cdc_basic.c: 113:     }
+"122
+[; ;app_device_cdc_basic.c: 122:     }
 }
 [e $U 402  ]
-"114
-[; ;app_device_cdc_basic.c: 114:     else
+"123
+[; ;app_device_cdc_basic.c: 123:     else
 [e :U 399 ]
-"115
-[; ;app_device_cdc_basic.c: 115:     {
+"124
+[; ;app_device_cdc_basic.c: 124:     {
 {
-"119
-[; ;app_device_cdc_basic.c: 119:         buttonPressed = 0;
+"128
+[; ;app_device_cdc_basic.c: 128:         buttonPressed = 0;
 [e = _buttonPressed -> -> 0 `i `a ]
-"120
-[; ;app_device_cdc_basic.c: 120:     }
+"129
+[; ;app_device_cdc_basic.c: 129:     }
 }
 [e :U 402 ]
-"125
-[; ;app_device_cdc_basic.c: 125:     if( (cdc_trf_state == 0) == 1)
+"134
+[; ;app_device_cdc_basic.c: 134:     if( (cdc_trf_state == 0) == 1)
 [e $ ! == -> == -> _cdc_trf_state `i -> 0 `i `i -> 1 `i 403  ]
-"126
-[; ;app_device_cdc_basic.c: 126:     {
+"135
+[; ;app_device_cdc_basic.c: 135:     {
 {
-"127
-[; ;app_device_cdc_basic.c: 127:         uint8_t i;
+"136
+[; ;app_device_cdc_basic.c: 136:         uint8_t i;
 [v _i `uc ~T0 @X0 1 a ]
-"128
-[; ;app_device_cdc_basic.c: 128:         uint8_t numBytesRead;
+"137
+[; ;app_device_cdc_basic.c: 137:         uint8_t numBytesRead;
 [v _numBytesRead `uc ~T0 @X0 1 a ]
-"130
-[; ;app_device_cdc_basic.c: 130:         numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
+"139
+[; ;app_device_cdc_basic.c: 139:         numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
 [e = _numBytesRead ( _getsUSBUSART (2 , &U _readBuffer -> -> # _readBuffer `ui `uc ]
-"133
-[; ;app_device_cdc_basic.c: 133:         for(i=0; i<numBytesRead; i++)
+"142
+[; ;app_device_cdc_basic.c: 142:         for(i=0; i<numBytesRead; i++)
 {
 [e = _i -> -> 0 `i `uc ]
 [e $U 407  ]
 [e :U 404 ]
-"134
-[; ;app_device_cdc_basic.c: 134:         {
-{
-"135
-[; ;app_device_cdc_basic.c: 135:             switch(readBuffer[i])
-[e $U 409  ]
-"136
-[; ;app_device_cdc_basic.c: 136:             {
-{
-"140
-[; ;app_device_cdc_basic.c: 140:                 case 0x0A:
-[e :U 410 ]
-"141
-[; ;app_device_cdc_basic.c: 141:                 case 0x0D:
-[e :U 411 ]
-"142
-[; ;app_device_cdc_basic.c: 142:                     writeBuffer[i] = readBuffer[i];
-[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux ]
 "143
-[; ;app_device_cdc_basic.c: 143:                     break;
-[e $U 408  ]
+[; ;app_device_cdc_basic.c: 143:         {
+{
+"144
+[; ;app_device_cdc_basic.c: 144:             switch(readBuffer[i])
+[e $U 409  ]
+"145
+[; ;app_device_cdc_basic.c: 145:             {
+{
+"149
+[; ;app_device_cdc_basic.c: 149:                 case 0x0A:
+[e :U 410 ]
 "150
-[; ;app_device_cdc_basic.c: 150:                 default:
-[e :U 412 ]
+[; ;app_device_cdc_basic.c: 150:                 case 0x0D:
+[e :U 411 ]
 "151
-[; ;app_device_cdc_basic.c: 151:                     writeBuffer[i] = readBuffer[i] + 1;
-[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux -> + -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i -> 1 `i `uc ]
+[; ;app_device_cdc_basic.c: 151:                     writeBuffer[i] = readBuffer[i];
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux ]
 "152
 [; ;app_device_cdc_basic.c: 152:                     break;
 [e $U 408  ]
-"153
-[; ;app_device_cdc_basic.c: 153:             }
+"159
+[; ;app_device_cdc_basic.c: 159:                 default:
+[e :U 412 ]
+"160
+[; ;app_device_cdc_basic.c: 160:                     writeBuffer[i] = readBuffer[i] + 1;
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux -> + -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i -> 1 `i `uc ]
+"161
+[; ;app_device_cdc_basic.c: 161:                     break;
+[e $U 408  ]
+"162
+[; ;app_device_cdc_basic.c: 162:             }
 }
 [e $U 408  ]
 [e :U 409 ]
@@ -738,35 +738,35 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 13 `i 411
  412 ]
 [e :U 408 ]
-"154
-[; ;app_device_cdc_basic.c: 154:         }
+"163
+[; ;app_device_cdc_basic.c: 163:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
 [e :U 407 ]
 [e $ < -> _i `i -> _numBytesRead `i 404  ]
 [e :U 405 ]
 }
-"156
-[; ;app_device_cdc_basic.c: 156:         if(numBytesRead > 0)
+"165
+[; ;app_device_cdc_basic.c: 165:         if(numBytesRead > 0)
 [e $ ! > -> _numBytesRead `i -> 0 `i 413  ]
-"157
-[; ;app_device_cdc_basic.c: 157:         {
+"166
+[; ;app_device_cdc_basic.c: 166:         {
 {
-"161
-[; ;app_device_cdc_basic.c: 161:             putUSBUSART(writeBuffer,numBytesRead);
+"170
+[; ;app_device_cdc_basic.c: 170:             putUSBUSART(writeBuffer,numBytesRead);
 [e ( _putUSBUSART (2 , &U _writeBuffer _numBytesRead ]
-"162
-[; ;app_device_cdc_basic.c: 162:         }
+"171
+[; ;app_device_cdc_basic.c: 171:         }
 }
 [e :U 413 ]
-"163
-[; ;app_device_cdc_basic.c: 163:     }
+"172
+[; ;app_device_cdc_basic.c: 172:     }
 }
 [e :U 403 ]
-"165
-[; ;app_device_cdc_basic.c: 165:     CDCTxService();
+"174
+[; ;app_device_cdc_basic.c: 174:     CDCTxService();
 [e ( _CDCTxService ..  ]
-"166
-[; ;app_device_cdc_basic.c: 166: }
+"176
+[; ;app_device_cdc_basic.c: 176: }
 [e :UE 396 ]
 }

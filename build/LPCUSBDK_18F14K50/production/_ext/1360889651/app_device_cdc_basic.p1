@@ -1,4 +1,26 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"847 ../CDC/usb_device_cdc.h
+[; ;../CDC/usb_device_cdc.h: 847:     {
+[s S383 `uc -> 7 `i ]
+[n S383 . _byte ]
+"851
+[; ;../CDC/usb_device_cdc.h: 851:     {
+[s S384 `ul 1 `uc 1 `uc 1 `uc 1 ]
+[n S384 . dwDTERate bCharFormat bParityType bDataBits ]
+"845
+[; ;../CDC/usb_device_cdc.h: 845: {
+[u S382 `S383 1 `S384 1 ]
+[n S382 _LINE_CODING . . ]
+"957
+[; ;../CDC/usb_device_cdc.h: 957: extern LINE_CODING line_coding;
+[v _line_coding `S382 ~T0 @X0 0 e ]
+"81 ../CDC/app_device_cdc_basic.c
+[; ;../CDC/app_device_cdc_basic.c: 81:     if( USBDeviceState < CONFIGURED_STATE )
+[c E3270 0 1 2 4 8 16 32 .. ]
+[n E3270 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
+"2050 ../CDC/usb_device.h
+[; ;../CDC/usb_device.h: 2050: extern USB_DEVICE_STATE USBDeviceState;
+[v _USBDeviceState `E3270 ~T0 @X0 0 e ]
 "1421 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 1421:     struct {
 [s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -10,23 +32,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1431
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 1431: extern volatile UCONbits_t UCONbits __attribute__((address(0xF64)));
 [v _UCONbits `VS60 ~T0 @X0 0 e@3940 ]
-"56 app_led_usb_status.c
-[; ;app_led_usb_status.c: 56:         LED_Off(LED_D1);
-[c E2817 0 1 2 3 4 .. ]
-[n E2817 . LED_NONE LED_D1 LED_D2 LED_D3 LED_D4  ]
-"74 ./leds.h
-[; ;./leds.h: 74: void LED_Off(LED led);
-[v _LED_Off `(v ~T0 @X0 0 ef1`E2817 ]
-"56
-[; ;./leds.h: 56: void LED_On(LED led);
-[v _LED_On `(v ~T0 @X0 0 ef1`E2817 ]
-"95 app_led_usb_status.c
-[; ;app_led_usb_status.c: 95:     }
-[c E2910 0 1 2 4 8 16 32 .. ]
-[n E2910 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
-"2049 ./usb_device.h
-[; ;./usb_device.h: 2049: extern USB_DEVICE_STATE USBDeviceState;
-[v _USBDeviceState `E2910 ~T0 @X0 0 e ]
+"98 ../CDC/app_device_cdc_basic.c
+[; ;../CDC/app_device_cdc_basic.c: 98:     if(BUTTON_IsPressed(BUTTON_S1) == 1)
+[c E2809 0 1 .. ]
+[n E2809 . BUTTON_NONE BUTTON_S1  ]
+"51 ../CDC/buttons.h
+[; ;../CDC/buttons.h: 51: _Bool BUTTON_IsPressed(BUTTON button);
+[v _BUTTON_IsPressed `(a ~T0 @X0 0 ef1`E2809 ]
+"951 ../CDC/usb_device_cdc.h
+[; ;../CDC/usb_device_cdc.h: 951: extern uint8_t cdc_trf_state;
+[v _cdc_trf_state `uc ~T0 @X0 0 e ]
+"779
+[; ;../CDC/usb_device_cdc.h: 779: void putrsUSBUSART(const char *data);
+[v _putrsUSBUSART `(v ~T0 @X0 0 ef1`*Cuc ]
+"653
+[; ;../CDC/usb_device_cdc.h: 653: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len);
+[v _getsUSBUSART `(uc ~T0 @X0 0 ef2`*uc`uc ]
+"695
+[; ;../CDC/usb_device_cdc.h: 695: void putUSBUSART(uint8_t *data, uint8_t Length);
+[v _putUSBUSART `(v ~T0 @X0 0 ef2`*uc`uc ]
+"831
+[; ;../CDC/usb_device_cdc.h: 831: void CDCTxService(void);
+[v _CDCTxService `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 54: __asm("UEP0 equ 0F53h");
 [; <" UEP0 equ 0F53h ;# ">
@@ -507,152 +534,239 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7437
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 7437: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"50 app_led_usb_status.c
-[; ;app_led_usb_status.c: 50: void APP_LEDUpdateUSBStatus(void)
-[v _APP_LEDUpdateUSBStatus `(v ~T0 @X0 1 ef ]
-"51
-[; ;app_led_usb_status.c: 51: {
-{
-[e :U _APP_LEDUpdateUSBStatus ]
-[f ]
-"52
-[; ;app_led_usb_status.c: 52:     static uint16_t ledCount = 0;
-[v F3306 `us ~T0 @X0 1 s ledCount ]
-[i F3306
--> -> 0 `i `us
+"35 ../CDC/app_device_cdc_basic.c
+[; ;../CDC/app_device_cdc_basic.c: 35: static _Bool buttonPressed;
+[v _buttonPressed `a ~T0 @X0 1 s ]
+"36
+[; ;../CDC/app_device_cdc_basic.c: 36: static char buttonMessage[] = "Button pressed.\r\n";
+[v _buttonMessage `uc ~T0 @X0 -> 18 `i s ]
+[i _buttonMessage
+:U ..
+-> 66 `c
+-> 117 `c
+-> 116 `c
+-> 116 `c
+-> 111 `c
+-> 110 `c
+-> 32 `c
+-> 112 `c
+-> 114 `c
+-> 101 `c
+-> 115 `c
+-> 115 `c
+-> 101 `c
+-> 100 `c
+-> 46 `c
+-> 13 `c
+-> 10 `c
+-> 0 `c
+..
 ]
+"37
+[; ;../CDC/app_device_cdc_basic.c: 37: static uint8_t readBuffer[64];
+[v _readBuffer `uc ~T0 @X0 -> 64 `i s ]
+"38
+[; ;../CDC/app_device_cdc_basic.c: 38: static uint8_t writeBuffer[64];
+[v _writeBuffer `uc ~T0 @X0 -> 64 `i s ]
+"52
+[; ;../CDC/app_device_cdc_basic.c: 52: void APP_DeviceCDCBasicDemoInitialize()
+[v _APP_DeviceCDCBasicDemoInitialize `(v ~T0 @X0 1 ef ]
+"53
+[; ;../CDC/app_device_cdc_basic.c: 53: {
+{
+[e :U _APP_DeviceCDCBasicDemoInitialize ]
+[f ]
 "54
-[; ;app_led_usb_status.c: 54:     if(UCONbits.SUSPND == 1)
-[e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 356  ]
+[; ;../CDC/app_device_cdc_basic.c: 54:     line_coding.bCharFormat = 0;
+[e = . . _line_coding 1 1 -> -> 0 `i `uc ]
 "55
-[; ;app_led_usb_status.c: 55:     {
-{
+[; ;../CDC/app_device_cdc_basic.c: 55:     line_coding.bDataBits = 8;
+[e = . . _line_coding 1 3 -> -> 8 `i `uc ]
 "56
-[; ;app_led_usb_status.c: 56:         LED_Off(LED_D1);
-[e ( _LED_Off (1 . `E2817 1 ]
+[; ;../CDC/app_device_cdc_basic.c: 56:     line_coding.bParityType = 0;
+[e = . . _line_coding 1 2 -> -> 0 `i `uc ]
 "57
-[; ;app_led_usb_status.c: 57:         return;
-[e $UE 355  ]
-"58
-[; ;app_led_usb_status.c: 58:     }
-}
-[e :U 356 ]
+[; ;../CDC/app_device_cdc_basic.c: 57:     line_coding.dwDTERate = 9600;
+[e = . . _line_coding 1 0 -> -> -> 9600 `i `l `ul ]
+"59
+[; ;../CDC/app_device_cdc_basic.c: 59:     buttonPressed = 0;
+[e = _buttonPressed -> -> 0 `i `a ]
 "60
-[; ;app_led_usb_status.c: 60:     switch(USBDeviceState)
-[e $U 358  ]
-"61
-[; ;app_led_usb_status.c: 61:     {
-{
-"62
-[; ;app_led_usb_status.c: 62:         case CONFIGURED_STATE:
-[e :U 359 ]
-"65
-[; ;app_led_usb_status.c: 65:             if(ledCount == 1)
-[e $ ! == -> F3306 `ui -> -> 1 `i `ui 360  ]
-"66
-[; ;app_led_usb_status.c: 66:             {
-{
-"67
-[; ;app_led_usb_status.c: 67:                 LED_On(LED_D1);
-[e ( _LED_On (1 . `E2817 1 ]
-"68
-[; ;app_led_usb_status.c: 68:             }
+[; ;../CDC/app_device_cdc_basic.c: 60: }
+[e :UE 395 ]
 }
-[e $U 361  ]
-"69
-[; ;app_led_usb_status.c: 69:             else if(ledCount == 75)
-[e :U 360 ]
-[e $ ! == -> F3306 `ui -> -> 75 `i `ui 362  ]
-"70
-[; ;app_led_usb_status.c: 70:             {
-{
-"71
-[; ;app_led_usb_status.c: 71:                 LED_Off(LED_D1);
-[e ( _LED_Off (1 . `E2817 1 ]
-"72
-[; ;app_led_usb_status.c: 72:             }
-}
-[e $U 363  ]
-"73
-[; ;app_led_usb_status.c: 73:             else if(ledCount > 150)
-[e :U 362 ]
-[e $ ! > -> F3306 `ui -> -> 150 `i `ui 364  ]
-"74
-[; ;app_led_usb_status.c: 74:             {
-{
-"75
-[; ;app_led_usb_status.c: 75:                 ledCount = 0;
-[e = F3306 -> -> 0 `i `us ]
 "76
-[; ;app_led_usb_status.c: 76:             }
-}
-[e :U 364 ]
-[e :U 363 ]
-[e :U 361 ]
+[; ;../CDC/app_device_cdc_basic.c: 76: void APP_DeviceCDCBasicDemoTasks()
+[v _APP_DeviceCDCBasicDemoTasks `(v ~T0 @X0 1 ef ]
 "77
-[; ;app_led_usb_status.c: 77:             break;
-[e $U 357  ]
-"79
-[; ;app_led_usb_status.c: 79:         default:
-[e :U 365 ]
+[; ;../CDC/app_device_cdc_basic.c: 77: {
+{
+[e :U _APP_DeviceCDCBasicDemoTasks ]
+[f ]
+"81
+[; ;../CDC/app_device_cdc_basic.c: 81:     if( USBDeviceState < CONFIGURED_STATE )
+[e $ ! < -> _USBDeviceState `ui -> . `E3270 6 `ui 397  ]
 "82
-[; ;app_led_usb_status.c: 82:             if(ledCount == 1)
-[e $ ! == -> F3306 `ui -> -> 1 `i `ui 366  ]
+[; ;../CDC/app_device_cdc_basic.c: 82:     {
+{
 "83
-[; ;app_led_usb_status.c: 83:             {
-{
+[; ;../CDC/app_device_cdc_basic.c: 83:         return;
+[e $UE 396  ]
 "84
-[; ;app_led_usb_status.c: 84:                 LED_On(LED_D1);
-[e ( _LED_On (1 . `E2817 1 ]
-"85
-[; ;app_led_usb_status.c: 85:             }
+[; ;../CDC/app_device_cdc_basic.c: 84:     }
 }
-[e $U 367  ]
-"86
-[; ;app_led_usb_status.c: 86:             else if(ledCount == 50)
-[e :U 366 ]
-[e $ ! == -> F3306 `ui -> -> 50 `i `ui 368  ]
-"87
-[; ;app_led_usb_status.c: 87:             {
-{
-"88
-[; ;app_led_usb_status.c: 88:                 LED_Off(LED_D1);
-[e ( _LED_Off (1 . `E2817 1 ]
-"89
-[; ;app_led_usb_status.c: 89:             }
-}
-[e $U 369  ]
+[e :U 397 ]
 "90
-[; ;app_led_usb_status.c: 90:             else if(ledCount > 950)
-[e :U 368 ]
-[e $ ! > -> F3306 `ui -> -> 950 `i `ui 370  ]
+[; ;../CDC/app_device_cdc_basic.c: 90:     if( UCONbits.SUSPND== 1 )
+[e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 398  ]
 "91
-[; ;app_led_usb_status.c: 91:             {
+[; ;../CDC/app_device_cdc_basic.c: 91:     {
 {
 "92
-[; ;app_led_usb_status.c: 92:                 ledCount = 0;
-[e = F3306 -> -> 0 `i `us ]
+[; ;../CDC/app_device_cdc_basic.c: 92:         return;
+[e $UE 396  ]
 "93
-[; ;app_led_usb_status.c: 93:             }
+[; ;../CDC/app_device_cdc_basic.c: 93:     }
 }
-[e :U 370 ]
-[e :U 369 ]
-[e :U 367 ]
-"94
-[; ;app_led_usb_status.c: 94:             break;
-[e $U 357  ]
-"95
-[; ;app_led_usb_status.c: 95:     }
-}
-[e $U 357  ]
-[e :U 358 ]
-[e [\ -> _USBDeviceState `ui , $ -> . `E2910 6 `ui 359
- 365 ]
-[e :U 357 ]
+[e :U 398 ]
 "98
-[; ;app_led_usb_status.c: 98:     ledCount++;
-[e ++ F3306 -> -> 1 `i `us ]
+[; ;../CDC/app_device_cdc_basic.c: 98:     if(BUTTON_IsPressed(BUTTON_S1) == 1)
+[e $ ! == -> ( _BUTTON_IsPressed (1 . `E2809 1 `i -> 1 `i 399  ]
 "99
-[; ;app_led_usb_status.c: 99: }
-[e :UE 355 ]
+[; ;../CDC/app_device_cdc_basic.c: 99:     {
+{
+"103
+[; ;../CDC/app_device_cdc_basic.c: 103:         if(buttonPressed == 0)
+[e $ ! == -> _buttonPressed `i -> 0 `i 400  ]
+"104
+[; ;../CDC/app_device_cdc_basic.c: 104:         {
+{
+"107
+[; ;../CDC/app_device_cdc_basic.c: 107:             if((cdc_trf_state == 0) == 1)
+[e $ ! == -> == -> _cdc_trf_state `i -> 0 `i `i -> 1 `i 401  ]
+"108
+[; ;../CDC/app_device_cdc_basic.c: 108:             {
+{
+"109
+[; ;../CDC/app_device_cdc_basic.c: 109:                 putrsUSBUSART(buttonMessage);
+[e ( _putrsUSBUSART (1 -> &U _buttonMessage `*Cuc ]
+"110
+[; ;../CDC/app_device_cdc_basic.c: 110:                 buttonPressed = 1;
+[e = _buttonPressed -> -> 1 `i `a ]
+"111
+[; ;../CDC/app_device_cdc_basic.c: 111:             }
+}
+[e :U 401 ]
+"112
+[; ;../CDC/app_device_cdc_basic.c: 112:         }
+}
+[e :U 400 ]
+"113
+[; ;../CDC/app_device_cdc_basic.c: 113:     }
+}
+[e $U 402  ]
+"114
+[; ;../CDC/app_device_cdc_basic.c: 114:     else
+[e :U 399 ]
+"115
+[; ;../CDC/app_device_cdc_basic.c: 115:     {
+{
+"119
+[; ;../CDC/app_device_cdc_basic.c: 119:         buttonPressed = 0;
+[e = _buttonPressed -> -> 0 `i `a ]
+"120
+[; ;../CDC/app_device_cdc_basic.c: 120:     }
+}
+[e :U 402 ]
+"125
+[; ;../CDC/app_device_cdc_basic.c: 125:     if( (cdc_trf_state == 0) == 1)
+[e $ ! == -> == -> _cdc_trf_state `i -> 0 `i `i -> 1 `i 403  ]
+"126
+[; ;../CDC/app_device_cdc_basic.c: 126:     {
+{
+"127
+[; ;../CDC/app_device_cdc_basic.c: 127:         uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"128
+[; ;../CDC/app_device_cdc_basic.c: 128:         uint8_t numBytesRead;
+[v _numBytesRead `uc ~T0 @X0 1 a ]
+"130
+[; ;../CDC/app_device_cdc_basic.c: 130:         numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
+[e = _numBytesRead ( _getsUSBUSART (2 , &U _readBuffer -> -> # _readBuffer `ui `uc ]
+"133
+[; ;../CDC/app_device_cdc_basic.c: 133:         for(i=0; i<numBytesRead; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 407  ]
+[e :U 404 ]
+"134
+[; ;../CDC/app_device_cdc_basic.c: 134:         {
+{
+"135
+[; ;../CDC/app_device_cdc_basic.c: 135:             switch(readBuffer[i])
+[e $U 409  ]
+"136
+[; ;../CDC/app_device_cdc_basic.c: 136:             {
+{
+"140
+[; ;../CDC/app_device_cdc_basic.c: 140:                 case 0x0A:
+[e :U 410 ]
+"141
+[; ;../CDC/app_device_cdc_basic.c: 141:                 case 0x0D:
+[e :U 411 ]
+"142
+[; ;../CDC/app_device_cdc_basic.c: 142:                     writeBuffer[i] = readBuffer[i];
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux ]
+"143
+[; ;../CDC/app_device_cdc_basic.c: 143:                     break;
+[e $U 408  ]
+"150
+[; ;../CDC/app_device_cdc_basic.c: 150:                 default:
+[e :U 412 ]
+"151
+[; ;../CDC/app_device_cdc_basic.c: 151:                     writeBuffer[i] = readBuffer[i] + 1;
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux -> + -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i -> 1 `i `uc ]
+"152
+[; ;../CDC/app_device_cdc_basic.c: 152:                     break;
+[e $U 408  ]
+"153
+[; ;../CDC/app_device_cdc_basic.c: 153:             }
+}
+[e $U 408  ]
+[e :U 409 ]
+[e [\ -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i , $ -> 10 `i 410
+ , $ -> 13 `i 411
+ 412 ]
+[e :U 408 ]
+"154
+[; ;../CDC/app_device_cdc_basic.c: 154:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 407 ]
+[e $ < -> _i `i -> _numBytesRead `i 404  ]
+[e :U 405 ]
+}
+"156
+[; ;../CDC/app_device_cdc_basic.c: 156:         if(numBytesRead > 0)
+[e $ ! > -> _numBytesRead `i -> 0 `i 413  ]
+"157
+[; ;../CDC/app_device_cdc_basic.c: 157:         {
+{
+"161
+[; ;../CDC/app_device_cdc_basic.c: 161:             putUSBUSART(writeBuffer,numBytesRead);
+[e ( _putUSBUSART (2 , &U _writeBuffer _numBytesRead ]
+"162
+[; ;../CDC/app_device_cdc_basic.c: 162:         }
+}
+[e :U 413 ]
+"163
+[; ;../CDC/app_device_cdc_basic.c: 163:     }
+}
+[e :U 403 ]
+"165
+[; ;../CDC/app_device_cdc_basic.c: 165:     CDCTxService();
+[e ( _CDCTxService ..  ]
+"166
+[; ;../CDC/app_device_cdc_basic.c: 166: }
+[e :UE 396 ]
 }

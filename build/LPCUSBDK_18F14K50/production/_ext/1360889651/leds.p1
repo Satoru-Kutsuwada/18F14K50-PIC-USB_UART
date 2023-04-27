@@ -1,32 +1,38 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1421 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 1421:     struct {
-[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S61 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
-"1420
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 1420: typedef union {
-[u S60 `S61 1 ]
-[n S60 . . ]
-"1431
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 1431: extern volatile UCONbits_t UCONbits __attribute__((address(0xF64)));
-[v _UCONbits `VS60 ~T0 @X0 0 e@3940 ]
-"56 app_led_usb_status.c
-[; ;app_led_usb_status.c: 56:         LED_Off(LED_D1);
-[c E2817 0 1 2 3 4 .. ]
-[n E2817 . LED_NONE LED_D1 LED_D2 LED_D3 LED_D4  ]
-"74 ./leds.h
-[; ;./leds.h: 74: void LED_Off(LED led);
-[v _LED_Off `(v ~T0 @X0 0 ef1`E2817 ]
-"56
-[; ;./leds.h: 56: void LED_On(LED led);
-[v _LED_On `(v ~T0 @X0 0 ef1`E2817 ]
-"95 app_led_usb_status.c
-[; ;app_led_usb_status.c: 95:     }
-[c E2910 0 1 2 4 8 16 32 .. ]
-[n E2910 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
-"2049 ./usb_device.h
-[; ;./usb_device.h: 2049: extern USB_DEVICE_STATE USBDeviceState;
-[v _USBDeviceState `E2910 ~T0 @X0 0 e ]
+"59 ../CDC/leds.c
+[; ;../CDC/leds.c: 59: void LED_On(LED led)
+[c E2 0 1 2 3 4 .. ]
+[n E2 . LED_NONE LED_D1 LED_D2 LED_D3 LED_D4  ]
+"2825 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 2825:     struct {
+[s S123 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S123 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"2835
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 2835:     struct {
+[s S124 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S124 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"2824
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 2824: typedef union {
+[u S122 `S123 1 `S124 1 ]
+[n S122 . . . ]
+"2846
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 2846: extern volatile LATCbits_t LATCbits __attribute__((address(0xF8B)));
+[v _LATCbits `VS122 ~T0 @X0 0 e@3979 ]
+"3154
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 3154:     struct {
+[s S138 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S138 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"3164
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 3164:     struct {
+[s S139 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S139 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"3153
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 3153: typedef union {
+[u S137 `S138 1 `S139 1 ]
+[n S137 . . . ]
+"3175
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 3175: extern volatile TRISCbits_t TRISCbits __attribute__((address(0xF94)));
+[v _TRISCbits `VS137 ~T0 @X0 0 e@3988 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 54: __asm("UEP0 equ 0F53h");
 [; <" UEP0 equ 0F53h ;# ">
@@ -507,152 +513,385 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7437
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 7437: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"50 app_led_usb_status.c
-[; ;app_led_usb_status.c: 50: void APP_LEDUpdateUSBStatus(void)
-[v _APP_LEDUpdateUSBStatus `(v ~T0 @X0 1 ef ]
-"51
-[; ;app_led_usb_status.c: 51: {
-{
-[e :U _APP_LEDUpdateUSBStatus ]
-[f ]
-"52
-[; ;app_led_usb_status.c: 52:     static uint16_t ledCount = 0;
-[v F3306 `us ~T0 @X0 1 s ledCount ]
-[i F3306
--> -> 0 `i `us
-]
-"54
-[; ;app_led_usb_status.c: 54:     if(UCONbits.SUSPND == 1)
-[e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 356  ]
-"55
-[; ;app_led_usb_status.c: 55:     {
-{
-"56
-[; ;app_led_usb_status.c: 56:         LED_Off(LED_D1);
-[e ( _LED_Off (1 . `E2817 1 ]
-"57
-[; ;app_led_usb_status.c: 57:         return;
-[e $UE 355  ]
-"58
-[; ;app_led_usb_status.c: 58:     }
-}
-[e :U 356 ]
+"59 ../CDC/leds.c
+[; ;../CDC/leds.c: 59: void LED_On(LED led)
+[v _LED_On `(v ~T0 @X0 1 ef1`E2 ]
 "60
-[; ;app_led_usb_status.c: 60:     switch(USBDeviceState)
-[e $U 358  ]
+[; ;../CDC/leds.c: 60: {
+{
+[e :U _LED_On ]
+"59
+[; ;../CDC/leds.c: 59: void LED_On(LED led)
+[v _led `E2 ~T0 @X0 1 r1 ]
+"60
+[; ;../CDC/leds.c: 60: {
+[f ]
 "61
-[; ;app_led_usb_status.c: 61:     {
-{
+[; ;../CDC/leds.c: 61:     switch(led)
+[e $U 330  ]
 "62
-[; ;app_led_usb_status.c: 62:         case CONFIGURED_STATE:
-[e :U 359 ]
-"65
-[; ;app_led_usb_status.c: 65:             if(ledCount == 1)
-[e $ ! == -> F3306 `ui -> -> 1 `i `ui 360  ]
-"66
-[; ;app_led_usb_status.c: 66:             {
+[; ;../CDC/leds.c: 62:     {
 {
+"63
+[; ;../CDC/leds.c: 63:         case LED_D1:
+[e :U 331 ]
+"64
+[; ;../CDC/leds.c: 64:             LATCbits.LATC0 = 1;
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+"65
+[; ;../CDC/leds.c: 65:             break;
+[e $U 329  ]
 "67
-[; ;app_led_usb_status.c: 67:                 LED_On(LED_D1);
-[e ( _LED_On (1 . `E2817 1 ]
+[; ;../CDC/leds.c: 67:         case LED_D2:
+[e :U 332 ]
 "68
-[; ;app_led_usb_status.c: 68:             }
+[; ;../CDC/leds.c: 68:             LATCbits.LATC1 = 1;
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+"69
+[; ;../CDC/leds.c: 69:             break;
+[e $U 329  ]
+"71
+[; ;../CDC/leds.c: 71:         case LED_D3:
+[e :U 333 ]
+"72
+[; ;../CDC/leds.c: 72:             LATCbits.LATC2 = 1;
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+"73
+[; ;../CDC/leds.c: 73:             break;
+[e $U 329  ]
+"75
+[; ;../CDC/leds.c: 75:         case LED_D4:
+[e :U 334 ]
+"76
+[; ;../CDC/leds.c: 76:             LATCbits.LATC3 = 1;
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+"77
+[; ;../CDC/leds.c: 77:             break;
+[e $U 329  ]
+"79
+[; ;../CDC/leds.c: 79:         case LED_NONE:
+[e :U 335 ]
+"80
+[; ;../CDC/leds.c: 80:             break;
+[e $U 329  ]
+"81
+[; ;../CDC/leds.c: 81:     }
+}
+[e $U 329  ]
+[e :U 330 ]
+[e [\ -> _led `ui , $ -> . `E2 1 `ui 331
+ , $ -> . `E2 2 `ui 332
+ , $ -> . `E2 3 `ui 333
+ , $ -> . `E2 4 `ui 334
+ , $ -> . `E2 0 `ui 335
+ 329 ]
+[e :U 329 ]
+"82
+[; ;../CDC/leds.c: 82: }
+[e :UE 328 ]
+}
+"100
+[; ;../CDC/leds.c: 100: void LED_Off(LED led)
+[v _LED_Off `(v ~T0 @X0 1 ef1`E2 ]
+"101
+[; ;../CDC/leds.c: 101: {
+{
+[e :U _LED_Off ]
+"100
+[; ;../CDC/leds.c: 100: void LED_Off(LED led)
+[v _led `E2 ~T0 @X0 1 r1 ]
+"101
+[; ;../CDC/leds.c: 101: {
+[f ]
+"102
+[; ;../CDC/leds.c: 102:     switch(led)
+[e $U 338  ]
+"103
+[; ;../CDC/leds.c: 103:     {
+{
+"104
+[; ;../CDC/leds.c: 104:         case LED_D1:
+[e :U 339 ]
+"105
+[; ;../CDC/leds.c: 105:             LATCbits.LATC0 = 0;
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+"106
+[; ;../CDC/leds.c: 106:             break;
+[e $U 337  ]
+"108
+[; ;../CDC/leds.c: 108:         case LED_D2:
+[e :U 340 ]
+"109
+[; ;../CDC/leds.c: 109:             LATCbits.LATC1 = 0;
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
+"110
+[; ;../CDC/leds.c: 110:             break;
+[e $U 337  ]
+"112
+[; ;../CDC/leds.c: 112:         case LED_D3:
+[e :U 341 ]
+"113
+[; ;../CDC/leds.c: 113:             LATCbits.LATC2 = 0;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+"114
+[; ;../CDC/leds.c: 114:             break;
+[e $U 337  ]
+"116
+[; ;../CDC/leds.c: 116:         case LED_D4:
+[e :U 342 ]
+"117
+[; ;../CDC/leds.c: 117:             LATCbits.LATC3 = 0;
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"118
+[; ;../CDC/leds.c: 118:             break;
+[e $U 337  ]
+"120
+[; ;../CDC/leds.c: 120:         case LED_NONE:
+[e :U 343 ]
+"121
+[; ;../CDC/leds.c: 121:             break;
+[e $U 337  ]
+"122
+[; ;../CDC/leds.c: 122:     }
+}
+[e $U 337  ]
+[e :U 338 ]
+[e [\ -> _led `ui , $ -> . `E2 1 `ui 339
+ , $ -> . `E2 2 `ui 340
+ , $ -> . `E2 3 `ui 341
+ , $ -> . `E2 4 `ui 342
+ , $ -> . `E2 0 `ui 343
+ 337 ]
+[e :U 337 ]
+"123
+[; ;../CDC/leds.c: 123: }
+[e :UE 336 ]
+}
+"141
+[; ;../CDC/leds.c: 141: void LED_Toggle(LED led)
+[v _LED_Toggle `(v ~T0 @X0 1 ef1`E2 ]
+"142
+[; ;../CDC/leds.c: 142: {
+{
+[e :U _LED_Toggle ]
+"141
+[; ;../CDC/leds.c: 141: void LED_Toggle(LED led)
+[v _led `E2 ~T0 @X0 1 r1 ]
+"142
+[; ;../CDC/leds.c: 142: {
+[f ]
+"143
+[; ;../CDC/leds.c: 143:     switch(led)
+[e $U 346  ]
+"144
+[; ;../CDC/leds.c: 144:     {
+{
+"145
+[; ;../CDC/leds.c: 145:         case LED_D1:
+[e :U 347 ]
+"146
+[; ;../CDC/leds.c: 146:             LATCbits.LATC0 ^= 1;
+[e =^ . . _LATCbits 0 0 -> -> 1 `i `Vuc ]
+"147
+[; ;../CDC/leds.c: 147:             break;
+[e $U 345  ]
+"149
+[; ;../CDC/leds.c: 149:         case LED_D2:
+[e :U 348 ]
+"150
+[; ;../CDC/leds.c: 150:             LATCbits.LATC1 ^= 1;
+[e =^ . . _LATCbits 0 1 -> -> 1 `i `Vuc ]
+"151
+[; ;../CDC/leds.c: 151:             break;
+[e $U 345  ]
+"153
+[; ;../CDC/leds.c: 153:         case LED_D3:
+[e :U 349 ]
+"154
+[; ;../CDC/leds.c: 154:             LATCbits.LATC2 ^= 1;
+[e =^ . . _LATCbits 0 2 -> -> 1 `i `Vuc ]
+"155
+[; ;../CDC/leds.c: 155:             break;
+[e $U 345  ]
+"157
+[; ;../CDC/leds.c: 157:         case LED_D4:
+[e :U 350 ]
+"158
+[; ;../CDC/leds.c: 158:             LATCbits.LATC3 ^= 1;
+[e =^ . . _LATCbits 0 3 -> -> 1 `i `Vuc ]
+"159
+[; ;../CDC/leds.c: 159:             break;
+[e $U 345  ]
+"161
+[; ;../CDC/leds.c: 161:         case LED_NONE:
+[e :U 351 ]
+"162
+[; ;../CDC/leds.c: 162:             break;
+[e $U 345  ]
+"163
+[; ;../CDC/leds.c: 163:     }
+}
+[e $U 345  ]
+[e :U 346 ]
+[e [\ -> _led `ui , $ -> . `E2 1 `ui 347
+ , $ -> . `E2 2 `ui 348
+ , $ -> . `E2 3 `ui 349
+ , $ -> . `E2 4 `ui 350
+ , $ -> . `E2 0 `ui 351
+ 345 ]
+[e :U 345 ]
+"164
+[; ;../CDC/leds.c: 164: }
+[e :UE 344 ]
+}
+"182
+[; ;../CDC/leds.c: 182: _Bool LED_Get(LED led)
+[v _LED_Get `(a ~T0 @X0 1 ef1`E2 ]
+"183
+[; ;../CDC/leds.c: 183: {
+{
+[e :U _LED_Get ]
+"182
+[; ;../CDC/leds.c: 182: _Bool LED_Get(LED led)
+[v _led `E2 ~T0 @X0 1 r1 ]
+"183
+[; ;../CDC/leds.c: 183: {
+[f ]
+"184
+[; ;../CDC/leds.c: 184:     switch(led)
+[e $U 354  ]
+"185
+[; ;../CDC/leds.c: 185:     {
+{
+"186
+[; ;../CDC/leds.c: 186:         case LED_D1:
+[e :U 355 ]
+"187
+[; ;../CDC/leds.c: 187:             return ( (LATCbits.LATC0 == 1) ? 1 : 0 );
+[e ) -> ? == -> . . _LATCbits 0 0 `i -> 1 `i : -> 1 `i -> 0 `i `a ]
+[e $UE 352  ]
+"189
+[; ;../CDC/leds.c: 189:         case LED_D2:
+[e :U 356 ]
+"190
+[; ;../CDC/leds.c: 190:             return ( (LATCbits.LATC1 == 1) ? 1 : 0 );
+[e ) -> ? == -> . . _LATCbits 0 1 `i -> 1 `i : -> 1 `i -> 0 `i `a ]
+[e $UE 352  ]
+"192
+[; ;../CDC/leds.c: 192:         case LED_D3:
+[e :U 357 ]
+"193
+[; ;../CDC/leds.c: 193:             return ( (LATCbits.LATC2 == 1) ? 1 : 0 );
+[e ) -> ? == -> . . _LATCbits 0 2 `i -> 1 `i : -> 1 `i -> 0 `i `a ]
+[e $UE 352  ]
+"195
+[; ;../CDC/leds.c: 195:         case LED_D4:
+[e :U 358 ]
+"196
+[; ;../CDC/leds.c: 196:             return ( (LATCbits.LATC3 == 1) ? 1 : 0 );
+[e ) -> ? == -> . . _LATCbits 0 3 `i -> 1 `i : -> 1 `i -> 0 `i `a ]
+[e $UE 352  ]
+"198
+[; ;../CDC/leds.c: 198:         case LED_NONE:
+[e :U 359 ]
+"199
+[; ;../CDC/leds.c: 199:             return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 352  ]
+"200
+[; ;../CDC/leds.c: 200:     }
+}
+[e $U 353  ]
+[e :U 354 ]
+[e [\ -> _led `ui , $ -> . `E2 1 `ui 355
+ , $ -> . `E2 2 `ui 356
+ , $ -> . `E2 3 `ui 357
+ , $ -> . `E2 4 `ui 358
+ , $ -> . `E2 0 `ui 359
+ 353 ]
+[e :U 353 ]
+"202
+[; ;../CDC/leds.c: 202:     return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 352  ]
+"203
+[; ;../CDC/leds.c: 203: }
+[e :UE 352 ]
+}
+"220
+[; ;../CDC/leds.c: 220: void LED_Enable(LED led)
+[v _LED_Enable `(v ~T0 @X0 1 ef1`E2 ]
+"221
+[; ;../CDC/leds.c: 221: {
+{
+[e :U _LED_Enable ]
+"220
+[; ;../CDC/leds.c: 220: void LED_Enable(LED led)
+[v _led `E2 ~T0 @X0 1 r1 ]
+"221
+[; ;../CDC/leds.c: 221: {
+[f ]
+"222
+[; ;../CDC/leds.c: 222:     switch(led)
+[e $U 362  ]
+"223
+[; ;../CDC/leds.c: 223:     {
+{
+"224
+[; ;../CDC/leds.c: 224:         case LED_D1:
+[e :U 363 ]
+"225
+[; ;../CDC/leds.c: 225:             TRISCbits.TRISC0 = 0;
+[e = . . _TRISCbits 0 0 -> -> 0 `i `uc ]
+"226
+[; ;../CDC/leds.c: 226:             break;
+[e $U 361  ]
+"228
+[; ;../CDC/leds.c: 228:         case LED_D2:
+[e :U 364 ]
+"229
+[; ;../CDC/leds.c: 229:             TRISCbits.TRISC1 = 0;
+[e = . . _TRISCbits 0 1 -> -> 0 `i `uc ]
+"230
+[; ;../CDC/leds.c: 230:             break;
+[e $U 361  ]
+"232
+[; ;../CDC/leds.c: 232:         case LED_D3:
+[e :U 365 ]
+"233
+[; ;../CDC/leds.c: 233:             TRISCbits.TRISC2 = 0;
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"234
+[; ;../CDC/leds.c: 234:             break;
+[e $U 361  ]
+"236
+[; ;../CDC/leds.c: 236:         case LED_D4:
+[e :U 366 ]
+"237
+[; ;../CDC/leds.c: 237:             TRISCbits.TRISC3 = 0;
+[e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
+"238
+[; ;../CDC/leds.c: 238:             break;
+[e $U 361  ]
+"240
+[; ;../CDC/leds.c: 240:         case LED_NONE:
+[e :U 367 ]
+"241
+[; ;../CDC/leds.c: 241:             break;
+[e $U 361  ]
+"242
+[; ;../CDC/leds.c: 242:     }
 }
 [e $U 361  ]
-"69
-[; ;app_led_usb_status.c: 69:             else if(ledCount == 75)
-[e :U 360 ]
-[e $ ! == -> F3306 `ui -> -> 75 `i `ui 362  ]
-"70
-[; ;app_led_usb_status.c: 70:             {
-{
-"71
-[; ;app_led_usb_status.c: 71:                 LED_Off(LED_D1);
-[e ( _LED_Off (1 . `E2817 1 ]
-"72
-[; ;app_led_usb_status.c: 72:             }
-}
-[e $U 363  ]
-"73
-[; ;app_led_usb_status.c: 73:             else if(ledCount > 150)
 [e :U 362 ]
-[e $ ! > -> F3306 `ui -> -> 150 `i `ui 364  ]
-"74
-[; ;app_led_usb_status.c: 74:             {
-{
-"75
-[; ;app_led_usb_status.c: 75:                 ledCount = 0;
-[e = F3306 -> -> 0 `i `us ]
-"76
-[; ;app_led_usb_status.c: 76:             }
-}
-[e :U 364 ]
-[e :U 363 ]
+[e [\ -> _led `ui , $ -> . `E2 1 `ui 363
+ , $ -> . `E2 2 `ui 364
+ , $ -> . `E2 3 `ui 365
+ , $ -> . `E2 4 `ui 366
+ , $ -> . `E2 0 `ui 367
+ 361 ]
 [e :U 361 ]
-"77
-[; ;app_led_usb_status.c: 77:             break;
-[e $U 357  ]
-"79
-[; ;app_led_usb_status.c: 79:         default:
-[e :U 365 ]
-"82
-[; ;app_led_usb_status.c: 82:             if(ledCount == 1)
-[e $ ! == -> F3306 `ui -> -> 1 `i `ui 366  ]
-"83
-[; ;app_led_usb_status.c: 83:             {
-{
-"84
-[; ;app_led_usb_status.c: 84:                 LED_On(LED_D1);
-[e ( _LED_On (1 . `E2817 1 ]
-"85
-[; ;app_led_usb_status.c: 85:             }
-}
-[e $U 367  ]
-"86
-[; ;app_led_usb_status.c: 86:             else if(ledCount == 50)
-[e :U 366 ]
-[e $ ! == -> F3306 `ui -> -> 50 `i `ui 368  ]
-"87
-[; ;app_led_usb_status.c: 87:             {
-{
-"88
-[; ;app_led_usb_status.c: 88:                 LED_Off(LED_D1);
-[e ( _LED_Off (1 . `E2817 1 ]
-"89
-[; ;app_led_usb_status.c: 89:             }
-}
-[e $U 369  ]
-"90
-[; ;app_led_usb_status.c: 90:             else if(ledCount > 950)
-[e :U 368 ]
-[e $ ! > -> F3306 `ui -> -> 950 `i `ui 370  ]
-"91
-[; ;app_led_usb_status.c: 91:             {
-{
-"92
-[; ;app_led_usb_status.c: 92:                 ledCount = 0;
-[e = F3306 -> -> 0 `i `us ]
-"93
-[; ;app_led_usb_status.c: 93:             }
-}
-[e :U 370 ]
-[e :U 369 ]
-[e :U 367 ]
-"94
-[; ;app_led_usb_status.c: 94:             break;
-[e $U 357  ]
-"95
-[; ;app_led_usb_status.c: 95:     }
-}
-[e $U 357  ]
-[e :U 358 ]
-[e [\ -> _USBDeviceState `ui , $ -> . `E2910 6 `ui 359
- 365 ]
-[e :U 357 ]
-"98
-[; ;app_led_usb_status.c: 98:     ledCount++;
-[e ++ F3306 -> -> 1 `i `us ]
-"99
-[; ;app_led_usb_status.c: 99: }
-[e :UE 355 ]
+"243
+[; ;../CDC/leds.c: 243: }
+[e :UE 360 ]
 }

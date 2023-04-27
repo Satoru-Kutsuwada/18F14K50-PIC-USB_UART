@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=app_device_cdc_basic.c app_led_usb_status.c buttons.c leds.c main.c system.c usb_descriptors.c usb_device.c usb_device_cdc.c usb_events.c
+SOURCEFILES_QUOTED_IF_SPACED=buttons.c main.c system.c usb_descriptors.c usb_device.c usb_device_cdc.c usb_events.c ../CDC/app_device_cdc_basic.c ../CDC/app_led_usb_status.c ../CDC/leds.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/app_device_cdc_basic.p1 ${OBJECTDIR}/app_led_usb_status.p1 ${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/leds.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/usb_device.p1 ${OBJECTDIR}/usb_device_cdc.p1 ${OBJECTDIR}/usb_events.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/app_device_cdc_basic.p1.d ${OBJECTDIR}/app_led_usb_status.p1.d ${OBJECTDIR}/buttons.p1.d ${OBJECTDIR}/leds.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/system.p1.d ${OBJECTDIR}/usb_descriptors.p1.d ${OBJECTDIR}/usb_device.p1.d ${OBJECTDIR}/usb_device_cdc.p1.d ${OBJECTDIR}/usb_events.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/usb_device.p1 ${OBJECTDIR}/usb_device_cdc.p1 ${OBJECTDIR}/usb_events.p1 ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1 ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1 ${OBJECTDIR}/_ext/1360889651/leds.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/buttons.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/system.p1.d ${OBJECTDIR}/usb_descriptors.p1.d ${OBJECTDIR}/usb_device.p1.d ${OBJECTDIR}/usb_device_cdc.p1.d ${OBJECTDIR}/usb_events.p1.d ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1.d ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1.d ${OBJECTDIR}/_ext/1360889651/leds.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/app_device_cdc_basic.p1 ${OBJECTDIR}/app_led_usb_status.p1 ${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/leds.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/usb_device.p1 ${OBJECTDIR}/usb_device_cdc.p1 ${OBJECTDIR}/usb_events.p1
+OBJECTFILES=${OBJECTDIR}/buttons.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/system.p1 ${OBJECTDIR}/usb_descriptors.p1 ${OBJECTDIR}/usb_device.p1 ${OBJECTDIR}/usb_device_cdc.p1 ${OBJECTDIR}/usb_events.p1 ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1 ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1 ${OBJECTDIR}/_ext/1360889651/leds.p1
 
 # Source Files
-SOURCEFILES=app_device_cdc_basic.c app_led_usb_status.c buttons.c leds.c main.c system.c usb_descriptors.c usb_device.c usb_device_cdc.c usb_events.c
+SOURCEFILES=buttons.c main.c system.c usb_descriptors.c usb_device.c usb_device_cdc.c usb_events.c ../CDC/app_device_cdc_basic.c ../CDC/app_led_usb_status.c ../CDC/leds.c
 
 
 
@@ -88,22 +88,6 @@ MP_PROCESSOR_OPTION=18F14K50
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/app_device_cdc_basic.p1: app_device_cdc_basic.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/app_device_cdc_basic.p1.d 
-	@${RM} ${OBJECTDIR}/app_device_cdc_basic.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/app_device_cdc_basic.p1 app_device_cdc_basic.c 
-	@-${MV} ${OBJECTDIR}/app_device_cdc_basic.d ${OBJECTDIR}/app_device_cdc_basic.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/app_device_cdc_basic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/app_led_usb_status.p1: app_led_usb_status.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/app_led_usb_status.p1.d 
-	@${RM} ${OBJECTDIR}/app_led_usb_status.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/app_led_usb_status.p1 app_led_usb_status.c 
-	@-${MV} ${OBJECTDIR}/app_led_usb_status.d ${OBJECTDIR}/app_led_usb_status.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/app_led_usb_status.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/buttons.p1: buttons.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/buttons.p1.d 
@@ -111,14 +95,6 @@ ${OBJECTDIR}/buttons.p1: buttons.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/buttons.p1 buttons.c 
 	@-${MV} ${OBJECTDIR}/buttons.d ${OBJECTDIR}/buttons.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/buttons.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/leds.p1: leds.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/leds.p1.d 
-	@${RM} ${OBJECTDIR}/leds.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/leds.p1 leds.c 
-	@-${MV} ${OBJECTDIR}/leds.d ${OBJECTDIR}/leds.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/leds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -168,23 +144,31 @@ ${OBJECTDIR}/usb_events.p1: usb_events.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/usb_events.d ${OBJECTDIR}/usb_events.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/usb_events.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1: ../CDC/app_device_cdc_basic.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1360889651" 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1 ../CDC/app_device_cdc_basic.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.d ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1: ../CDC/app_led_usb_status.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1360889651" 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1 ../CDC/app_led_usb_status.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.d ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360889651/leds.p1: ../CDC/leds.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1360889651" 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/leds.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/leds.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1360889651/leds.p1 ../CDC/leds.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360889651/leds.d ${OBJECTDIR}/_ext/1360889651/leds.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360889651/leds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
-${OBJECTDIR}/app_device_cdc_basic.p1: app_device_cdc_basic.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/app_device_cdc_basic.p1.d 
-	@${RM} ${OBJECTDIR}/app_device_cdc_basic.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/app_device_cdc_basic.p1 app_device_cdc_basic.c 
-	@-${MV} ${OBJECTDIR}/app_device_cdc_basic.d ${OBJECTDIR}/app_device_cdc_basic.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/app_device_cdc_basic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/app_led_usb_status.p1: app_led_usb_status.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/app_led_usb_status.p1.d 
-	@${RM} ${OBJECTDIR}/app_led_usb_status.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/app_led_usb_status.p1 app_led_usb_status.c 
-	@-${MV} ${OBJECTDIR}/app_led_usb_status.d ${OBJECTDIR}/app_led_usb_status.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/app_led_usb_status.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/buttons.p1: buttons.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/buttons.p1.d 
@@ -192,14 +176,6 @@ ${OBJECTDIR}/buttons.p1: buttons.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/buttons.p1 buttons.c 
 	@-${MV} ${OBJECTDIR}/buttons.d ${OBJECTDIR}/buttons.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/buttons.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
-${OBJECTDIR}/leds.p1: leds.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/leds.p1.d 
-	@${RM} ${OBJECTDIR}/leds.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/leds.p1 leds.c 
-	@-${MV} ${OBJECTDIR}/leds.d ${OBJECTDIR}/leds.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/leds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -248,6 +224,30 @@ ${OBJECTDIR}/usb_events.p1: usb_events.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/usb_events.p1 usb_events.c 
 	@-${MV} ${OBJECTDIR}/usb_events.d ${OBJECTDIR}/usb_events.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/usb_events.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1: ../CDC/app_device_cdc_basic.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1360889651" 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1 ../CDC/app_device_cdc_basic.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.d ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360889651/app_device_cdc_basic.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1: ../CDC/app_led_usb_status.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1360889651" 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1 ../CDC/app_led_usb_status.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.d ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360889651/app_led_usb_status.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1360889651/leds.p1: ../CDC/leds.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1360889651" 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/leds.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1360889651/leds.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -maddrqual=ignore -xassembler-with-cpp -I"../demo_src" -I"../../../../../../framework/usb/inc" -I"../../../../../../bsp/low_pin_count_usb_development_kit/pic18f14k50" -I"." -mwarn=0 -Wa,-a -DXPRJ_LPCUSBDK_18F14K50=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits $(COMPARISON_BUILD)  -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1360889651/leds.p1 ../CDC/leds.c 
+	@-${MV} ${OBJECTDIR}/_ext/1360889651/leds.d ${OBJECTDIR}/_ext/1360889651/leds.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1360889651/leds.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
