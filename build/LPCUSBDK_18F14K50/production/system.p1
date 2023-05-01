@@ -1,22 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "65 system.c
 [; ;system.c: 65: void SYSTEM_Initialize( SYSTEM_STATE state )
-[c E2834 0 1 2 .. ]
-[n E2834 . SYSTEM_STATE_USB_START SYSTEM_STATE_USB_SUSPEND SYSTEM_STATE_USB_RESUME  ]
-"70
-[; ;system.c: 70:             LED_Enable(LED_D1);
-[c E2817 0 1 2 3 4 .. ]
-[n E2817 . LED_NONE LED_D1 LED_D2 LED_D3 LED_D4  ]
-"127 ./leds.h
-[; ;./leds.h: 127: void LED_Enable(LED led);
-[v _LED_Enable `(v ~T0 @X0 0 ef1`E2817 ]
-"71 system.c
-[; ;system.c: 71:             BUTTON_Enable(BUTTON_S1);
-[c E2809 0 1 .. ]
-[n E2809 . BUTTON_NONE BUTTON_S1  ]
-"69 ./buttons.h
-[; ;./buttons.h: 69: void BUTTON_Enable(BUTTON button);
-[v _BUTTON_Enable `(v ~T0 @X0 0 ef1`E2809 ]
+[c E2809 0 1 2 .. ]
+[n E2809 . SYSTEM_STATE_USB_START SYSTEM_STATE_USB_SUSPEND SYSTEM_STATE_USB_RESUME  ]
 [t ~ __interrupt . k ]
 [t T20 __interrupt ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
@@ -555,14 +541,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTRB    =  OFF ]
 "65
 [; ;system.c: 65: void SYSTEM_Initialize( SYSTEM_STATE state )
-[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef1`E2834 ]
+[v _SYSTEM_Initialize `(v ~T0 @X0 1 ef1`E2809 ]
 "66
 [; ;system.c: 66: {
 {
 [e :U _SYSTEM_Initialize ]
 "65
 [; ;system.c: 65: void SYSTEM_Initialize( SYSTEM_STATE state )
-[v _state `E2834 ~T0 @X0 1 r1 ]
+[v _state `E2809 ~T0 @X0 1 r1 ]
 "66
 [; ;system.c: 66: {
 [f ]
@@ -575,12 +561,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "69
 [; ;system.c: 69:         case SYSTEM_STATE_USB_START:
 [e :U 385 ]
-"70
-[; ;system.c: 70:             LED_Enable(LED_D1);
-[e ( _LED_Enable (1 . `E2817 1 ]
-"71
-[; ;system.c: 71:             BUTTON_Enable(BUTTON_S1);
-[e ( _BUTTON_Enable (1 . `E2809 1 ]
 "72
 [; ;system.c: 72:             break;
 [e $U 383  ]
@@ -601,9 +581,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 383  ]
 [e :U 384 ]
-[e [\ -> _state `ui , $ -> . `E2834 0 `ui 385
- , $ -> . `E2834 1 `ui 386
- , $ -> . `E2834 2 `ui 387
+[e [\ -> _state `ui , $ -> . `E2809 0 `ui 385
+ , $ -> . `E2809 1 `ui 386
+ , $ -> . `E2809 2 `ui 387
  383 ]
 [e :U 383 ]
 "80

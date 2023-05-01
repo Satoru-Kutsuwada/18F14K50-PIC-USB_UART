@@ -5098,46 +5098,10 @@ unsigned char __t3rd16on(void);
 # 24 "./system.h" 2
 
 
-# 1 "./buttons.h" 1
-# 29 "./buttons.h"
-typedef enum
-{
-    BUTTON_NONE,
-    BUTTON_S1,
-} BUTTON;
-# 51 "./buttons.h"
-_Bool BUTTON_IsPressed(BUTTON button);
-# 69 "./buttons.h"
-void BUTTON_Enable(BUTTON button);
-# 26 "./system.h" 2
 
-# 1 "./leds.h" 1
-# 29 "./leds.h"
-typedef enum
-{
-    LED_NONE,
-    LED_D1,
-    LED_D2,
-    LED_D3,
-    LED_D4
-} LED;
-# 56 "./leds.h"
-void LED_On(LED led);
-# 74 "./leds.h"
-void LED_Off(LED led);
-# 92 "./leds.h"
-void LED_Toggle(LED led);
-# 110 "./leds.h"
-_Bool LED_Get(LED led);
-# 127 "./leds.h"
-void LED_Enable(LED led);
-# 27 "./system.h" 2
 
 
 # 1 "./io_mapping.h" 1
-# 21 "./io_mapping.h"
-# 1 "./buttons.h" 1
-# 21 "./io_mapping.h" 2
 # 29 "./system.h" 2
 
 # 1 "./fixed_address_memory.h" 1
@@ -6300,7 +6264,7 @@ _Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
     }
     return 1;
 }
-# 485 "usb_device_cdc.c"
+# 487 "usb_device_cdc.c"
 uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
 {
     cdc_rx_len = 0;
@@ -6331,23 +6295,12 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
     return cdc_rx_len;
 
 }
-# 550 "usb_device_cdc.c"
-void putUSBUSART(uint8_t *data, uint8_t length)
-{
-# 577 "usb_device_cdc.c"
-                       ;
-    if(cdc_trf_state == 0)
-    {
-        { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = length; cdc_mem_type = 0x01; cdc_trf_state = 1; };
-    }
-                         ;
-}
-# 618 "usb_device_cdc.c"
+# 626 "usb_device_cdc.c"
 void putsUSBUSART(char *data)
 {
     uint8_t len;
     char *pData;
-# 639 "usb_device_cdc.c"
+# 647 "usb_device_cdc.c"
                        ;
     if(cdc_trf_state != 0)
     {
@@ -6374,36 +6327,7 @@ void putsUSBUSART(char *data)
     { pCDCSrc.bRam = (uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x01; cdc_trf_state = 1; };
                          ;
 }
-# 706 "usb_device_cdc.c"
-void putrsUSBUSART(const char *data)
-{
-    uint8_t len;
-    const char *pData;
-# 734 "usb_device_cdc.c"
-                       ;
-    if(cdc_trf_state != 0)
-    {
-                             ;
-        return;
-    }
-
-
-
-
-
-    len = 0;
-    pData = data;
-    do
-    {
-        len++;
-        if(len == 255) break;
-    }while(*pData++);
-# 760 "usb_device_cdc.c"
-    { pCDCSrc.bRom = (const uint8_t*)data; cdc_tx_len = len; cdc_mem_type = 0x00; cdc_trf_state = 1; };
-                         ;
-
-}
-# 814 "usb_device_cdc.c"
+# 826 "usb_device_cdc.c"
 void CDCTxService(void)
 {
     uint8_t byte_to_send;
@@ -6418,7 +6342,7 @@ void CDCTxService(void)
                              ;
         return;
     }
-# 837 "usb_device_cdc.c"
+# 849 "usb_device_cdc.c"
     if(cdc_trf_state == 3)
         cdc_trf_state = 0;
 

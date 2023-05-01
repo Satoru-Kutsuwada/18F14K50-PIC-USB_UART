@@ -2183,7 +2183,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;usb_device.c: 1734:     {
 {
 "1735
-[; ;usb_device.c: 1735:         byteToSend = inPipes[0].wCount.Val;
+[; ;usb_device.c: 1735:         byteToSend = ( uint8_t )inPipes[0].wCount.Val;
 [e = _byteToSend -> . . *U + &U _inPipes * -> -> -> 0 `i `ui `ux -> -> # *U &U _inPipes `ui `ux 2 0 `uc ]
 "1742
 [; ;usb_device.c: 1742:         if(shortPacketStatus == 0)
@@ -2316,7 +2316,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;usb_device.c: 1821:     {
 {
 "1822
-[; ;usb_device.c: 1822:         byteToRead = outPipes[0].wCount.Val;
+[; ;usb_device.c: 1822:         byteToRead = (uint8_t )outPipes[0].wCount.Val;
 [e = _byteToRead -> . . *U + &U _outPipes * -> -> -> 0 `i `ui `ux -> -> # *U &U _outPipes `ui `ux 2 0 `uc ]
 "1823
 [; ;usb_device.c: 1823:     }

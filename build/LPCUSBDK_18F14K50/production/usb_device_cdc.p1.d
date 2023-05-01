@@ -1,8 +1,6 @@
 build/LPCUSBDK_18F14K50/production/usb_device_cdc.p1:  \
 usb_device_cdc.c  \
 system.h  \
-buttons.h  \
-leds.h  \
 io_mapping.h  \
 fixed_address_memory.h  \
 usb.h  \

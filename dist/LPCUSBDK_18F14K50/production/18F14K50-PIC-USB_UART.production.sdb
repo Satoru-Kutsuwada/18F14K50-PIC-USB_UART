@@ -3,13 +3,8 @@
 [d edition pro ]
 [d chip 18F14K50 ]
 [d frameptr 4065 ]
-"55 D:\USB\18F14K50-PIC-USB_UART\buttons.c
-[e E2809 . `uc
-BUTTON_NONE 0
-BUTTON_S1 1
-]
-"302 D:\USB\18F14K50-PIC-USB_UART\main.c
-[e E3424 . `uc
+"389 D:\USB\18F14K50-PIC-USB_UART\main.c
+[e E3398 . `uc
 DETACHED_STATE 0
 ATTACHED_STATE 1
 POWERED_STATE 2
@@ -19,23 +14,10 @@ ADDRESS_STATE 16
 CONFIGURED_STATE 32
 ]
 "65 D:\USB\18F14K50-PIC-USB_UART\system.c
-[e E2834 . `uc
+[e E2809 . `uc
 SYSTEM_STATE_USB_START 0
 SYSTEM_STATE_USB_SUSPEND 1
 SYSTEM_STATE_USB_RESUME 2
-]
-"70
-[e E2817 . `uc
-LED_NONE 0
-LED_D1 1
-LED_D2 2
-LED_D3 3
-LED_D4 4
-]
-"71
-[e E2809 . `uc
-BUTTON_NONE 0
-BUTTON_S1 1
 ]
 "141 D:\USB\18F14K50-PIC-USB_UART\usb_device.c
 [e E3238 . `uc
@@ -95,7 +77,7 @@ EVENT_ATTACH 4
 EVENT_TRANSFER_TERMINATED 5
 ]
 "424 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
-[e E2851 . `ui
+[e E2826 . `ui
 EVENT_NONE 0
 EVENT_DEVICE_STACK_BASE 1
 EVENT_HOST_STACK_BASE 100
@@ -134,7 +116,7 @@ EVENT_USER_BASE 10000
 EVENT_BUS_ERROR 32767
 ]
 "442
-[e E3111 . `uc
+[e E3086 . `uc
 EVENT_CONFIGURED 1
 EVENT_SET_DESCRIPTOR 2
 EVENT_EP0_REQUEST 3
@@ -142,7 +124,7 @@ EVENT_ATTACH 4
 EVENT_TRANSFER_TERMINATED 5
 ]
 "51 D:\USB\18F14K50-PIC-USB_UART\usb_events.c
-[e E2852 . `ui
+[e E2826 . `ui
 EVENT_NONE 0
 EVENT_DEVICE_STACK_BASE 1
 EVENT_HOST_STACK_BASE 100
@@ -181,74 +163,19 @@ EVENT_USER_BASE 10000
 EVENT_BUS_ERROR 32767
 ]
 "74
-[e E2834 . `uc
+[e E2809 . `uc
 SYSTEM_STATE_USB_START 0
 SYSTEM_STATE_USB_SUSPEND 1
 SYSTEM_STATE_USB_RESUME 2
 ]
 "112
-[e E3112 . `uc
+[e E3086 . `uc
 EVENT_CONFIGURED 1
 EVENT_SET_DESCRIPTOR 2
 EVENT_EP0_REQUEST 3
 EVENT_ATTACH 4
 EVENT_TRANSFER_TERMINATED 5
 ]
-"81 D:\USB/CDC/app_device_cdc_basic.c
-[e E3270 . `uc
-DETACHED_STATE 0
-ATTACHED_STATE 1
-POWERED_STATE 2
-DEFAULT_STATE 4
-ADR_PENDING_STATE 8
-ADDRESS_STATE 16
-CONFIGURED_STATE 32
-]
-"98
-[e E2809 . `uc
-BUTTON_NONE 0
-BUTTON_S1 1
-]
-"56 D:\USB/CDC/app_led_usb_status.c
-[e E2817 . `uc
-LED_NONE 0
-LED_D1 1
-LED_D2 2
-LED_D3 3
-LED_D4 4
-]
-"95
-[e E2910 . `uc
-DETACHED_STATE 0
-ATTACHED_STATE 1
-POWERED_STATE 2
-DEFAULT_STATE 4
-ADR_PENDING_STATE 8
-ADDRESS_STATE 16
-CONFIGURED_STATE 32
-]
-"59 D:\USB/CDC/leds.c
-[e E2 . `uc
-LED_NONE 0
-LED_D1 1
-LED_D2 2
-LED_D3 3
-LED_D4 4
-]
-"52 D:\USB/CDC/app_device_cdc_basic.c
-[v _APP_DeviceCDCBasicDemoInitialize APP_DeviceCDCBasicDemoInitialize `(v  1 e 1 0 ]
-"50 D:\USB/CDC/app_led_usb_status.c
-[v _APP_LEDUpdateUSBStatus APP_LEDUpdateUSBStatus `(v  1 e 1 0 ]
-"59 D:\USB/CDC/leds.c
-[v _LED_On LED_On `(v  1 e 1 0 ]
-"100
-[v _LED_Off LED_Off `(v  1 e 1 0 ]
-"220
-[v _LED_Enable LED_Enable `(v  1 e 1 0 ]
-"55 D:\USB\18F14K50-PIC-USB_UART\buttons.c
-[v _BUTTON_IsPressed BUTTON_IsPressed `(a  1 e 1 0 ]
-"85
-[v _BUTTON_Enable BUTTON_Enable `(v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
@@ -281,27 +208,27 @@ LED_D4 4
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"119 D:\USB\18F14K50-PIC-USB_UART\main.c
+"124 D:\USB\18F14K50-PIC-USB_UART\main.c
 [v _main main `(v  1 e 1 0 ]
-"218
+"304
 [v _GetChar GetChar `(uc  1 e 1 0 ]
-"234
+"320
 [v _PutString01 PutString01 `(v  1 e 1 0 ]
-"243
+"329
 [v _PutString03 PutString03 `(v  1 e 1 0 ]
-"257
-[v _PutString PutString `(v  1 e 1 0 ]
-"276
-[v _PutStringLF PutStringLF `(v  1 e 1 0 ]
-"332
-[v _Wait Wait `(v  1 e 1 0 ]
 "344
+[v _PutString PutString `(v  1 e 1 0 ]
+"363
+[v _PutStringLF PutStringLF `(v  1 e 1 0 ]
+"419
+[v _Wait Wait `(v  1 e 1 0 ]
+"431
 [v _skUSB_ini skUSB_ini `(v  1 e 1 0 ]
-"384
+"471
 [v _skStrlen skStrlen `(uc  1 e 1 0 ]
-"430
+"517
 [v _UsbPutString03 UsbPutString03 `(v  1 e 1 0 ]
-"512
+"573
 [v _uint2string uint2string `(v  1 e 1 0 ]
 "65 D:\USB\18F14K50-PIC-USB_UART\system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -357,49 +284,37 @@ LED_D4 4
 [v _USBCheckCDCRequest USBCheckCDCRequest `(v  1 e 1 0 ]
 "291
 [v _CDCInitEP CDCInitEP `(v  1 e 1 0 ]
-"485
+"487
 [v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
-"550
-[v _putUSBUSART putUSBUSART `(v  1 e 1 0 ]
-"618
+"626
 [v _putsUSBUSART putsUSBUSART `(v  1 e 1 0 ]
-"706
-[v _putrsUSBUSART putrsUSBUSART `(v  1 e 1 0 ]
-"814
+"826
 [v _CDCTxService CDCTxService `(v  1 e 1 0 ]
 "51 D:\USB\18F14K50-PIC-USB_UART\usb_events.c
 [v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(a  1 e 1 0 ]
-"35 D:\USB/CDC/app_device_cdc_basic.c
-[v _buttonPressed buttonPressed `a  1 s 1 buttonPressed ]
-"36
-[v _buttonMessage buttonMessage `[18]uc  1 s 18 buttonMessage ]
-"37
-[v _readBuffer readBuffer `[64]uc  1 s 64 readBuffer ]
-"38
-[v _writeBuffer writeBuffer `[64]uc  1 s 64 writeBuffer ]
 "52 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
 [v _UEP0 UEP0 `VEuc  1 e 1 @3923 ]
-[s S882 . 1 `uc 1 EPSTALL 1 0 :1:0 
+[s S815 . 1 `uc 1 EPSTALL 1 0 :1:0 
 `uc 1 EPINEN 1 0 :1:1 
 `uc 1 EPOUTEN 1 0 :1:2 
 `uc 1 EPCONDIS 1 0 :1:3 
 `uc 1 EPHSHK 1 0 :1:4 
 ]
 "80
-[s S888 . 1 `uc 1 EP0STALL 1 0 :1:0 
+[s S821 . 1 `uc 1 EP0STALL 1 0 :1:0 
 `uc 1 EP0INEN 1 0 :1:1 
 `uc 1 EP0OUTEN 1 0 :1:2 
 `uc 1 EP0CONDIS 1 0 :1:3 
 `uc 1 EP0HSHK 1 0 :1:4 
 ]
-[s S894 . 1 `uc 1 EPSTALL0 1 0 :1:0 
+[s S827 . 1 `uc 1 EPSTALL0 1 0 :1:0 
 `uc 1 EPINEN0 1 0 :1:1 
 `uc 1 EPOUTEN0 1 0 :1:2 
 `uc 1 EPCONDIS0 1 0 :1:3 
 `uc 1 EPHSHK0 1 0 :1:4 
 ]
-[u S900 . 1 `S882 1 . 1 0 `S888 1 . 1 0 `S894 1 . 1 0 ]
-[v _UEP0bits UEP0bits `VES900  1 e 1 @3923 ]
+[u S833 . 1 `S815 1 . 1 0 `S821 1 . 1 0 `S827 1 . 1 0 ]
+[v _UEP0bits UEP0bits `VES833  1 e 1 @3923 ]
 "160
 [v _UEP1 UEP1 `VEuc  1 e 1 @3924 ]
 "916
@@ -410,7 +325,7 @@ LED_D4 4
 [v _UEIR UEIR `VEuc  1 e 1 @3935 ]
 "1192
 [v _UIE UIE `VEuc  1 e 1 @3936 ]
-[s S757 . 1 `uc 1 URSTIE 1 0 :1:0 
+[s S690 . 1 `uc 1 URSTIE 1 0 :1:0 
 `uc 1 UERRIE 1 0 :1:1 
 `uc 1 ACTVIE 1 0 :1:2 
 `uc 1 TRNIE 1 0 :1:3 
@@ -419,13 +334,13 @@ LED_D4 4
 `uc 1 SOFIE 1 0 :1:6 
 ]
 "1208
-[u S765 . 1 `S757 1 . 1 0 ]
-[v _UIEbits UIEbits `VES765  1 e 1 @3936 ]
+[u S698 . 1 `S690 1 . 1 0 ]
+[v _UIEbits UIEbits `VES698  1 e 1 @3936 ]
 "1248
 [v _UCFG UCFG `VEuc  1 e 1 @3937 ]
 "1308
 [v _UIR UIR `VEuc  1 e 1 @3938 ]
-[s S709 . 1 `uc 1 URSTIF 1 0 :1:0 
+[s S642 . 1 `uc 1 URSTIF 1 0 :1:0 
 `uc 1 UERRIF 1 0 :1:1 
 `uc 1 ACTVIF 1 0 :1:2 
 `uc 1 TRNIF 1 0 :1:3 
@@ -434,13 +349,13 @@ LED_D4 4
 `uc 1 SOFIF 1 0 :1:6 
 ]
 "1324
-[u S717 . 1 `S709 1 . 1 0 ]
-[v _UIRbits UIRbits `VES717  1 e 1 @3938 ]
+[u S650 . 1 `S642 1 . 1 0 ]
+[v _UIRbits UIRbits `VES650  1 e 1 @3938 ]
 "1364
 [v _USTAT USTAT `VEuc  1 e 1 @3939 ]
 "1415
 [v _UCON UCON `VEuc  1 e 1 @3940 ]
-[s S191 . 1 `uc 1 . 1 0 :1:0 
+[s S137 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 SUSPND 1 0 :1:1 
 `uc 1 RESUME 1 0 :1:2 
 `uc 1 USBEN 1 0 :1:3 
@@ -449,92 +364,25 @@ LED_D4 4
 `uc 1 PPBRST 1 0 :1:6 
 ]
 "1431
-[u S199 . 1 `S191 1 . 1 0 ]
-[v _UCONbits UCONbits `VES199  1 e 1 @3940 ]
+[u S145 . 1 `S137 1 . 1 0 ]
+[v _UCONbits UCONbits `VES145  1 e 1 @3940 ]
 "2127
 [v _ANSEL ANSEL `VEuc  1 e 1 @3966 ]
 "2172
 [v _ANSELH ANSELH `VEuc  1 e 1 @3967 ]
 "2210
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
-[s S27 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 . 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-]
-"2244
-[s S34 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 AN3 1 0 :1:4 
-]
-[s S37 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 OSC2 1 0 :1:4 
-`uc 1 OSC1 1 0 :1:5 
-]
-[s S41 . 1 `uc 1 . 1 0 :4:0 
-`uc 1 CLKOUT 1 0 :1:4 
-`uc 1 CLKIN 1 0 :1:5 
-]
-[s S45 . 1 `uc 1 ULPWUIN 1 0 :1:0 
-`uc 1 . 1 0 :4:1 
-`uc 1 LVDIN 1 0 :1:5 
-]
-[u S49 . 1 `S27 1 . 1 0 `S34 1 . 1 0 `S37 1 . 1 0 `S41 1 . 1 0 `S45 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES49  1 e 1 @3968 ]
 "2309
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 "2417
 [v _PORTC PORTC `VEuc  1 e 1 @3970 ]
-[s S2561 . 1 `uc 1 LATC0 1 0 :1:0 
-`uc 1 LATC1 1 0 :1:1 
-`uc 1 LATC2 1 0 :1:2 
-`uc 1 LATC3 1 0 :1:3 
-`uc 1 LATC4 1 0 :1:4 
-`uc 1 LATC5 1 0 :1:5 
-`uc 1 LATC6 1 0 :1:6 
-`uc 1 LATC7 1 0 :1:7 
-]
-"2846
-[s S2570 . 1 `uc 1 LC0 1 0 :1:0 
-`uc 1 LC1 1 0 :1:1 
-`uc 1 LC2 1 0 :1:2 
-`uc 1 LC3 1 0 :1:3 
-`uc 1 LC4 1 0 :1:4 
-`uc 1 LC5 1 0 :1:5 
-`uc 1 LC6 1 0 :1:6 
-`uc 1 LC7 1 0 :1:7 
-]
-[u S2579 . 1 `S2561 1 . 1 0 `S2570 1 . 1 0 ]
-[v _LATCbits LATCbits `VES2579  1 e 1 @3979 ]
 "2931
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "3013
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "3143
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S2601 . 1 `uc 1 TRISC0 1 0 :1:0 
-`uc 1 TRISC1 1 0 :1:1 
-`uc 1 TRISC2 1 0 :1:2 
-`uc 1 TRISC3 1 0 :1:3 
-`uc 1 TRISC4 1 0 :1:4 
-`uc 1 TRISC5 1 0 :1:5 
-`uc 1 TRISC6 1 0 :1:6 
-`uc 1 TRISC7 1 0 :1:7 
-]
-"3175
-[s S2610 . 1 `uc 1 RC0 1 0 :1:0 
-`uc 1 RC1 1 0 :1:1 
-`uc 1 RC2 1 0 :1:2 
-`uc 1 RC3 1 0 :1:3 
-`uc 1 RC4 1 0 :1:4 
-`uc 1 RC5 1 0 :1:5 
-`uc 1 RC6 1 0 :1:6 
-`uc 1 RC7 1 0 :1:7 
-]
-[u S2619 . 1 `S2601 1 . 1 0 `S2610 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES2619  1 e 1 @3988 ]
-[s S135 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S81 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -543,13 +391,13 @@ LED_D4 4
 `uc 1 ADIF 1 0 :1:6 
 ]
 "3527
-[s S143 . 1 `uc 1 . 1 0 :4:0 
+[s S89 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 ]
-[u S147 . 1 `S135 1 . 1 0 `S143 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES147  1 e 1 @3998 ]
-[s S655 . 1 `uc 1 . 1 0 :1:0 
+[u S93 . 1 `S81 1 . 1 0 `S89 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES93  1 e 1 @3998 ]
+[s S588 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TMR3IE 1 0 :1:1 
 `uc 1 USBIE 1 0 :1:2 
 `uc 1 BCLIE 1 0 :1:3 
@@ -559,12 +407,12 @@ LED_D4 4
 `uc 1 OSCFIE 1 0 :1:7 
 ]
 "3669
-[s S664 . 1 `uc 1 . 1 0 :6:0 
+[s S597 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CMIE 1 0 :1:6 
 ]
-[u S667 . 1 `S655 1 . 1 0 `S664 1 . 1 0 ]
-[v _PIE2bits PIE2bits `VES667  1 e 1 @4000 ]
-[s S729 . 1 `uc 1 . 1 0 :1:0 
+[u S600 . 1 `S588 1 . 1 0 `S597 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES600  1 e 1 @4000 ]
+[s S662 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 TMR3IF 1 0 :1:1 
 `uc 1 USBIF 1 0 :1:2 
 `uc 1 BCLIF 1 0 :1:3 
@@ -574,11 +422,11 @@ LED_D4 4
 `uc 1 OSCFIF 1 0 :1:7 
 ]
 "3735
-[s S738 . 1 `uc 1 . 1 0 :6:0 
+[s S671 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 CMIF 1 0 :1:6 
 ]
-[u S741 . 1 `S729 1 . 1 0 `S738 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES741  1 e 1 @4001 ]
+[u S674 . 1 `S662 1 . 1 0 `S671 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES674  1 e 1 @4001 ]
 "3988
 [v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
 "4198
@@ -591,6 +439,14 @@ LED_D4 4
 [v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
 "4777
 [v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"5666
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
+"5728
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
+"5798
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+"6019
+[v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "6538
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 "9348
@@ -599,32 +455,32 @@ LED_D4 4
 [v _USB_In_Buffer USB_In_Buffer `[64]uc  1 e 64 0 ]
 "71
 [v _USB_Out_Buffer USB_Out_Buffer `[64]uc  1 e 64 0 ]
-"73
+"74
 [v _CharConv CharConv `[16]uc  1 e 16 0 ]
-[s S355 _USB_DEVICE_DESCRIPTOR 18 `uc 1 bLength 1 0 `uc 1 bDescriptorType 1 1 `us 1 bcdUSB 2 2 `uc 1 bDeviceClass 1 4 `uc 1 bDeviceSubClass 1 5 `uc 1 bDeviceProtocol 1 6 `uc 1 bMaxPacketSize0 1 7 `us 1 idVendor 2 8 `us 1 idProduct 2 10 `us 1 bcdDevice 2 12 `uc 1 iManufacturer 1 14 `uc 1 iProduct 1 15 `uc 1 iSerialNumber 1 16 `uc 1 bNumConfigurations 1 17 ]
+[s S288 _USB_DEVICE_DESCRIPTOR 18 `uc 1 bLength 1 0 `uc 1 bDescriptorType 1 1 `us 1 bcdUSB 2 2 `uc 1 bDeviceClass 1 4 `uc 1 bDeviceSubClass 1 5 `uc 1 bDeviceProtocol 1 6 `uc 1 bMaxPacketSize0 1 7 `us 1 idVendor 2 8 `us 1 idProduct 2 10 `us 1 bcdDevice 2 12 `uc 1 iManufacturer 1 14 `uc 1 iProduct 1 15 `uc 1 iSerialNumber 1 16 `uc 1 bNumConfigurations 1 17 ]
 "152 D:\USB\18F14K50-PIC-USB_UART\usb_descriptors.c
-[v _device_dsc device_dsc `CS355  1 e 18 0 ]
+[v _device_dsc device_dsc `CS288  1 e 18 0 ]
 "171
 [v _configDescriptor1 configDescriptor1 `C[67]uc  1 e 67 0 ]
-[s S392 . 4 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[1]us 1 string 2 2 ]
+[s S325 . 4 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[1]us 1 string 2 2 ]
 "257
-[v _sd000 sd000 `CS392  1 e 4 0 ]
-[s S396 . 52 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[25]us 1 string 50 2 ]
+[v _sd000 sd000 `CS325  1 e 4 0 ]
+[s S329 . 52 `uc 1 bLength 1 0 `uc 1 bDscType 1 1 `[25]us 1 string 50 2 ]
 "261
-[v _sd001 sd001 `CS396  1 e 52 0 ]
+[v _sd001 sd001 `CS329  1 e 52 0 ]
 "268
-[v _sd002 sd002 `CS396  1 e 52 0 ]
+[v _sd002 sd002 `CS329  1 e 52 0 ]
 "286
 [v _USB_CD_Ptr USB_CD_Ptr `C[1]*.25Cuc  1 e 2 0 ]
 "291
 [v _USB_SD_Ptr USB_SD_Ptr `C[3]*.25Cuc  1 e 6 0 ]
 "141 D:\USB\18F14K50-PIC-USB_UART\usb_device.c
-[v _USBDeviceState USBDeviceState `E3424  1 e 1 0 ]
+[v _USBDeviceState USBDeviceState `E3398  1 e 1 0 ]
 "142
 [v _USBActiveConfiguration USBActiveConfiguration `uc  1 e 1 0 ]
 "143
 [v _USBAlternateInterface USBAlternateInterface `[2]uc  1 e 2 0 ]
-[s S444 . 1 `uc 1 BC8 1 0 :1:0 
+[s S377 . 1 `uc 1 BC8 1 0 :1:0 
 `uc 1 BC9 1 0 :1:1 
 `uc 1 BSTALL 1 0 :1:2 
 `uc 1 DTSEN 1 0 :1:3 
@@ -634,80 +490,80 @@ LED_D4 4
 `uc 1 UOWN 1 0 :1:7 
 ]
 "144
-[s S453 . 1 `uc 1 . 1 0 :2:0 
+[s S386 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID0 1 0 :1:2 
 `uc 1 PID1 1 0 :1:3 
 `uc 1 PID2 1 0 :1:4 
 `uc 1 PID3 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 ]
-[s S460 . 1 `uc 1 . 1 0 :2:0 
+[s S393 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-[u S464 _BD_STAT 1 `uc 1 Val 1 0 `S444 1 . 1 0 `S453 1 . 1 0 `S460 1 . 1 0 ]
-[s S469 . 4 `S464 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
-[s S474 . 4 `uc 1 . 1 0 :8:0 
+[u S397 _BD_STAT 1 `uc 1 Val 1 0 `S377 1 . 1 0 `S386 1 . 1 0 `S393 1 . 1 0 ]
+[s S402 . 4 `S397 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S407 . 4 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `us 1 ADR 2 2 ]
-[u S478 __BDT 4 `S469 1 . 4 0 `S474 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
-[v _pBDTEntryEP0OutCurrent pBDTEntryEP0OutCurrent `*.39VES478  1 e 2 0 ]
+[u S411 __BDT 4 `S402 1 . 4 0 `S407 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v _pBDTEntryEP0OutCurrent pBDTEntryEP0OutCurrent `*.39VES411  1 e 2 0 ]
 "145
-[v _pBDTEntryEP0OutNext pBDTEntryEP0OutNext `*.39VES478  1 e 2 0 ]
+[v _pBDTEntryEP0OutNext pBDTEntryEP0OutNext `*.39VES411  1 e 2 0 ]
 "146
-[v _pBDTEntryOut pBDTEntryOut `[3]*.39VES478  1 e 6 0 ]
+[v _pBDTEntryOut pBDTEntryOut `[3]*.39VES411  1 e 6 0 ]
 "147
-[v _pBDTEntryIn pBDTEntryIn `[3]*.39VES478  1 e 6 0 ]
+[v _pBDTEntryIn pBDTEntryIn `[3]*.39VES411  1 e 6 0 ]
 "148
 [v _shortPacketStatus shortPacketStatus `uc  1 e 1 0 ]
 "149
 [v _controlTransferState controlTransferState `uc  1 e 1 0 ]
-[u S483 . 3 `*.2uc 1 bRam 3 0 `*.2Cuc 1 bRom 3 0 `*.2us 1 wRam 3 0 `*.2Cus 1 wRom 3 0 ]
+[u S416 . 3 `*.2uc 1 bRam 3 0 `*.2Cuc 1 bRom 3 0 `*.2us 1 wRam 3 0 `*.2Cus 1 wRom 3 0 ]
 "150
-[s S488 . 1 `uc 1 ctrl_trf_mem 1 0 :1:0 
+[s S421 . 1 `uc 1 ctrl_trf_mem 1 0 :1:0 
 `uc 1 reserved 1 0 :5:1 
 `uc 1 includeZero 1 0 :1:6 
 `uc 1 busy 1 0 :1:7 
 ]
-[u S493 . 1 `S488 1 bits 1 0 `uc 1 Val 1 0 ]
-[s S496 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
-[u S499 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S496 1 byte 2 0 ]
-[s S503 . 6 `S483 1 pSrc 3 0 `S493 1 info 1 3 `S499 1 wCount 2 4 ]
-[v _inPipes inPipes `[1]S503  1 e 6 0 ]
-[u S507 . 3 `*.2uc 1 bRam 3 0 `*.2us 1 wRam 3 0 ]
+[u S426 . 1 `S421 1 bits 1 0 `uc 1 Val 1 0 ]
+[s S429 . 2 `uc 1 LB 1 0 `uc 1 HB 1 1 ]
+[u S432 . 2 `us 1 Val 2 0 `[2]uc 1 v 2 0 `S429 1 byte 2 0 ]
+[s S436 . 6 `S416 1 pSrc 3 0 `S426 1 info 1 3 `S432 1 wCount 2 4 ]
+[v _inPipes inPipes `[1]S436  1 e 6 0 ]
+[u S440 . 3 `*.2uc 1 bRam 3 0 `*.2us 1 wRam 3 0 ]
 "151
-[s S510 . 1 `uc 1 reserved 1 0 :7:0 
+[s S443 . 1 `uc 1 reserved 1 0 :7:0 
 `uc 1 busy 1 0 :1:7 
 ]
-[u S513 . 1 `S510 1 bits 1 0 `uc 1 Val 1 0 ]
-[s S517 . 8 `S507 1 pDst 3 0 `S513 1 info 1 3 `S499 1 wCount 2 4 `*.37(v 1 pFunc 2 6 ]
-[v _outPipes outPipes `[1]S517  1 e 8 0 ]
+[u S446 . 1 `S443 1 bits 1 0 `uc 1 Val 1 0 ]
+[s S450 . 8 `S440 1 pDst 3 0 `S446 1 info 1 3 `S432 1 wCount 2 4 `*.37(v 1 pFunc 2 6 ]
+[v _outPipes outPipes `[1]S450  1 e 8 0 ]
 "152
 [v _pDst pDst `*.39uc  1 e 2 0 ]
 "153
 [v _RemoteWakeup RemoteWakeup `a  1 e 1 0 ]
 "154
 [v _USBBusIsSuspended USBBusIsSuspended `a  1 e 1 0 ]
-[s S522 . 1 `uc 1 filler1 1 0 :1:0 
+[s S455 . 1 `uc 1 filler1 1 0 :1:0 
 `uc 1 ping_pong 1 0 :1:1 
 `uc 1 direction 1 0 :1:2 
 `uc 1 endpoint_number 1 0 :4:3 
 ]
 "155
-[u S527 __USTAT 1 `S522 1 . 1 0 `uc 1 Val 1 0 ]
-[v _USTATcopy USTATcopy `S527  1 e 1 0 ]
+[u S460 __USTAT 1 `S455 1 . 1 0 `uc 1 Val 1 0 ]
+[v _USTATcopy USTATcopy `S460  1 e 1 0 ]
 "156
 [v _endpoint_number endpoint_number `uc  1 e 1 0 ]
 "157
 [v _BothEP0OutUOWNsSet BothEP0OutUOWNsSet `a  1 e 1 0 ]
-[s S530 . 1 `uc 1 ping_pong_state 1 0 :1:0 
+[s S463 . 1 `uc 1 ping_pong_state 1 0 :1:0 
 `uc 1 transfer_terminated 1 0 :1:1 
 ]
 "158
-[u S533 . 1 `S530 1 bits 1 0 `uc 1 Val 1 0 ]
-[v _ep_data_in ep_data_in `[3]S533  1 e 3 0 ]
+[u S466 . 1 `S463 1 bits 1 0 `uc 1 Val 1 0 ]
+[v _ep_data_in ep_data_in `[3]S466  1 e 3 0 ]
 "159
-[v _ep_data_out ep_data_out `[3]S533  1 e 3 0 ]
+[v _ep_data_out ep_data_out `[3]S466  1 e 3 0 ]
 "160
 [v _USBStatusStageTimeoutCounter USBStatusStageTimeoutCounter `uc  1 e 1 0 ]
 "161
@@ -725,13 +581,13 @@ LED_D4 4
 "167
 [v _USBTicksSinceSuspendEnd USBTicksSinceSuspendEnd `uc  1 e 1 0 ]
 "174
-[v _BDT BDT `VE[12]S478  1 e 48 @512 ]
-[s S536 . 8 `uc 1 bmRequestType 1 0 `uc 1 bRequest 1 1 `us 1 wValue 2 2 `us 1 wIndex 2 4 `us 1 wLength 2 6 ]
+[v _BDT BDT `VE[12]S411  1 e 48 @512 ]
+[s S469 . 8 `uc 1 bmRequestType 1 0 `uc 1 bRequest 1 1 `us 1 wValue 2 2 `us 1 wIndex 2 4 `us 1 wLength 2 6 ]
 "179
-[s S563 . 8 `uc 1 . 1 0 :8:0 
+[s S496 . 8 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
-`S499 1 W_Value 2 2 `S499 1 W_Index 2 4 `S499 1 W_Length 2 6 ]
-[s S569 . 8 `uc 1 Recipient 1 0 :5:0 
+`S432 1 W_Value 2 2 `S432 1 W_Index 2 4 `S432 1 W_Length 2 6 ]
+[s S502 . 8 `uc 1 Recipient 1 0 :5:0 
 `uc 1 RequestType 1 0 :2:5 
 `uc 1 DataDir 1 0 :1:7 
 `uc 1 . 1 1 :8:0 
@@ -741,44 +597,44 @@ LED_D4 4
 `uc 1 . 1 6 :8:0 
 `uc 1 . 1 7 :8:0 
 ]
-[s S580 . 1 `uc 1 recipient 1 0 :5:0 
+[s S513 . 1 `uc 1 recipient 1 0 :5:0 
 `uc 1 type 1 0 :2:5 
 `uc 1 direction 1 0 :1:7 
 ]
-[u S584 . 1 `uc 1 bmRequestType 1 0 `S580 1 . 1 0 ]
-[s S587 . 1 `S584 1 requestInfo 1 0 ]
-[s S589 . 8 `uc 1 . 1 0 :8:0 
+[u S517 . 1 `uc 1 bmRequestType 1 0 `S513 1 . 1 0 ]
+[s S520 . 1 `S517 1 requestInfo 1 0 ]
+[s S522 . 8 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `uc 1 bDscIndex 1 2 `uc 1 bDescriptorType 1 3 `us 1 wLangID 2 4 `uc 1 . 1 6 :8:0 
 `uc 1 . 1 7 :8:0 
 ]
-[s S597 . 8 `uc 1 . 1 0 :8:0 
+[s S530 . 8 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `uc 1 bDevADR 1 2 `uc 1 bDevADRH 1 3 `uc 1 . 1 4 :8:0 
 `uc 1 . 1 5 :8:0 
 `uc 1 . 1 6 :8:0 
 `uc 1 . 1 7 :8:0 
 ]
-[s S606 . 8 `uc 1 . 1 0 :8:0 
+[s S539 . 8 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `uc 1 bConfigurationValue 1 2 `uc 1 bCfgRSD 1 3 `uc 1 . 1 4 :8:0 
 `uc 1 . 1 5 :8:0 
 `uc 1 . 1 6 :8:0 
 `uc 1 . 1 7 :8:0 
 ]
-[s S615 . 8 `uc 1 . 1 0 :8:0 
+[s S548 . 8 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `uc 1 bAltID 1 2 `uc 1 bAltID_H 1 3 `uc 1 bIntfID 1 4 `uc 1 bIntfID_H 1 5 `uc 1 . 1 6 :8:0 
 `uc 1 . 1 7 :8:0 
 ]
-[s S624 . 8 `uc 1 . 1 0 :8:0 
+[s S557 . 8 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `uc 1 . 1 2 :8:0 
 `uc 1 . 1 3 :8:0 
 `uc 1 bEPID 1 4 `uc 1 bEPID_H 1 5 `uc 1 . 1 6 :8:0 
 `uc 1 . 1 7 :8:0 
 ]
-[s S633 . 8 `uc 1 . 1 0 :8:0 
+[s S566 . 8 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `uc 1 . 1 2 :8:0 
 `uc 1 . 1 3 :8:0 
@@ -789,29 +645,29 @@ LED_D4 4
 `uc 1 . 1 6 :8:0 
 `uc 1 . 1 7 :8:0 
 ]
-[u S644 . 8 `S536 1 . 8 0 `S563 1 . 8 0 `S569 1 . 8 0 `S587 1 . 1 0 `S589 1 . 8 0 `S597 1 . 8 0 `S606 1 . 8 0 `S615 1 . 8 0 `S624 1 . 8 0 `S633 1 . 8 0 ]
-[v _SetupPkt SetupPkt `VES644  1 e 8 @560 ]
+[u S577 . 8 `S469 1 . 8 0 `S496 1 . 8 0 `S502 1 . 8 0 `S520 1 . 1 0 `S522 1 . 8 0 `S530 1 . 8 0 `S539 1 . 8 0 `S548 1 . 8 0 `S557 1 . 8 0 `S566 1 . 8 0 ]
+[v _SetupPkt SetupPkt `VES577  1 e 8 @560 ]
 "180
 [v _CtrlTrfData CtrlTrfData `VE[8]uc  1 e 8 @568 ]
 "66 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
 [v _cdc_data_tx cdc_data_tx `VE[64]uc  1 e 64 @576 ]
 "67
 [v _cdc_data_rx cdc_data_rx `VE[64]uc  1 e 64 @640 ]
-[s S2006 . 7 `[7]uc 1 _byte 7 0 ]
+[s S1939 . 7 `[7]uc 1 _byte 7 0 ]
 "77
-[s S2008 . 7 `ul 1 dwDTERate 4 0 `uc 1 bCharFormat 1 4 `uc 1 bParityType 1 5 `uc 1 bDataBits 1 6 ]
-[u S2013 _LINE_CODING 7 `S2006 1 . 7 0 `S2008 1 . 7 0 ]
-[v _line_coding line_coding `S2013  1 e 7 0 ]
+[s S1941 . 7 `ul 1 dwDTERate 4 0 `uc 1 bCharFormat 1 4 `uc 1 bParityType 1 5 `uc 1 bDataBits 1 6 ]
+[u S1946 _LINE_CODING 7 `S1939 1 . 7 0 `S1941 1 . 7 0 ]
+[v _line_coding line_coding `S1946  1 e 7 0 ]
 "84
 [v _cdc_rx_len cdc_rx_len `uc  1 e 1 0 ]
 "85
 [v _cdc_trf_state cdc_trf_state `uc  1 e 1 0 ]
-[s S2020 . 2 `uc 1 bLow 1 0 `uc 1 bHigh 1 1 ]
+[s S1953 . 2 `uc 1 bLow 1 0 `uc 1 bHigh 1 1 ]
 "86
-[u S2023 _POINTER 3 `S2020 1 . 2 0 `us 1 _word 2 0 `*.2uc 1 bRam 3 0 `*.2us 1 wRam 3 0 `*.2Cuc 1 bRom 3 0 `*.2Cus 1 wRom 3 0 ]
-[v _pCDCSrc pCDCSrc `S2023  1 e 3 0 ]
+[u S1956 _POINTER 3 `S1953 1 . 2 0 `us 1 _word 2 0 `*.2uc 1 bRam 3 0 `*.2us 1 wRam 3 0 `*.2Cuc 1 bRom 3 0 `*.2Cus 1 wRom 3 0 ]
+[v _pCDCSrc pCDCSrc `S1956  1 e 3 0 ]
 "87
-[v _pCDCDst pCDCDst `S2023  1 e 3 0 ]
+[v _pCDCDst pCDCDst `S1956  1 e 3 0 ]
 "88
 [v _cdc_tx_len cdc_tx_len `uc  1 e 1 0 ]
 "89
@@ -820,96 +676,98 @@ LED_D4 4
 [v _CDCDataOutHandle CDCDataOutHandle `*.39v  1 e 2 0 ]
 "92
 [v _CDCDataInHandle CDCDataInHandle `*.39v  1 e 2 0 ]
-[s S2030 . 1 `uc 1 DTE_PRESENT 1 0 :1:0 
+[s S1963 . 1 `uc 1 DTE_PRESENT 1 0 :1:0 
 `uc 1 CARRIER_CONTROL 1 0 :1:1 
 ]
 "95
-[u S2033 _CONTROL_SIGNAL_BITMAP 1 `uc 1 _byte 1 0 `S2030 1 . 1 0 ]
-[v _control_signal_bitmap control_signal_bitmap `S2033  1 e 1 0 ]
+[u S1966 _CONTROL_SIGNAL_BITMAP 1 `uc 1 _byte 1 0 `S1963 1 . 1 0 ]
+[v _control_signal_bitmap control_signal_bitmap `S1966  1 e 1 0 ]
 "111
 [v _dummy_encapsulated_cmd_response dummy_encapsulated_cmd_response `[8]uc  1 e 8 0 ]
-"119 D:\USB\18F14K50-PIC-USB_UART\main.c
+"124 D:\USB\18F14K50-PIC-USB_UART\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"121
-[v main@numBytesRead numBytesRead `uc  1 a 1 61 ]
-"122
-[v main@i i `uc  1 a 1 60 ]
-"123
-[v main@RxData RxData `uc  1 a 1 59 ]
-"214
+"126
+[v main@numBytesRead numBytesRead `uc  1 a 1 62 ]
+"127
+[v main@i i `uc  1 a 1 61 ]
+"128
+[v main@RxData RxData `uc  1 a 1 60 ]
+"129
+[v main@rtn rtn `uc  1 a 1 59 ]
+"300
 } 0
-"344
+"431
 [v _skUSB_ini skUSB_ini `(v  1 e 1 0 ]
 {
-"380
+"467
 } 0
-"485 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
+"487 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
 [v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
 {
 [v getsUSBUSART@buffer buffer `*.39uc  1 p 2 11 ]
 [v getsUSBUSART@len len `uc  1 p 1 13 ]
-"514
+"516
 } 0
-"332 D:\USB\18F14K50-PIC-USB_UART\main.c
+"419 D:\USB\18F14K50-PIC-USB_UART\main.c
 [v _Wait Wait `(v  1 e 1 0 ]
 {
-"334
+"421
 [v Wait@i i `i  1 a 2 3 ]
-"332
+"419
 [v Wait@num num `us  1 p 2 0 ]
-"339
+"426
 } 0
-"430
+"517
 [v _UsbPutString03 UsbPutString03 `(v  1 e 1 0 ]
 {
-"434
+"521
 [v UsbPutString03@string string `[30]uc  1 a 30 27 ]
-"432
+"519
 [v UsbPutString03@i i `uc  1 a 1 57 ]
-"430
+"517
 [v UsbPutString03@str str `*.25uc  1 p 2 21 ]
 [v UsbPutString03@data data `us  1 p 2 23 ]
 [v UsbPutString03@flg flg `uc  1 p 1 25 ]
 [v UsbPutString03@keta keta `uc  1 p 1 26 ]
-"481
+"568
 } 0
-"384
+"471
 [v _skStrlen skStrlen `(uc  1 e 1 0 ]
 {
-"386
+"473
 [v skStrlen@rtn rtn `uc  1 a 1 3 ]
-"384
+"471
 [v skStrlen@str str `*.39uc  1 p 2 0 ]
 [v skStrlen@flg flg `uc  1 p 1 2 ]
-"408
+"495
 } 0
-"618 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
+"626 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
 [v _putsUSBUSART putsUSBUSART `(v  1 e 1 0 ]
 {
-"621
+"629
 [v putsUSBUSART@pData pData `*.39uc  1 a 2 2 ]
-"620
+"628
 [v putsUSBUSART@len len `uc  1 a 1 4 ]
-"618
+"626
 [v putsUSBUSART@data data `*.39uc  1 p 2 0 ]
-"664
+"672
 } 0
-"234 D:\USB\18F14K50-PIC-USB_UART\main.c
+"320 D:\USB\18F14K50-PIC-USB_UART\main.c
 [v _PutString01 PutString01 `(v  1 e 1 0 ]
 {
 [v PutString01@string string `*.25uc  1 p 2 2 ]
-[v PutString01@flg flg `us  1 p 2 4 ]
-"239
+[v PutString01@flg flg `uc  1 p 1 4 ]
+"325
 } 0
-"814 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
+"826 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
 [v _CDCTxService CDCTxService `(v  1 e 1 0 ]
 {
-"816
+"828
 [v CDCTxService@byte_to_send byte_to_send `uc  1 a 1 12 ]
-"817
+"829
 [v CDCTxService@i i `uc  1 a 1 11 ]
-"919
+"931
 } 0
 "432 D:\USB\18F14K50-PIC-USB_UART\usb_device.c
 [v _USBDeviceTasks USBDeviceTasks `(v  1 e 1 0 ]
@@ -1008,7 +866,7 @@ LED_D4 4
 "2084 D:\USB\18F14K50-PIC-USB_UART\usb_device.c
 [v _USBStdGetStatusHandler USBStdGetStatusHandler `(v  1 s 1 USBStdGetStatusHandler ]
 {
-[s S444 . 1 `uc 1 BC8 1 0 :1:0 
+[s S377 . 1 `uc 1 BC8 1 0 :1:0 
 `uc 1 BC9 1 0 :1:1 
 `uc 1 BSTALL 1 0 :1:2 
 `uc 1 DTSEN 1 0 :1:3 
@@ -1018,24 +876,24 @@ LED_D4 4
 `uc 1 UOWN 1 0 :1:7 
 ]
 "2117
-[s S453 . 1 `uc 1 . 1 0 :2:0 
+[s S386 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID0 1 0 :1:2 
 `uc 1 PID1 1 0 :1:3 
 `uc 1 PID2 1 0 :1:4 
 `uc 1 PID3 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 ]
-[s S460 . 1 `uc 1 . 1 0 :2:0 
+[s S393 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-[u S464 _BD_STAT 1 `uc 1 Val 1 0 `S444 1 . 1 0 `S453 1 . 1 0 `S460 1 . 1 0 ]
-[s S469 . 4 `S464 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
-[s S474 . 4 `uc 1 . 1 0 :8:0 
+[u S397 _BD_STAT 1 `uc 1 Val 1 0 `S377 1 . 1 0 `S386 1 . 1 0 `S393 1 . 1 0 ]
+[s S402 . 4 `S397 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S407 . 4 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `us 1 ADR 2 2 ]
-[u S478 __BDT 4 `S469 1 . 4 0 `S474 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
-[v USBStdGetStatusHandler@p p `*.39S478  1 a 2 2 ]
+[u S411 __BDT 4 `S402 1 . 4 0 `S407 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBStdGetStatusHandler@p p `*.39S411  1 a 2 2 ]
 "2142
 } 0
 "1998
@@ -1046,7 +904,7 @@ LED_D4 4
 "2712
 [v _USBStdFeatureReqHandler USBStdFeatureReqHandler `(v  1 s 1 USBStdFeatureReqHandler ]
 {
-[s S444 . 1 `uc 1 BC8 1 0 :1:0 
+[s S377 . 1 `uc 1 BC8 1 0 :1:0 
 `uc 1 BC9 1 0 :1:1 
 `uc 1 BSTALL 1 0 :1:2 
 `uc 1 DTSEN 1 0 :1:3 
@@ -1056,38 +914,38 @@ LED_D4 4
 `uc 1 UOWN 1 0 :1:7 
 ]
 "2714
-[s S453 . 1 `uc 1 . 1 0 :2:0 
+[s S386 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID0 1 0 :1:2 
 `uc 1 PID1 1 0 :1:3 
 `uc 1 PID2 1 0 :1:4 
 `uc 1 PID3 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 ]
-[s S460 . 1 `uc 1 . 1 0 :2:0 
+[s S393 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-[u S464 _BD_STAT 1 `uc 1 Val 1 0 `S444 1 . 1 0 `S453 1 . 1 0 `S460 1 . 1 0 ]
-[s S469 . 4 `S464 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
-[s S474 . 4 `uc 1 . 1 0 :8:0 
+[u S397 _BD_STAT 1 `uc 1 Val 1 0 `S377 1 . 1 0 `S386 1 . 1 0 `S393 1 . 1 0 ]
+[s S402 . 4 `S397 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S407 . 4 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `us 1 ADR 2 2 ]
-[u S478 __BDT 4 `S469 1 . 4 0 `S474 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
-[v USBStdFeatureReqHandler@p p `*.39S478  1 a 2 27 ]
+[u S411 __BDT 4 `S402 1 . 4 0 `S407 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBStdFeatureReqHandler@p p `*.39S411  1 a 2 27 ]
 "2719
 [v USBStdFeatureReqHandler@pUEP pUEP `*.39uc  1 a 2 24 ]
-[s S530 . 1 `uc 1 ping_pong_state 1 0 :1:0 
+[s S463 . 1 `uc 1 ping_pong_state 1 0 :1:0 
 `uc 1 transfer_terminated 1 0 :1:1 
 ]
 "2715
-[u S533 . 1 `S530 1 bits 1 0 `uc 1 Val 1 0 ]
-[v USBStdFeatureReqHandler@current_ep_data current_ep_data `S533  1 a 1 26 ]
+[u S466 . 1 `S463 1 bits 1 0 `uc 1 Val 1 0 ]
+[v USBStdFeatureReqHandler@current_ep_data current_ep_data `S466  1 a 1 26 ]
 "2904
 } 0
 "51 D:\USB\18F14K50-PIC-USB_UART\usb_events.c
 [v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(a  1 e 1 0 ]
 {
-[v USER_USB_CALLBACK_EVENT_HANDLER@event event `E2852  1 p 2 14 ]
+[v USER_USB_CALLBACK_EVENT_HANDLER@event event `E2826  1 p 2 14 ]
 [v USER_USB_CALLBACK_EVENT_HANDLER@pdata pdata `*.39v  1 p 2 16 ]
 [v USER_USB_CALLBACK_EVENT_HANDLER@size size `us  1 p 2 18 ]
 "114
@@ -1100,26 +958,10 @@ LED_D4 4
 "65 D:\USB\18F14K50-PIC-USB_UART\system.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-[v SYSTEM_Initialize@state state `E2834  1 a 1 wreg ]
-[v SYSTEM_Initialize@state state `E2834  1 a 1 wreg ]
-[v SYSTEM_Initialize@state state `E2834  1 a 1 5 ]
+[v SYSTEM_Initialize@state state `E2809  1 a 1 wreg ]
+[v SYSTEM_Initialize@state state `E2809  1 a 1 wreg ]
+[v SYSTEM_Initialize@state state `E2809  1 a 1 2 ]
 "80
-} 0
-"220 D:\USB/CDC/leds.c
-[v _LED_Enable LED_Enable `(v  1 e 1 0 ]
-{
-[v LED_Enable@led led `E2  1 a 1 wreg ]
-[v LED_Enable@led led `E2  1 a 1 wreg ]
-[v LED_Enable@led led `E2  1 a 1 2 ]
-"243
-} 0
-"85 D:\USB\18F14K50-PIC-USB_UART\buttons.c
-[v _BUTTON_Enable BUTTON_Enable `(v  1 e 1 0 ]
-{
-[v BUTTON_Enable@button button `E2809  1 a 1 wreg ]
-[v BUTTON_Enable@button button `E2809  1 a 1 wreg ]
-[v BUTTON_Enable@button button `E2809  1 a 1 2 ]
-"95
 } 0
 "291 D:\USB\18F14K50-PIC-USB_UART\usb_device_cdc.c
 [v _CDCInitEP CDCInitEP `(v  1 e 1 0 ]
@@ -1130,7 +972,7 @@ LED_D4 4
 [v _USBTransferOnePacket USBTransferOnePacket `(*.39v  1 e 2 0 ]
 {
 [v USBTransferOnePacket@ep ep `uc  1 a 1 wreg ]
-[s S444 . 1 `uc 1 BC8 1 0 :1:0 
+[s S377 . 1 `uc 1 BC8 1 0 :1:0 
 `uc 1 BC9 1 0 :1:1 
 `uc 1 BSTALL 1 0 :1:2 
 `uc 1 DTSEN 1 0 :1:3 
@@ -1140,24 +982,24 @@ LED_D4 4
 `uc 1 UOWN 1 0 :1:7 
 ]
 "952
-[s S453 . 1 `uc 1 . 1 0 :2:0 
+[s S386 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID0 1 0 :1:2 
 `uc 1 PID1 1 0 :1:3 
 `uc 1 PID2 1 0 :1:4 
 `uc 1 PID3 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 ]
-[s S460 . 1 `uc 1 . 1 0 :2:0 
+[s S393 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-[u S464 _BD_STAT 1 `uc 1 Val 1 0 `S444 1 . 1 0 `S453 1 . 1 0 `S460 1 . 1 0 ]
-[s S469 . 4 `S464 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
-[s S474 . 4 `uc 1 . 1 0 :8:0 
+[u S397 _BD_STAT 1 `uc 1 Val 1 0 `S377 1 . 1 0 `S386 1 . 1 0 `S393 1 . 1 0 ]
+[s S402 . 4 `S397 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S407 . 4 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `us 1 ADR 2 2 ]
-[u S478 __BDT 4 `S469 1 . 4 0 `S474 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
-[v USBTransferOnePacket@handle handle `*.39VES478  1 a 2 9 ]
+[u S411 __BDT 4 `S402 1 . 4 0 `S407 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBTransferOnePacket@handle handle `*.39VES411  1 a 2 9 ]
 "950
 [v USBTransferOnePacket@ep ep `uc  1 a 1 wreg ]
 [v USBTransferOnePacket@dir dir `uc  1 p 1 0 ]
@@ -1184,7 +1026,7 @@ LED_D4 4
 [v _USBConfigureEndpoint USBConfigureEndpoint `(v  1 s 1 USBConfigureEndpoint ]
 {
 [v USBConfigureEndpoint@EPNum EPNum `uc  1 a 1 wreg ]
-[s S444 . 1 `uc 1 BC8 1 0 :1:0 
+[s S377 . 1 `uc 1 BC8 1 0 :1:0 
 `uc 1 BC9 1 0 :1:1 
 `uc 1 BSTALL 1 0 :1:2 
 `uc 1 DTSEN 1 0 :1:3 
@@ -1194,24 +1036,24 @@ LED_D4 4
 `uc 1 UOWN 1 0 :1:7 
 ]
 "1500
-[s S453 . 1 `uc 1 . 1 0 :2:0 
+[s S386 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID0 1 0 :1:2 
 `uc 1 PID1 1 0 :1:3 
 `uc 1 PID2 1 0 :1:4 
 `uc 1 PID3 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 ]
-[s S460 . 1 `uc 1 . 1 0 :2:0 
+[s S393 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 PID 1 0 :4:2 
 `uc 1 . 1 0 :2:6 
 ]
-[u S464 _BD_STAT 1 `uc 1 Val 1 0 `S444 1 . 1 0 `S453 1 . 1 0 `S460 1 . 1 0 ]
-[s S469 . 4 `S464 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
-[s S474 . 4 `uc 1 . 1 0 :8:0 
+[u S397 _BD_STAT 1 `uc 1 Val 1 0 `S377 1 . 1 0 `S386 1 . 1 0 `S393 1 . 1 0 ]
+[s S402 . 4 `S397 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S407 . 4 `uc 1 . 1 0 :8:0 
 `uc 1 . 1 1 :8:0 
 `us 1 ADR 2 2 ]
-[u S478 __BDT 4 `S469 1 . 4 0 `S474 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
-[v USBConfigureEndpoint@handle handle `*.39VES478  1 a 2 8 ]
+[u S411 __BDT 4 `S402 1 . 4 0 `S407 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBConfigureEndpoint@handle handle `*.39VES411  1 a 2 8 ]
 "1498
 [v USBConfigureEndpoint@EPNum EPNum `uc  1 a 1 wreg ]
 [v USBConfigureEndpoint@direction direction `uc  1 p 1 0 ]
@@ -1219,35 +1061,7 @@ LED_D4 4
 [v USBConfigureEndpoint@EPNum EPNum `uc  1 a 1 7 ]
 "1540
 } 0
-"50 D:\USB/CDC/app_led_usb_status.c
-[v _APP_LEDUpdateUSBStatus APP_LEDUpdateUSBStatus `(v  1 e 1 0 ]
-{
-"52
-[v APP_LEDUpdateUSBStatus@ledCount ledCount `us  1 s 2 ledCount ]
-"99
-} 0
-"59 D:\USB/CDC/leds.c
-[v _LED_On LED_On `(v  1 e 1 0 ]
-{
-[v LED_On@led led `E2  1 a 1 wreg ]
-[v LED_On@led led `E2  1 a 1 wreg ]
-[v LED_On@led led `E2  1 a 1 2 ]
-"82
-} 0
-"100
-[v _LED_Off LED_Off `(v  1 e 1 0 ]
-{
-[v LED_Off@led led `E2  1 a 1 wreg ]
-[v LED_Off@led led `E2  1 a 1 wreg ]
-[v LED_Off@led led `E2  1 a 1 2 ]
-"123
-} 0
-"52 D:\USB/CDC/app_device_cdc_basic.c
-[v _APP_DeviceCDCBasicDemoInitialize APP_DeviceCDCBasicDemoInitialize `(v  1 e 1 0 ]
-{
-"60
-} 0
-"2496 D:\USB\18F14K50-PIC-USB_UART\usb_device.c
+"2496
 [v _USBCtrlTrfOutHandler USBCtrlTrfOutHandler `(v  1 s 1 USBCtrlTrfOutHandler ]
 {
 "2525
@@ -1280,32 +1094,32 @@ LED_D4 4
 [v USBCtrlTrfTxService@byteToSend byteToSend `uc  1 a 1 0 ]
 "1780
 } 0
-"243 D:\USB\18F14K50-PIC-USB_UART\main.c
+"329 D:\USB\18F14K50-PIC-USB_UART\main.c
 [v _PutString03 PutString03 `(v  1 e 1 0 ]
 {
-"246
-[v PutString03@buf buf `[20]uc  1 a 20 29 ]
-"243
+"332
+[v PutString03@buf buf `[20]uc  1 a 20 27 ]
+"329
 [v PutString03@string string `*.25uc  1 p 2 21 ]
 [v PutString03@data data `us  1 p 2 23 ]
-[v PutString03@flg flg `us  1 p 2 25 ]
-[v PutString03@keta keta `us  1 p 2 27 ]
-"253
+[v PutString03@flg flg `uc  1 p 1 25 ]
+[v PutString03@keta keta `uc  1 p 1 26 ]
+"340
 } 0
-"512
+"573
 [v _uint2string uint2string `(v  1 e 1 0 ]
 {
-"514
+"575
 [v uint2string@dt dt `us  1 a 2 19 ]
-"515
+"576
 [v uint2string@i i `us  1 a 2 17 ]
-"516
+"577
 [v uint2string@sw sw `us  1 a 2 15 ]
-"512
+"573
 [v uint2string@buf buf `*.39uc  1 p 2 7 ]
 [v uint2string@data data `us  1 p 2 9 ]
 [v uint2string@flg flg `uc  1 p 1 11 ]
-"563
+"624
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -1329,23 +1143,23 @@ LED_D4 4
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"276 D:\USB\18F14K50-PIC-USB_UART\main.c
+"363 D:\USB\18F14K50-PIC-USB_UART\main.c
 [v _PutStringLF PutStringLF `(v  1 e 1 0 ]
 {
-"291
+"378
 } 0
-"257
+"344
 [v _PutString PutString `(v  1 e 1 0 ]
 {
 [v PutString@string string `*.35uc  1 p 2 0 ]
-"272
+"359
 } 0
-"218
+"304
 [v _GetChar GetChar `(uc  1 e 1 0 ]
 {
-"220
+"306
 [v GetChar@rxdt rxdt `uc  1 a 1 0 ]
-"230
+"316
 } 0
 "88 D:\USB\18F14K50-PIC-USB_UART\system.c
 [v _SYS_InterruptHigh SYS_InterruptHigh `IIH(v  1 e 1 0 ]

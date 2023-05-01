@@ -5098,46 +5098,10 @@ unsigned char __t3rd16on(void);
 # 24 "./system.h" 2
 
 
-# 1 "./buttons.h" 1
-# 29 "./buttons.h"
-typedef enum
-{
-    BUTTON_NONE,
-    BUTTON_S1,
-} BUTTON;
-# 51 "./buttons.h"
-_Bool BUTTON_IsPressed(BUTTON button);
-# 69 "./buttons.h"
-void BUTTON_Enable(BUTTON button);
-# 26 "./system.h" 2
 
-# 1 "./leds.h" 1
-# 29 "./leds.h"
-typedef enum
-{
-    LED_NONE,
-    LED_D1,
-    LED_D2,
-    LED_D3,
-    LED_D4
-} LED;
-# 56 "./leds.h"
-void LED_On(LED led);
-# 74 "./leds.h"
-void LED_Off(LED led);
-# 92 "./leds.h"
-void LED_Toggle(LED led);
-# 110 "./leds.h"
-_Bool LED_Get(LED led);
-# 127 "./leds.h"
-void LED_Enable(LED led);
-# 27 "./system.h" 2
 
 
 # 1 "./io_mapping.h" 1
-# 21 "./io_mapping.h"
-# 1 "./buttons.h" 1
-# 21 "./io_mapping.h" 2
 # 29 "./system.h" 2
 
 # 1 "./fixed_address_memory.h" 1
@@ -5158,19 +5122,9 @@ void SYSTEM_Initialize( SYSTEM_STATE state );
 # 21 "usb_events.c" 2
 
 
-# 1 "./app_device_cdc_basic.h" 1
-# 24 "./app_device_cdc_basic.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
-# 24 "./app_device_cdc_basic.h" 2
 
 
-# 1 "./usb_device_cdc.h" 1
-# 26 "./usb_device_cdc.h"
+
 # 1 "./usb.h" 1
 # 45 "./usb.h"
 # 1 "./usb_config.h" 1
@@ -6029,7 +5983,10 @@ _Bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t
 _Bool USBHALInitialize ( unsigned long flags );
 # 2055 "./usb_device.h" 2
 # 51 "./usb.h" 2
-# 26 "./usb_device_cdc.h" 2
+# 26 "usb_events.c" 2
+
+
+# 1 "./usb_device_cdc.h" 1
 # 536 "./usb_device_cdc.h"
 void CDCInitEP(void);
 # 562 "./usb_device_cdc.h"
@@ -6166,17 +6123,7 @@ extern LINE_CODING line_coding;
 
 extern volatile CTRL_TRF_SETUP SetupPkt;
 extern const uint8_t configDescriptor1[];
-# 26 "./app_device_cdc_basic.h" 2
-# 40 "./app_device_cdc_basic.h"
-void APP_DeviceCDCBasicDemoInitialize(void);
-# 56 "./app_device_cdc_basic.h"
-void APP_DeviceCDCBasicDemoTasks(void);
-# 23 "usb_events.c" 2
-
-# 1 "./app_led_usb_status.h" 1
-# 37 "./app_led_usb_status.h"
-void APP_LEDUpdateUSBStatus(void);
-# 24 "usb_events.c" 2
+# 28 "usb_events.c" 2
 # 51 "usb_events.c"
 _Bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size)
 {
@@ -6188,25 +6135,17 @@ _Bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t siz
         case EVENT_SOF:
 
 
-            APP_LEDUpdateUSBStatus();
+
             break;
 
         case EVENT_SUSPEND:
-
-            APP_LEDUpdateUSBStatus();
-
-
-
-
-
-
-
+# 74 "usb_events.c"
             SYSTEM_Initialize(SYSTEM_STATE_USB_SUSPEND);
             break;
 
         case EVENT_RESUME:
 
-            APP_LEDUpdateUSBStatus();
+
 
 
 
@@ -6219,7 +6158,7 @@ _Bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t siz
 
 
             CDCInitEP();
-            APP_DeviceCDCBasicDemoInitialize();
+
             break;
 
         case EVENT_SET_DESCRIPTOR:

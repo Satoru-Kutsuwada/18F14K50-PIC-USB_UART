@@ -25,8 +25,8 @@ please contact mla_licensing@microchip.com
 
 #include "system.h"
 
-#include "app_device_cdc_basic.h"
-#include "app_led_usb_status.h"
+//#include "app_device_cdc_basic.h"
+//#include "app_led_usb_status.h"
 
 #include "usb.h"
 #include "usb_device.h"
@@ -70,6 +70,7 @@ please contact mla_licensing@microchip.com
 uint8_t     USB_In_Buffer[64] ;       // USBの送信用バッファ
 uint8_t     USB_Out_Buffer[64] ;      // USBの受信用バッファ
 
+
 char CharConv[16]={
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     'a', 'b', 'c', 'd', 'e', 'f'
@@ -86,15 +87,19 @@ void skUSB_ini(void);
 void UsbPutString01(char *str, uint8_t flg);
 void Wait(uint16_t num);
 uint8_t skStrlen(char *str, uint8_t flg);
-uint8_t skStrinMerge(char *a, char *b);
-void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta);
+
+
 void uint2string(char *buf, uint16_t data, uint8_t flg);
 char GetChar(void);
-void PutString03(char *string,uint16_t data, uint16_t flg, uint16_t keta);
+void PutString03(char *string,uint16_t data, uint8_t flg, uint8_t keta);
 void PutString(char *string);
 void PutStringLF(void);
-void PutString01(char *string,uint16_t flg);
+void PutString01(char *string, uint8_t flg);
+extern void I2C_main(void);
+extern uint8_t vl53l0x_init(uint8_t io_2v8);
+extern uint8_t I2C_init(void);
 
+void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta) ;
 #define _XTAL_FREQ 4000000
 /********************************************************************
  * Function:        void main(void)
@@ -121,6 +126,8 @@ void main(void)
      BYTE numBytesRead ;
      BYTE i ;
      char RxData;
+     uint8_t rtn;
+    
      
     // bit7 IDLEN=0 : 0 = SLEEP ?????????????????????
     // bit6-4 IRCF<2:0>: ???????????????
@@ -158,12 +165,25 @@ void main(void)
     // • BAUDCTL (baud レート制御) レジスタ
     // RX/DT およびTX/CK ピンに対応するTRIS 制御ビットは「1」にセットしてください。
     // EUSART の制御により、ピン設定は必要に応じて入力から出力に自動的に変更されます。 
+     
+    //--------------------------------------------------------------------------
+    // I2C Pin Configulation
+    // I2C通信に使用するピンはクロック信号ピン(SCLピン)とデータ信号ピン(SDAピン)
+    // クロック信号はマスターが出力、データ信号は入出力になりますが、両方とも「入力」に
+    // 設定します
+    //
+    // TRISビットによってこれらのピンを入力として設定する
+    //--------------------------------------------------------------------------
+    
     //============================================================
     TRISA  = 0b00000000 ;     // 1で入力 0で出力 RA4-RA5全て出力に設定(RA3は入力専用)
     //TRISA = 0b00100000; // RA5: Input
     
-    TRISB  = 0b00000000 ;     // RB4-RB7全て出力に設定 
+    //TRISB  = 0b00000000 ;     // RB4-RB7全て出力に設定 
     //TRISB = 0b00000010; // RX: Input
+    // I2C対応ピン(RB4/RB6)を入力に割当てる
+    TRISB = 0b01010000;
+//    TRISB = 0b01010000 ;　
     
     
     // TXSTA: TXEN(bit5) = 1, SYNC(bit4) = 0, BRGH(bit2)=1
@@ -180,11 +200,43 @@ void main(void)
     // 19200bps 
     
     SPBRG = 155;
+    
+    //--------------------------------------------------------------------------
+    // MSSP モジュール
+    // SSPCON1、SSPCON2、SSPSTAT は、I2C モード動作時の制御レジスタとステータス レジスタです。
+    //
+    // MSSP をマスタモードに設定
+    // SSPADD レジスタの値はbaudレート ジェネレータの再読み込み値です
+    // 
+    // 受信動作の場合、SSPSR とSSPBUF が連動して、ダブルバッファ レシーバを構成します。
+    // SR が1 バイト分のデータを全て受信すると、そのバイトはSSPBUFに転送され、SSPIF 割り込みがセットされます。
+    // 
+    // 送信時のSSPBUF はダブルバッファを構成しません。
+    // SSPBUF への書き込み動作は、SSPBUF とSSPSR の両方に書き込みます。
+    //--------------------------------------------------------------------------
+    // I2Cモジュールを初期化
+    //--------------------------------------------------------------------------
+    SSPCON1 = 0b00001000;               // I2C Master modeにする
+    SSPCON2 = 0x00;                     // PowerOn初期値にする
+    SSPSTAT = 0b10000000;               // スルーレート制御はOff @100k
+    SSPADD  = 0x77;                     // クロックの設定    100k@4MHz (Fsoc 48Mz)
+    //SSPCON1bits.SSPEN = 1;              // SSP 有効にする
+    SSPCON1 = 0b00101000;               // SSP 有効にする,I2C Master modeにする
+    
+    
 
     skUSB_ini(); 
-             
+   
 
-     while(1) {
+        
+    
+    
+    UsbPutString03("MainLoop",0,1,16);
+    PutString03("UARTMainLoop", 0, 1, 16);
+    
+    rtn = 1;
+    
+     while( rtn == 1) {
          
          
         USBDeviceTasks() ;
@@ -192,6 +244,38 @@ void main(void)
         //ProcessUSB() ;
 
         numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;  // 受信データが有れば取り出す
+        if(numBytesRead != 0) {
+            
+            UsbPutString03("GetChaNumr = ",numBytesRead,1,16);
+            PutString03("GetChaNumr = ", numBytesRead, 1, 16);
+            for (i=0 ; i<numBytesRead ; i++) {           // 受信した個数分繰り返す
+                UsbPutString03("GetChar = ",USB_Out_Buffer[i],1,16);
+                PutString03("UART-Rxdata = ", USB_Out_Buffer[i], 1, 16);
+            
+                if( USB_Out_Buffer[i] == 'i')
+                    rtn=0;
+            }
+        }
+        
+        
+        RxData = GetChar();
+        
+        if(RxData > 0){
+            PutString03("UART-Rxdata = ", RxData, 1, 16);
+            if( RxData == 'i')
+                    rtn=0;
+        }
+     }
+    
+    // I2C
+    //rtn = I2C_init();
+    
+    if( rtn == 0 ){
+        PutString01("I2C initialize Error",1);
+    }
+    
+    while(1) {
+                numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;  // 受信データが有れば取り出す
         if(numBytesRead != 0) {
             
             UsbPutString03("GetChaNumr = ",numBytesRead,1,16);
@@ -208,9 +292,11 @@ void main(void)
         if(RxData > 0){
             PutString03("UART-Rxdata = ", RxData, 1, 16);
         }
-          
-
+        
+       // I2C_main();
     }
+    
+    //return 1;
 }
 //-----------------------------------------------------------------------------
 // 
@@ -231,7 +317,7 @@ char GetChar(void)
 //-----------------------------------------------------------------------------
 // 
 //-----------------------------------------------------------------------------
-void PutString01(char *string,uint16_t flg)
+void PutString01(char *string, uint8_t flg)
 {
     PutString(string);
     if(flg == 1)
@@ -240,13 +326,14 @@ void PutString01(char *string,uint16_t flg)
 //-----------------------------------------------------------------------------
 // 
 //-----------------------------------------------------------------------------
-void PutString03(char *string,uint16_t data, uint16_t flg, uint16_t keta)
+void PutString03(char *string,uint16_t data, uint8_t flg, uint8_t keta)
 
 {
     char buf[20];
     
     PutString(string);
     uint2string(buf, data, keta);
+    
     PutString(buf);
     if(flg == 1)
         PutStringLF();
@@ -479,33 +566,7 @@ void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta)
     
     
 }
-//-----------------------------------------------------------------------------
-// 
-//-----------------------------------------------------------------------------
-uint8_t skStrinMerge(char *a, char *b)
-{
-    uint8_t  rtn;
-    char *string;
-    
-    rtn = 0;
-    while( *a != (char)NULL )
-    {
-        a ++;
-        rtn ++;
-    }
 
-    while( *b != (char)NULL )
-    {
-        *a = *b;
-        a ++;
-        b ++;
-        rtn ++;
-    }
-    *a = *b;
-
-    return rtn;
-    
-}
 //-----------------------------------------------------------------------------
 // 
 //-----------------------------------------------------------------------------

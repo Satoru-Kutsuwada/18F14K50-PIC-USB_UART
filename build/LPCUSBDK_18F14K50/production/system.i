@@ -5098,46 +5098,10 @@ unsigned char __t3rd16on(void);
 # 24 "./system.h" 2
 
 
-# 1 "./buttons.h" 1
-# 29 "./buttons.h"
-typedef enum
-{
-    BUTTON_NONE,
-    BUTTON_S1,
-} BUTTON;
-# 51 "./buttons.h"
-_Bool BUTTON_IsPressed(BUTTON button);
-# 69 "./buttons.h"
-void BUTTON_Enable(BUTTON button);
-# 26 "./system.h" 2
 
-# 1 "./leds.h" 1
-# 29 "./leds.h"
-typedef enum
-{
-    LED_NONE,
-    LED_D1,
-    LED_D2,
-    LED_D3,
-    LED_D4
-} LED;
-# 56 "./leds.h"
-void LED_On(LED led);
-# 74 "./leds.h"
-void LED_Off(LED led);
-# 92 "./leds.h"
-void LED_Toggle(LED led);
-# 110 "./leds.h"
-_Bool LED_Get(LED led);
-# 127 "./leds.h"
-void LED_Enable(LED led);
-# 27 "./system.h" 2
 
 
 # 1 "./io_mapping.h" 1
-# 21 "./io_mapping.h"
-# 1 "./buttons.h" 1
-# 21 "./io_mapping.h" 2
 # 29 "./system.h" 2
 
 # 1 "./fixed_address_memory.h" 1
@@ -6053,8 +6017,8 @@ void SYSTEM_Initialize( SYSTEM_STATE state )
     switch(state)
     {
         case SYSTEM_STATE_USB_START:
-            LED_Enable(LED_D1);
-            BUTTON_Enable(BUTTON_S1);
+
+
             break;
 
         case SYSTEM_STATE_USB_SUSPEND:

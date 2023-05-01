@@ -482,6 +482,8 @@ bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size)
     len -     The number of BYTEs expected.
 
   **********************************************************************************/
+
+
 uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
 {
     cdc_rx_len = 0;
@@ -497,7 +499,7 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
 
         /*
          * Copy data from dual-ram buffer to user's buffer
-         */
+        */
         for(cdc_rx_len = 0; cdc_rx_len < len; cdc_rx_len++)
             buffer[cdc_rx_len] = cdc_data_rx[cdc_rx_len];
 
@@ -512,6 +514,7 @@ uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len)
     return cdc_rx_len;
 
 }//end getsUSBUSART
+
 
 /******************************************************************************
 ■Function:
@@ -547,6 +550,8 @@ USBUSARTIsTxTrfReady() は true を返す必要があります。 これは、�
  char *data - ホストに転送されるデータの RAM 配列へのポインタ uint8_t length - 転送されるバイト数 (255 未満である必要があります)。
  
  *****************************************************************************/
+
+/********
 void putUSBUSART(uint8_t *data, uint8_t  length)
 {
     /*
@@ -572,7 +577,7 @@ void putUSBUSART(uint8_t *data, uint8_t  length)
      * ファームウェア フレームワーク全体が協調マルチタスクに基づいて記述されており、
      * ブロッキング コードは受け入れられません。
      * 代わりにステート マシンを使用してください。
-     */
+     
     
     USBMaskInterrupts();
     if(cdc_trf_state == CDC_TX_READY)
@@ -581,6 +586,9 @@ void putUSBUSART(uint8_t *data, uint8_t  length)
     }
     USBUnmaskInterrupts();
 }//end putUSBUSART
+
+ * *****/
+
 
 /******************************************************************************
 ■Function:
@@ -703,6 +711,8 @@ void putsUSBUSART(char *data)
                             will be transferred to the host.
 
   **************************************************************************/
+
+/**********************
 void putrsUSBUSART(const char *data)
 {
     uint8_t len;
@@ -730,7 +740,7 @@ void putrsUSBUSART(const char *data)
      * The whole firmware framework is written based on cooperative
      * multi-tasking and a blocking code is not acceptable.
      * Use a state machine instead.
-     */
+     
     USBMaskInterrupts();
     if(cdc_trf_state != CDC_TX_READY)
     {
@@ -741,7 +751,7 @@ void putrsUSBUSART(const char *data)
     /*
      * While loop counts the number of BYTEs to send including the
      * null character.
-     */
+     
     len = 0;
     pData = data;
     do
@@ -755,12 +765,14 @@ void putrsUSBUSART(const char *data)
      * Call mUSBUSARTTxRom to setup the transfer.
      * The actual transfer process will be handled by CDCTxService(),
      * which should be called once per Main Program loop.
-     */
+     
 
     mUSBUSARTTxRom((const uint8_t*)data,len); // See cdc.h
     USBUnmaskInterrupts();
 
 }//end putrsUSBUSART
+*****/
+
 
 /************************************************************************
 ■Function:

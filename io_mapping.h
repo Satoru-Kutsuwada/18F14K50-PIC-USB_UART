@@ -17,8 +17,8 @@ To request to license the code under the MLA license (www.microchip.com/mla_lice
 please contact mla_licensing@microchip.com
 *******************************************************************************/
 
-#include "leds.h"
-#include "buttons.h"
+//#include "leds.h"
+//#include "buttons.h"
 
 #define LED_USB_DEVICE_STATE                    LED_D1
 

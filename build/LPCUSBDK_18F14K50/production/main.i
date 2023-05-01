@@ -5249,46 +5249,10 @@ char *tempnam(const char *, const char *);
 # 24 "./system.h" 2
 
 
-# 1 "./buttons.h" 1
-# 29 "./buttons.h"
-typedef enum
-{
-    BUTTON_NONE,
-    BUTTON_S1,
-} BUTTON;
-# 51 "./buttons.h"
-_Bool BUTTON_IsPressed(BUTTON button);
-# 69 "./buttons.h"
-void BUTTON_Enable(BUTTON button);
-# 26 "./system.h" 2
 
-# 1 "./leds.h" 1
-# 29 "./leds.h"
-typedef enum
-{
-    LED_NONE,
-    LED_D1,
-    LED_D2,
-    LED_D3,
-    LED_D4
-} LED;
-# 56 "./leds.h"
-void LED_On(LED led);
-# 74 "./leds.h"
-void LED_Off(LED led);
-# 92 "./leds.h"
-void LED_Toggle(LED led);
-# 110 "./leds.h"
-_Bool LED_Get(LED led);
-# 127 "./leds.h"
-void LED_Enable(LED led);
-# 27 "./system.h" 2
 
 
 # 1 "./io_mapping.h" 1
-# 21 "./io_mapping.h"
-# 1 "./buttons.h" 1
-# 21 "./io_mapping.h" 2
 # 29 "./system.h" 2
 
 # 1 "./fixed_address_memory.h" 1
@@ -5309,19 +5273,9 @@ void SYSTEM_Initialize( SYSTEM_STATE state );
 # 26 "main.c" 2
 
 
-# 1 "./app_device_cdc_basic.h" 1
-# 24 "./app_device_cdc_basic.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 1 3
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 132 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef int ptrdiff_t;
-# 20 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stddef.h" 2 3
-# 24 "./app_device_cdc_basic.h" 2
 
 
-# 1 "./usb_device_cdc.h" 1
-# 26 "./usb_device_cdc.h"
+
 # 1 "./usb.h" 1
 # 45 "./usb.h"
 # 1 "./usb_config.h" 1
@@ -6180,7 +6134,10 @@ _Bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t
 _Bool USBHALInitialize ( unsigned long flags );
 # 2055 "./usb_device.h" 2
 # 51 "./usb.h" 2
-# 26 "./usb_device_cdc.h" 2
+# 31 "main.c" 2
+
+
+# 1 "./usb_device_cdc.h" 1
 # 536 "./usb_device_cdc.h"
 void CDCInitEP(void);
 # 562 "./usb_device_cdc.h"
@@ -6317,21 +6274,7 @@ extern LINE_CODING line_coding;
 
 extern volatile CTRL_TRF_SETUP SetupPkt;
 extern const uint8_t configDescriptor1[];
-# 26 "./app_device_cdc_basic.h" 2
-# 40 "./app_device_cdc_basic.h"
-void APP_DeviceCDCBasicDemoInitialize(void);
-# 56 "./app_device_cdc_basic.h"
-void APP_DeviceCDCBasicDemoTasks(void);
-# 28 "main.c" 2
-
-# 1 "./app_led_usb_status.h" 1
-# 37 "./app_led_usb_status.h"
-void APP_LEDUpdateUSBStatus(void);
-# 29 "main.c" 2
-
-
-
-
+# 33 "main.c" 2
 
 # 1 "./GenericTypeDefs.h" 1
 # 49 "./GenericTypeDefs.h"
@@ -6585,6 +6528,7 @@ typedef union _QWORD_VAL
 uint8_t USB_In_Buffer[64] ;
 uint8_t USB_Out_Buffer[64] ;
 
+
 char CharConv[16]={
     '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
     'a', 'b', 'c', 'd', 'e', 'f'
@@ -6601,21 +6545,27 @@ void skUSB_ini(void);
 void UsbPutString01(char *str, uint8_t flg);
 void Wait(uint16_t num);
 uint8_t skStrlen(char *str, uint8_t flg);
-uint8_t skStrinMerge(char *a, char *b);
-void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta);
+
+
 void uint2string(char *buf, uint16_t data, uint8_t flg);
 char GetChar(void);
-void PutString03(char *string,uint16_t data, uint16_t flg, uint16_t keta);
+void PutString03(char *string,uint16_t data, uint8_t flg, uint8_t keta);
 void PutString(char *string);
 void PutStringLF(void);
-void PutString01(char *string,uint16_t flg);
-# 119 "main.c"
+void PutString01(char *string, uint8_t flg);
+extern void I2C_main(void);
+extern uint8_t vl53l0x_init(uint8_t io_2v8);
+extern uint8_t I2C_init(void);
+
+void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta) ;
+# 124 "main.c"
 void main(void)
 {
      BYTE numBytesRead ;
      BYTE i ;
      char RxData;
-# 141 "main.c"
+     uint8_t rtn;
+# 148 "main.c"
      OSCCON = 0b00000000 ;
 
 
@@ -6628,11 +6578,14 @@ void main(void)
      PORTA = 0b00000000 ;
      PORTB = 0b00000000 ;
      PORTC = 0b00000000 ;
-# 162 "main.c"
+# 179 "main.c"
     TRISA = 0b00000000 ;
 
 
-    TRISB = 0b00000000 ;
+
+
+
+    TRISB = 0b01010000;
 
 
 
@@ -6650,11 +6603,28 @@ void main(void)
 
 
     SPBRG = 155;
+# 219 "main.c"
+    SSPCON1 = 0b00001000;
+    SSPCON2 = 0x00;
+    SSPSTAT = 0b10000000;
+    SSPADD = 0x77;
+
+    SSPCON1 = 0b00101000;
+
+
 
     skUSB_ini();
 
 
-     while(1) {
+
+
+
+    UsbPutString03("MainLoop",0,1,16);
+    PutString03("UARTMainLoop", 0, 1, 16);
+
+    rtn = 1;
+
+     while( rtn == 1) {
 
 
         USBDeviceTasks() ;
@@ -6662,6 +6632,38 @@ void main(void)
 
 
         numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;
+        if(numBytesRead != 0) {
+
+            UsbPutString03("GetChaNumr = ",numBytesRead,1,16);
+            PutString03("GetChaNumr = ", numBytesRead, 1, 16);
+            for (i=0 ; i<numBytesRead ; i++) {
+                UsbPutString03("GetChar = ",USB_Out_Buffer[i],1,16);
+                PutString03("UART-Rxdata = ", USB_Out_Buffer[i], 1, 16);
+
+                if( USB_Out_Buffer[i] == 'i')
+                    rtn=0;
+            }
+        }
+
+
+        RxData = GetChar();
+
+        if(RxData > 0){
+            PutString03("UART-Rxdata = ", RxData, 1, 16);
+            if( RxData == 'i')
+                    rtn=0;
+        }
+     }
+
+
+
+
+    if( rtn == 0 ){
+        PutString01("I2C initialize Error",1);
+    }
+
+    while(1) {
+                numBytesRead = getsUSBUSART(USB_Out_Buffer,64) ;
         if(numBytesRead != 0) {
 
             UsbPutString03("GetChaNumr = ",numBytesRead,1,16);
@@ -6681,6 +6683,8 @@ void main(void)
 
 
     }
+
+
 }
 
 
@@ -6701,7 +6705,7 @@ char GetChar(void)
 
 
 
-void PutString01(char *string,uint16_t flg)
+void PutString01(char *string, uint8_t flg)
 {
     PutString(string);
     if(flg == 1)
@@ -6710,13 +6714,14 @@ void PutString01(char *string,uint16_t flg)
 
 
 
-void PutString03(char *string,uint16_t data, uint16_t flg, uint16_t keta)
+void PutString03(char *string,uint16_t data, uint8_t flg, uint8_t keta)
 
 {
     char buf[20];
 
     PutString(string);
     uint2string(buf, data, keta);
+
     PutString(buf);
     if(flg == 1)
         PutStringLF();
@@ -6927,35 +6932,9 @@ void UsbPutString03(char *str, uint16_t data, uint8_t flg, uint8_t keta)
         putsUSBUSART(string);
         CDCTxService() ;
     }
-# 481 "main.c"
+# 568 "main.c"
 }
 
-
-
-uint8_t skStrinMerge(char *a, char *b)
-{
-    uint8_t rtn;
-    char *string;
-
-    rtn = 0;
-    while( *a != (char)((void*)0) )
-    {
-        a ++;
-        rtn ++;
-    }
-
-    while( *b != (char)((void*)0) )
-    {
-        *a = *b;
-        a ++;
-        b ++;
-        rtn ++;
-    }
-    *a = *b;
-
-    return rtn;
-
-}
 
 
 

@@ -1,31 +1,25 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "51 usb_events.c
 [; ;usb_events.c: 51: _Bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size)
-[c E2852 0 1 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 400 500 600 700 800 900 1000 10000 32767 .. ]
-[n E2852 . EVENT_NONE EVENT_DEVICE_STACK_BASE EVENT_HOST_STACK_BASE EVENT_HUB_ATTACH EVENT_STALL EVENT_VBUS_SES_REQUEST EVENT_VBUS_OVERCURRENT EVENT_VBUS_REQUEST_POWER EVENT_VBUS_RELEASE_POWER EVENT_VBUS_POWER_AVAILABLE EVENT_UNSUPPORTED_DEVICE EVENT_CANNOT_ENUMERATE EVENT_CLIENT_INIT_ERROR EVENT_OUT_OF_MEMORY EVENT_UNSPECIFIED_ERROR EVENT_DETACH EVENT_TRANSFER EVENT_SOF EVENT_RESUME EVENT_SUSPEND EVENT_RESET EVENT_DATA_ISOC_READ EVENT_DATA_ISOC_WRITE EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION EVENT_1MS EVENT_ALT_INTERFACE EVENT_HOLD_BEFORE_CONFIGURATION EVENT_GENERIC_BASE EVENT_MSD_BASE EVENT_HID_BASE EVENT_PRINTER_BASE EVENT_CDC_BASE EVENT_CHARGER_BASE EVENT_AUDIO_BASE EVENT_USER_BASE EVENT_BUS_ERROR  ]
-"37 ./app_led_usb_status.h
-[; ;./app_led_usb_status.h: 37: void APP_LEDUpdateUSBStatus(void);
-[v _APP_LEDUpdateUSBStatus `(v ~T0 @X0 0 ef ]
-"74 usb_events.c
+[c E2826 0 1 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 400 500 600 700 800 900 1000 10000 32767 .. ]
+[n E2826 . EVENT_NONE EVENT_DEVICE_STACK_BASE EVENT_HOST_STACK_BASE EVENT_HUB_ATTACH EVENT_STALL EVENT_VBUS_SES_REQUEST EVENT_VBUS_OVERCURRENT EVENT_VBUS_REQUEST_POWER EVENT_VBUS_RELEASE_POWER EVENT_VBUS_POWER_AVAILABLE EVENT_UNSUPPORTED_DEVICE EVENT_CANNOT_ENUMERATE EVENT_CLIENT_INIT_ERROR EVENT_OUT_OF_MEMORY EVENT_UNSPECIFIED_ERROR EVENT_DETACH EVENT_TRANSFER EVENT_SOF EVENT_RESUME EVENT_SUSPEND EVENT_RESET EVENT_DATA_ISOC_READ EVENT_DATA_ISOC_WRITE EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION EVENT_1MS EVENT_ALT_INTERFACE EVENT_HOLD_BEFORE_CONFIGURATION EVENT_GENERIC_BASE EVENT_MSD_BASE EVENT_HID_BASE EVENT_PRINTER_BASE EVENT_CDC_BASE EVENT_CHARGER_BASE EVENT_AUDIO_BASE EVENT_USER_BASE EVENT_BUS_ERROR  ]
+"74
 [; ;usb_events.c: 74:             SYSTEM_Initialize(SYSTEM_STATE_USB_SUSPEND);
-[c E2834 0 1 2 .. ]
-[n E2834 . SYSTEM_STATE_USB_START SYSTEM_STATE_USB_SUSPEND SYSTEM_STATE_USB_RESUME  ]
+[c E2809 0 1 2 .. ]
+[n E2809 . SYSTEM_STATE_USB_START SYSTEM_STATE_USB_SUSPEND SYSTEM_STATE_USB_RESUME  ]
 "54 ./system.h
 [; ;./system.h: 54: void SYSTEM_Initialize( SYSTEM_STATE state );
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef1`E2834 ]
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef1`E2809 ]
 "536 ./usb_device_cdc.h
 [; ;./usb_device_cdc.h: 536: void CDCInitEP(void);
 [v _CDCInitEP `(v ~T0 @X0 0 ef ]
-"40 ./app_device_cdc_basic.h
-[; ;./app_device_cdc_basic.h: 40: void APP_DeviceCDCBasicDemoInitialize(void);
-[v _APP_DeviceCDCBasicDemoInitialize `(v ~T0 @X0 0 ef ]
-"562 ./usb_device_cdc.h
+"562
 [; ;./usb_device_cdc.h: 562: void USBCheckCDCRequest(void);
 [v _USBCheckCDCRequest `(v ~T0 @X0 0 ef ]
 "112 usb_events.c
 [; ;usb_events.c: 112:     }
-[c E3112 1 2 3 4 5 .. ]
-[n E3112 . EVENT_CONFIGURED EVENT_SET_DESCRIPTOR EVENT_EP0_REQUEST EVENT_ATTACH EVENT_TRANSFER_TERMINATED  ]
+[c E3086 1 2 3 4 5 .. ]
+[n E3086 . EVENT_CONFIGURED EVENT_SET_DESCRIPTOR EVENT_EP0_REQUEST EVENT_ATTACH EVENT_TRANSFER_TERMINATED  ]
 "54 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-K_DFP/1.7.134/xc8\pic\include\proc\pic18f14k50.h: 54: __asm("UEP0 equ 0F53h");
 [; <" UEP0 equ 0F53h ;# ">
@@ -508,14 +502,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 0FFFh ;# ">
 "51 usb_events.c
 [; ;usb_events.c: 51: _Bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size)
-[v _USER_USB_CALLBACK_EVENT_HANDLER `(a ~T0 @X0 1 ef3`E2852`*v`us ]
+[v _USER_USB_CALLBACK_EVENT_HANDLER `(a ~T0 @X0 1 ef3`E2826`*v`us ]
 "52
 [; ;usb_events.c: 52: {
 {
 [e :U _USER_USB_CALLBACK_EVENT_HANDLER ]
 "51
 [; ;usb_events.c: 51: _Bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size)
-[v _event `E2852 ~T0 @X0 1 r1 ]
+[v _event `E2826 ~T0 @X0 1 r1 ]
 [v _pdata `*v ~T0 @X0 1 r2 ]
 [v _size `us ~T0 @X0 1 r3 ]
 "52
@@ -536,33 +530,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "58
 [; ;usb_events.c: 58:         case EVENT_SOF:
 [e :U 399 ]
-"61
-[; ;usb_events.c: 61:             APP_LEDUpdateUSBStatus();
-[e ( _APP_LEDUpdateUSBStatus ..  ]
 "62
 [; ;usb_events.c: 62:             break;
 [e $U 396  ]
 "64
 [; ;usb_events.c: 64:         case EVENT_SUSPEND:
 [e :U 400 ]
-"66
-[; ;usb_events.c: 66:             APP_LEDUpdateUSBStatus();
-[e ( _APP_LEDUpdateUSBStatus ..  ]
 "74
 [; ;usb_events.c: 74:             SYSTEM_Initialize(SYSTEM_STATE_USB_SUSPEND);
-[e ( _SYSTEM_Initialize (1 . `E2834 1 ]
+[e ( _SYSTEM_Initialize (1 . `E2809 1 ]
 "75
 [; ;usb_events.c: 75:             break;
 [e $U 396  ]
 "77
 [; ;usb_events.c: 77:         case EVENT_RESUME:
 [e :U 401 ]
-"79
-[; ;usb_events.c: 79:             APP_LEDUpdateUSBStatus();
-[e ( _APP_LEDUpdateUSBStatus ..  ]
 "85
 [; ;usb_events.c: 85:             SYSTEM_Initialize(SYSTEM_STATE_USB_RESUME);
-[e ( _SYSTEM_Initialize (1 . `E2834 2 ]
+[e ( _SYSTEM_Initialize (1 . `E2809 2 ]
 "86
 [; ;usb_events.c: 86:             break;
 [e $U 396  ]
@@ -572,9 +557,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "91
 [; ;usb_events.c: 91:             CDCInitEP();
 [e ( _CDCInitEP ..  ]
-"92
-[; ;usb_events.c: 92:             APP_DeviceCDCBasicDemoInitialize();
-[e ( _APP_DeviceCDCBasicDemoInitialize ..  ]
 "93
 [; ;usb_events.c: 93:             break;
 [e $U 396  ]
@@ -616,15 +598,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 396  ]
 [e :U 397 ]
-[e [\ -> _event `i , $ . `E2852 16 398
- , $ . `E2852 17 399
- , $ . `E2852 19 400
- , $ . `E2852 18 401
- , $ . `E3112 0 402
- , $ . `E3112 1 403
- , $ . `E3112 2 404
- , $ . `E2852 35 405
- , $ . `E3112 4 406
+[e [\ -> _event `i , $ . `E2826 16 398
+ , $ . `E2826 17 399
+ , $ . `E2826 19 400
+ , $ . `E2826 18 401
+ , $ . `E3086 0 402
+ , $ . `E3086 1 403
+ , $ . `E3086 2 404
+ , $ . `E2826 35 405
+ , $ . `E3086 4 406
  407 ]
 [e :U 396 ]
 "113

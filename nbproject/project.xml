@@ -10,6 +10,7 @@
             <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <asminc-extensions/>
+            <creation-uuid>7e03049a-7240-46c2-a789-e065ba244bf9</creation-uuid>
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../boards</sourceRootElem>

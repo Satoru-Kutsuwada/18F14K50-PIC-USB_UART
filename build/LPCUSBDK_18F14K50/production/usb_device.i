@@ -6727,7 +6727,7 @@ static void USBCtrlTrfTxService(void)
     byteToSend = 8;
     if(inPipes[0].wCount.Val < (uint8_t)8)
     {
-        byteToSend = inPipes[0].wCount.Val;
+        byteToSend = ( uint8_t )inPipes[0].wCount.Val;
 
 
 
@@ -6789,7 +6789,7 @@ static void USBCtrlTrfRxService(void)
 
     if(byteToRead > outPipes[0].wCount.Val)
     {
-        byteToRead = outPipes[0].wCount.Val;
+        byteToRead = (uint8_t )outPipes[0].wCount.Val;
     }
 
     outPipes[0].wCount.Val -= byteToRead;
